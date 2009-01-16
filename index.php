@@ -21,7 +21,9 @@ ob_start();
 		<div class="homeitem3col">
 			<h3>About e4</h3>
 		      <p>The mission of the e4 project is to build a next generation platform for 
-		      pervasive, component-based applications and tools.
+		      pervasive, component-based applications and tools. This project is currently
+		      in the proposal phase. See the <a href="http://www.eclipse.org/proposals/e4/">proposal</a>
+		      for more details.
 		      </p>
 		      <p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
