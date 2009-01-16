@@ -9,7 +9,7 @@
   xmlns:p="http://www.eclipse.org/project/plan" xmlns="http://www.w3.org/1999/xhtml"
   name="e4 Project">
 
-<p:release projectid="e4" version="0.9"/>
+<p:release projectid="eclipse.e4" version="0.9"/>
 
 <!-- ============================================== -->
 
