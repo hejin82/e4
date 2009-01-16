@@ -38,7 +38,7 @@ ob_start();
 		<div class="homeitem3col">
 			<h3>For more information</h3>
       	 <ul>
-      	   <li><a href="development/">e4 Development</a><br>
+      	   <li><a href="http://eclipse.org/eclipse/development/">Project Development</a><br>
 				Release plans and other information about the Eclipse Project development process.
       	   </li>
       	   <li><a href="http://download.eclipse.org/e4/downloads/">Downloads</a><br>
