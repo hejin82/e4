@@ -108,6 +108,16 @@
   Galileo Simultaneous Release</a> train.</p>
 </p:preamble>
 
+<!--
+Feb 6 M1
+Mar 20 M2
+May 8 M3
+June 19 M4
+July 3 RC1
+July 10 RC2
+July 17 RC3
+July 24 RC4
+-->
 <p:milestone date="08/08/2008" milestone="M1"><div>3.5M1</div></p:milestone>
 <p:milestone date="09/19/2008" milestone="M2"><div>3.5M2</div></p:milestone>
 <p:milestone date="10/31/2008" milestone="M3"><div>3.5M3</div></p:milestone>
