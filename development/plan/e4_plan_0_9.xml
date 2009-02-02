@@ -374,6 +374,7 @@ easier to build applications and extensions upon.
 </p:committed>
 
 <p:proposed>
+<ul>
 <li><strong>Support declarative definition of user-interfaces.</strong> 
   We will work with the community to identify and provide access to a best-of-breed
   declarative mechanism for defining widget-based user-interfaces in Eclipse. [Platform UI, SWT]
@@ -387,7 +388,7 @@ easier to build applications and extensions upon.
   will make development simpler, but more flexible and dynamic. [Platform UI]
  (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id= 252650"> 252650</a>) </li>
 
-<li><strong>Skinnable UI</strong>
+<li><strong>Skinnable UI.</strong>
   We will enable developers to have greater control over the Eclipse UI, 
   making it simple to customize the appearance of Eclipse-based applications
   using industry standard mechanisms such as CSS. [Platform UI, SWT]
@@ -400,6 +401,14 @@ easier to build applications and extensions upon.
   will potentially impact many other areas, only the initial investigation
   is planned during the R3.5 cycle. [All]
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252654">252654</a>)</li>
+
+<li><strong>Compatibility layer.</strong>
+  Although the 0.9 release will not itself be backward compatible with earlier versions
+  of the Eclipse platform, we will develop a compatibility layer that will allow
+  plug-ins built against earlier versions of the platform to run without modification
+  in e4. [All]
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+</ul>
 </p:proposed>
 
 <p:deferred>
