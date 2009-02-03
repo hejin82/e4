@@ -81,9 +81,8 @@ However, deliverables will include:</p>
   <li>Source code release for all e4 Project deliverables, available as
     versions tagged &quot;R0_9&quot; in the e4 Project <a href="http://dev.eclipse.org/viewcvs/">CVS
     repository</a>.</li>
-  <li>e4 resources patch, applicable against Eclipse Platform Galileo (3.5 release).</li>
-  <li>e4 Examples (downloadable).</li>
-  <li>SWT distribution (downloadable).</li>
+  <li>e4 master zip (downloadable). Contains all source code, e4 bundles in binary form,
+  and patches for applying portions of e4 onto an existing instance of the Eclipse Platform.</li>
 </ul>
 
 </div>
@@ -186,7 +185,7 @@ are developing and testing against.</p>
   </table>
 
 </center>
-<p>As stated above, <i>we expect that Eclipse works fine on other current
+<p>As stated above, <i>we expect that e4 works fine on other current
   Java VM and OS versions but we cannot flag these as reference platforms without
   significant community support for testing them.</i></p>
 </div>
