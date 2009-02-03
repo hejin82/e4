@@ -130,9 +130,11 @@ However, deliverables will include:</p>
   Java Platform itself. Portions are targeted to specific classes of operating
   environments, requiring their source code to only reference facilities available
   in particular class libraries (e.g. J2ME Foundation 1.0, J2SE 1.3 and 1.4,
-  etc.).</p>
-<p>In general, the 0.9 release of the Eclipse Project is developed on Java SE 5.
-  As such, the Eclipse SDK as a whole is targeted at all modern, desktop Java VMs.</p>
+  etc.). In general, the 0.9 release of the Eclipse Project is developed on Java SE 5.</p>
+<p>e4 has dependencies on components from other Eclipse projects, notably the Platform
+project, and the EMF project. While specific version dependencies may specify
+a wider range, e4 is generally built and tested against the versions contained in the 
+Galileo release train.</p>
 <p>There are many different implementations of the Java Platform running atop
   a variety of operating systems. We focus our testing on a handful of
   popular combinations of operating system and Java Platform; these are our <em>reference
@@ -141,6 +143,9 @@ However, deliverables will include:</p>
   them we cannot vouch for them. Problems encountered when running Eclipse on a
   non-reference platform that cannot be recreated on any reference platform will
   be given lower priority than problems with running Eclipse on a reference platform.</p>
+<p>e4 also has dependencies on browser technologies such as Javascript and Flash. The
+reference platforms listed below show the versions of these technologies that we
+are developing and testing against.</p>
 <p>e4 0.9 is tested and validated on the following reference platforms
   (this list is updated over the course of the release cycle):</p>
   
@@ -153,93 +158,22 @@ However, deliverables will include:</p>
       <tr>
         <td><b>Microsoft Windows Vista, x86-32, Win32</b> running (any of):
           <ul>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Microsoft Windows</li>
+            <li>Sun Java Standard Edition 5 Update 14 for Microsoft Windows</li>
             <li>IBM 32-bit SDK for Windows, Java 2 Technology Edition 5.0, SR6b</li>
-            <li>BEA JRockit 27.4.0, for Microsoft Windows</li>
           </ul></td>
       </tr>
       <tr>
         <td><b>Microsoft Windows XP, x86-32, Win32</b> running (any of):
           <ul>
-            <li>Sun Java 2 Standard Edition 6.0 Update 4 for Microsoft Windows</li>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Microsoft Windows</li>
+            <li>Sun Java Standard Edition 5 Update 14 for Microsoft Windows</li>
             <li>IBM 32-bit SDK for Windows, Java 2 Technology Edition 5.0, SR6b</li>
-            <li>BEA JRockit 27.4.0, for Microsoft Windows</li>
-            <li>Sun Java 2 Standard Edition 1.4.2_16 for Microsoft Windows</li>
-            <li>IBM 32-bit SDK for Windows, Java 2 Technology Edition 1.4.2 SR10</li>
           </ul></td>
       </tr>
       <tr>
         <td><b>Red Hat Enterprise Linux 5.0, x86-32, GTK</b> running (any of):
           <ul>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Linux x86</li>
+            <li>Sun Java Standard Edition 5 Update 14 for Linux x86</li>
             <li>IBM 32-bit SDK for Linux on Intel architecture, Java 2 Technology Edition 5.0, SR6b</li>
-            <li>BEA JRockit 27.4.0, for Linux x86</li>
-            <li>Sun Java 2 Standard Edition 1.4.2_16 for Linux x86</li>
-            <li>IBM 32-bit SDK for Linux on Intel architecture, Java 2 Technology Edition 1.4.2 SR10</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>SUSE Linux Enterprise Server 10, x86-32, GTK</b> running (any of):
-          <ul>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Linux x86</li>
-            <li>IBM 32-bit SDK for Linux on Intel architecture, Java 2 Technology Edition 5.0, SR6b</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>Microsoft Windows Vista, x86-64, Win32</b> running (any of):
-          <ul>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Microsoft Windows (AMD64/EM64T)</li>
-            <li>IBM 64-bit SDK for Windows, Java 2 Technology Edition 5.0, SR6b</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>Microsoft Windows XP Professional x64 Edition, x86-64, Win32</b> running (any of):
-          <ul>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Microsoft Windows (AMD64/EM64T)</li>
-            <li>IBM 64-bit SDK for Windows, Java 2 Technology Edition 5.0, SR6b</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>Red Hat Enterprise Linux 4.0 update 2, x86-64, GTK</b> running:
-          <ul>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Linux x86_64</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>Sun Solaris 10, SPARC, GTK</b> running:
-          <ul>
-            <li>Sun Java 2 Standard Edition 5.0 Update 14 for Solaris SPARC</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>HP-UX 11i v2, ia64, Motif 2.1, GTK</b> running:
-          <ul>
-            <li>HP-UX Java 2 Standard Edition 5.0 Update 7 for Itanium</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>IBM AIX 5.3, Power, Motif 2.1</b> running:
-          <ul>
-            <li>IBM 32-bit SDK, Java 2 Technology Edition 5.0, SR6b</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>Red Hat Enterprise Linux 5.0, Power, GTK</b> running:
-          <ul>
-            <li>IBM 32-bit SDK for Linux on pSeries architecture, Java 2 Technology Edition 5.0, SR6b</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>SUSE Linux Enterprise Server 10, Power, GTK</b> running:
-          <ul>
-            <li>IBM 32-bit SDK for Linux on pSeries architecture, Java 2 Technology Edition 5.0, SR6b</li>
-          </ul></td>
-      </tr>
-      <tr>
-        <td><b>Apple Mac OS X 10.5, Universal, Carbon</b> running:
-          <ul>
-            <li>Apple Java for Mac OS X 10.5, Update 1</li>
           </ul></td>
       </tr>
       <tr>
