@@ -8,15 +8,18 @@ on current Eclipse and OSGi technology, its major goals include</p>
   <li>Increasing diversity of contributors to the platform</li> 
   <li>Maintaining backward compatibility for API-clean clients</li> 
 </ul>
-<p>In order to reach these goals, Eclipse UI APIs are is refactored into 
+<p>In order to reach these goals, Eclipse APIs are is refactored into 
   <a href="http://wiki.eclipse.org/e4/Eclipse_Application_Services">services</a>
-  which support depenency injection to run in multiple different
-  contexts; the Workbench is uniformly 
+  that make up a uniform application model, which supports dependency 
+  injection to run in multiple different contexts such as desktop or 
+  web; the Workbench is uniformly 
   <a href="http://wiki.eclipse.org/e4/Workbench_Model">modeled</a>
-  to provide introspection, more flexibility, and CSS styling;
-  SWT target platforms are added to run in the Browser;
-  and many more
-  <a href="http://wiki.eclipse.org/e4">initiatives</a> involving
+  to provide introspection, more flexibility, CSS styling, and
+  declarative UI markup; SWT target platforms are added to run
+  in the Browser; and many more
+  <a href="http://wiki.eclipse.org/e4">initiatives</a> in areas
+  such as flexible resources, commands recording, scripting, 
+  language integrations, reducing bloat, and more involving
   broad community participation.
 </p>
 <p>
