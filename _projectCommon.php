@@ -32,7 +32,7 @@
 	$Nav->addCustomNav("Bugs", "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&classification=Eclipse&product=E4&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&cmdtype=doit", 	"_self", 2);
 	$Nav->addCustomNav("File a Bug", "https://bugs.eclipse.org/bugs/enter_bug.cgi?product=e4", 	"_self", 2);
 
-	$Nav->addCustomNav( "Projects", "index.php", "", 1  );
+	$Nav->addNavSeparator( "Projects", "index.php", "", 1  );
 	$Nav->addCustomNav("Platform", "/platform/", "_self", 2);
 	$Nav->addCustomNav("JDT", "/jdt/", "_self", 2);
 	$Nav->addCustomNav("PDE", "/pde/", "_self", 2);
