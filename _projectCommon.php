@@ -29,6 +29,7 @@
 	$Nav->addCustomNav("Downloads", "http://download.eclipse.org/e4/downloads/", 	"_self", 2);
 	$Nav->addCustomNav("Newsgroup", "http://www.eclipse.org/newsportal/thread.php?group=eclipse.e4", "_self", 2);
 	$Nav->addCustomNav("Mailing List", "https://dev.eclipse.org/mailman/listinfo/e4-dev", "_self", 2);
+	$Nav->addCustomNav("Project Plan", "http://www.eclipse.org/projects/project-plan.php?projectid=eclipse.e4", "_self", 2);
 	$Nav->addCustomNav("Bugs", "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&classification=Eclipse&product=E4&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&cmdtype=doit", 	"_self", 2);
 	$Nav->addCustomNav("File a Bug", "https://bugs.eclipse.org/bugs/enter_bug.cgi?product=e4", 	"_self", 2);
 

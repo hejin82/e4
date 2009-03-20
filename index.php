@@ -21,8 +21,10 @@ ob_start();
 		<div class="homeitem3col">
 			<h3>About e4</h3>
 		      <p>The mission of the e4 project is to build a next generation platform for 
-		      pervasive, component-based applications and tools. This project is currently
-		      in the proposal phase. See the <a href="http://www.eclipse.org/proposals/e4/">proposal</a>
+		      pervasive, component-based applications and tools. See the
+		      <a href="/projects/project_summary.php?projectid=eclipse.e4">about page</a>
+		      as well as the original
+		      <a href="http://www.eclipse.org/proposals/e4/">project proposal</a>
 		      for more details.
 		      </p>
 		      <p>
