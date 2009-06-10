@@ -101,11 +101,10 @@ However, deliverables will include:</p>
 <p:milestone date="02/06/2009" milestone="M1"><div>0.9M1</div></p:milestone>
 <p:milestone date="03/20/2009" milestone="M2"><div>0.9M2</div></p:milestone>
 <p:milestone date="05/08/2009" milestone="M3"><div>0.9M3</div></p:milestone>
-<p:milestone date="06/19/2009" milestone="M4"><div>0.9M4 (Feature Freeze)</div></p:milestone>
-<p:milestone date="07/03/2009" milestone="RC1"><div>0.9RC1</div></p:milestone>
-<p:milestone date="07/10/2009" milestone="RC2"><div>0.9RC2</div></p:milestone>
-<p:milestone date="07/17/2009" milestone="RC3"><div>0.9RC3</div></p:milestone>
-<p:milestone date="07/24/2009" milestone="RC4"><div>0.9RC4</div></p:milestone>
+<p:milestone date="06/26/2009" milestone="M4"><div>0.9M4</div></p:milestone>
+<p:milestone date="07/10/2009" milestone="M5"><div>0.9M5 (Feature Freeze)</div></p:milestone>
+<p:milestone date="07/17/2009" milestone="RC1"><div>0.9RC1</div></p:milestone>
+<p:milestone date="07/24/2009" milestone="RC2"><div>0.9RC2</div></p:milestone>
 
 <p:postamble>
 <div>
