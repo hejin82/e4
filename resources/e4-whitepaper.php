@@ -29,8 +29,10 @@ ob_start();
 		<h1><?= $pageTitle ?></h1>
 
 		<h3><strong>Executive Summary</strong></h3>
+		<p>Some content.</p>
 
 		<h3><strong>Another Section</strong></h3>
+		<p>Some content.</p>
 	</div>
 </div?
 
