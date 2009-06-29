@@ -26,7 +26,7 @@ ob_start();
 	</style>
 <div id="maincontent">
 	<div id="midcolumn">
-		<h1>$pageTitle</h1>
+		<h1><?= $pageTitle ?></h1>
 
 		<h3><strong>Executive Summary</strong></h3>
 
