@@ -40,8 +40,6 @@
 	$Nav->addCustomNav("e4", "/e4/", "_self", 2);
 	$Nav->addCustomNav("Incubator", "/eclipse/incubator/", "_self", 2);
 
-	$Nav->addNavSeparator("Development", "/eclipse/development/", "_self", 1);
-
 $rightcolumn = <<<EOHTML
 
 	<div id="rightcolumn">
