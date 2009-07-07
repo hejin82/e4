@@ -9,7 +9,7 @@
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
 	$Nav->addNavSeparator("e4 Whitepaper", "e4-whitepaper.php");
 	$Nav->addCustomNav("What is e4?", "#whatise4", "_self", 3);
-	$Nav->addCustomNav("What is e4?", "#progmodel", "_self", 3);
+	$Nav->addCustomNav("Programming Model", "#progmodel", "_self", 3);
 
 	# End: page-specific settings
 	# Paste your HTML content between the markers!	
