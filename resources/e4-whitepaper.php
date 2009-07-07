@@ -124,7 +124,7 @@ ob_start();
 		 	the Eclipse extension registry, nicely decouple service providers from consumers,
 		 	but often require service providers and consumers to have explicit knowledge
 		 	of the particular container or service broker.
-		 	<img src="simple-service-model.png">
+		 	<img width="400" src="simple-service-model.png">
 		 	</p>
 			
 		<h3><strong>Modelled GUI Applications</strong></h3>
