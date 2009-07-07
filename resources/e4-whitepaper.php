@@ -63,7 +63,7 @@ ob_start();
 			reuse it in a completely different application or environment.</p>
 			<p>The e4 vision is to make it much easier to write components that are
 			more reusable and customizable for a wide range of applications and environments.
-			This is achieved with a number of new e4 technologies:
+			This is achieved with a number of new e4 technologies:</p>
 			<ul>
 				<li>A new programming model that aggressively avoids components reaching 
 				out to, or making assumptions about their application container.</li>
@@ -80,11 +80,53 @@ ob_start();
 				<li>In the development tools space, a more flexible resource model that
 				provides better support for complex project project layouts.</li>
 			</ul>
-			The remainder of this paper will outline these new technologies in more detail.
-			</p>
-			
-		<h3><strong>Programming Model</strong></h3>
 			<p>
+			The remainder of this paper will outline these new technologies in more detail.
+			A general knowledge of the current Eclipse platform is assumed, so readers
+			unfamiliar with Eclipse should consult other resources such as the 
+			<a href="http://www.eclipse.org/whitepapers/eclipse-overview.pdf">Eclipse Platform Technical Overview</a> for 
+			background information.
+			</p>
+		<h3><strong>Programming Model</strong></h3>
+			<p>The e4 programming model starts with the existing principles of programming
+			in Eclipse:</p>
+			<ul>
+				<li>Applications are made up of modular, loosely coupled components called <i>plug-ins</i> or
+				<i>bundles</i>. Plug-ins can be made up of code written in Java and other
+				languages, and/or other resources such as documentation and source code.</li>
+				<li>Plug-ins can declare points where they can be customized or extended using
+				<i>extension points</i>, and customize or extend other plug-ins by defining
+				<i>extensions</i>.</li>
+				<li>A very large number of plug-ins can be installed at a time, but only those
+				plug-ins that are actually in use will be loaded and consume system resources.</li>
+			</ul>
+			<p>
+			Where e4 differs from this traditional Eclipse programming model is in how
+			plug-ins interact with each other outside the extension registry mechanism.
+			Plug-ins often need to provide data and software services to other plug-ins
+		 	in ways that aren't suited to the Eclipse extension registry. This was most
+		 	commonly achieved by plug-ins <i>reaching out</i> to other plug-ins by
+		 	directly referencing methods and constants defined in API Java classes. Plug-ins
+		 	would typically define entry points for obtaining singleton instances of services
+		 	(for example classes such as <tt>Platform</tt>, <tt>IDE</tt>, <tt>ResourcesPlugin</tt>,
+		 	<tt>JavaCore</tt>, etc). This practice of reaching out led to tight coupling
+		 	from plug-ins using services to a particular provider of that service, and the
+		 	prevalence of singleton accessors made it difficult or impossible for alternate
+		 	service implementations to be substituted, or for multiple implementations to be 
+		 	available at the same time. The resulting plug-ins were therefore difficult to 
+		 	reconfigure or reuse in different environments where different or multiple service
+		 	implementations would be needed.</p>
+		 	<p>
+		 	Service programming models generally define three distinct participants:
+		 	service <i>providers</i>, service <i>consumers</i>, and a <i>broker</i>
+		 	or <i>container</i> that manages binding of service providers to consumers. Basic
+		 	implementations of this programming model, such as the OSGi service API or
+		 	the Eclipse extension registry, nicely decouple service providers from consumers,
+		 	but often require service providers and consumers to have explicit knowledge
+		 	of the particular container or service broker.
+		 	<img src="simple-service-model.png">
+		 	</p>
+			
 		<h3><strong>Modelled GUI Applications</strong></h3>
 		<h3><strong>GUI Application Styling</strong></h3>
 		<h3><strong>SWT Browser Edition</strong></h3>
@@ -92,7 +134,7 @@ ob_start();
 		<h3><strong>Flexible Resource Model</strong></h3>
 		<p>Some content.</p>
 	</div>
-</div?
+</div>
 
 	<div id="rightcolumn">
 		<div class="sideitem">
