@@ -7,9 +7,9 @@
 	
 	# Add page-specific Nav bars here
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
-	# $Nav->addNavSeparator("My Page Links", 	"downloads.php");
-	# $Nav->addCustomNav("My Link", "mypage.php", "_self", 3);
-	# $Nav->addCustomNav("Google", "http://www.google.com/", "_blank", 3);
+	$Nav->addNavSeparator("e4 Whitepaper", "e4-whitepaper.php");
+	$Nav->addCustomNav("What is e4?", "#whatise4", "_self", 3);
+	$Nav->addCustomNav("What is e4?", "#progmodel", "_self", 3);
 
 	# End: page-specific settings
 	# Paste your HTML content between the markers!	
@@ -40,7 +40,7 @@ ob_start();
 		      This paper provides a technical overview of the e4 architecture and programming
 		      model.
 			</p>
-		<h3><strong>What is e4?</strong></h3>
+		<h3 id="whatise4"><strong>What is e4?</strong></h3>
 			<p>To provide some context on the rest of this paper, it is useful to first
 			clarify what precisely e4 is. The most useful definition is that e4 is a cluster
 			of related technologies for building extensible component-based applications.
@@ -87,7 +87,7 @@ ob_start();
 			<a href="http://www.eclipse.org/whitepapers/eclipse-overview.pdf">Eclipse Platform Technical Overview</a> for 
 			background information.
 			</p>
-		<h3><strong>Programming Model</strong></h3>
+		<h3 id="progmodel"><strong>Programming Model</strong></h3>
 			<p>The e4 programming model starts with the existing principles of programming
 			in Eclipse:</p>
 			<ul>
@@ -124,7 +124,7 @@ ob_start();
 		 	the Eclipse extension registry, nicely decouple service providers from consumers,
 		 	but often require service providers and consumers to have explicit knowledge
 		 	of the particular container or service broker.
-		 	<img width="400" src="simple-service-model.png">
+		 	<img width="400" alt="Diagram of simple service model" src="simple-service-model.png">
 		 	</p>
 			
 		<h3><strong>Modelled GUI Applications</strong></h3>
