@@ -126,6 +126,43 @@ ob_start();
 		 	of the particular container or service broker.
 		 	<img border="1" width="350" alt="Diagram of simple service model" src="simple-service-model.png">
 		 	</p>
+		 	<p>
+		 	The e4 programming model aims to further decouple these participants by
+		 	reducing or eliminating these explicit links from the service producers and
+		 	consumers to a specific service broker technology. This new flexibility is
+		 	best explained by looking at how these three service participants are defined in e4.
+		 	</p>
+		 	<h4>Contexts: the service broker</h4>
+		 	<p>
+		 	e4 introduces the notion of <i>context</i> as a generic mechanism that stores
+		 	or knows how to locate services and provide them to service consumers. At
+		 	its basic level, an e4 context looks much like a Java <tt>Map</tt> storing values
+		 	associated with some key. A client can put values into the map, or retrieve values
+		 	from the map. The map can also store <i>context functions</i> that are pieces
+		 	of code that know how to compute a context value lazily when values are
+		 	requested by the client. When a client asks for a value not currently defined
+		 	in the context, it will delegate to a parent context. This allows services
+		 	or data to be stored in a central place and be consumed by many clients. Finally,
+		 	contexts have a pluggable lookup strategy that allows external parties to "teach"
+		 	the context how to retrieve certain kinds of values. The lookup strategy enables interoperability
+		 	between e4 contexts and other service brokers such as the OSGi service registry.
+		 	This flexibility at the service broker level is a very powerful enabler for reuse - 
+		 	all kinds of different service lookup and brokerage systems can easily be integrated
+		 	into the e4 context mechanism.
+		 	</p>
+		 	<h4>Injection: service consumers</h4>
+		 	<p>
+		 	The best practice in modern service programming models is that consumers
+		 	receive dependencies via <a href="http://en.wikipedia.org/wiki/Dependency_injection">dependency injection</a>.
+		 	This theoretically allows application code to completely eliminate its dependency on a particular
+		 	container technology, thus enabling greater reuse. e4 directly supports and encourages
+		 	dependency injection as a means to supply services to clients. Constructor,
+		 	method, and field injection are all supported, and injection points can be identified
+		 	in client code using either naming conventions or Java annotations. For clients
+		 	that find inversion of control confusing and prefer code clarity over framework independence,
+		 	the e4 context API can also be used directly (the <a href="http://java.sun.com/blueprints/corej2eepatterns/Patterns/ServiceLocator.html">
+		 	service locator</a> design pattern).
+		 	</p>
 			
 		<h3><strong>Modelled GUI Applications</strong></h3>
 		<h3><strong>GUI Application Styling</strong></h3>
