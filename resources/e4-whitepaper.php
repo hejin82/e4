@@ -243,7 +243,7 @@ ob_start();
 			manipulates a document object model in a web browser. In figure 3, we see
 			a model editor that is being used to customize the running application - in this
 			case changing the name and tooltip of the traditional Eclipse problems view.
-		 	<img border="1" alt="e4 model editor" src="model-editor.png">
+		 	<img border="1" alt="e4 model editor" src="e4-model-editor.png">
 			</p>
 			
 		<h3 id="guistyling"><strong>GUI Application Styling</strong></h3>
