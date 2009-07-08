@@ -10,6 +10,11 @@
 	$Nav->addNavSeparator("e4 Whitepaper", "e4-whitepaper.php");
 	$Nav->addCustomNav("What is e4?", "#whatise4", "_self", 3);
 	$Nav->addCustomNav("Programming Model", "#progmodel", "_self", 3);
+	$Nav->addCustomNav("Modelled GUI Applications", "#guimodel", "_self", 3);
+	$Nav->addCustomNav("GUI Application Styling", "#guistyling", "_self", 3);
+	$Nav->addCustomNav("SWT Browser Edition", "#swtbe", "_self", 3);
+	$Nav->addCustomNav("Declarative Widgets", "#xwt", "_self", 3);
+	$Nav->addCustomNav("Flexible Resource Model", "#resources", "_self", 3);
 
 	# End: page-specific settings
 	# Paste your HTML content between the markers!	
@@ -148,7 +153,10 @@ ob_start();
 		 	between e4 contexts and other service brokers such as the OSGi service registry.
 		 	This flexibility at the service broker level is a very powerful enabler for reuse - 
 		 	all kinds of different service lookup and brokerage systems can easily be integrated
-		 	into the e4 context mechanism.
+		 	into the e4 context mechanism. This ability to create context hierarchies and insert
+		 	service lookup strategies allows contexts to scale up from very simple map-like
+		 	service registration and lookup to highly complex and dynamic service arbitration mechanisms.
+		 	
 		 	</p>
 		 	<h4>Injection: service consumers</h4>
 		 	<p>
@@ -163,12 +171,59 @@ ob_start();
 		 	the e4 context API can also be used directly (the <a href="http://java.sun.com/blueprints/corej2eepatterns/Patterns/ServiceLocator.html">
 		 	service locator</a> design pattern).
 		 	</p>
+		 	<h4>Service providers</h4>
+		 	<p>
+		 	There is great variety in the services and data that plug-ins make available for
+		 	consumption by other plug-ins. Some services are very lightweight and may
+		 	be consumed and discarded thousands of times, while others are heavyweight
+		 	services designed to live for long periods of time. There are many different
+		 	life-cycles to these services - some come and go based on the existence of a particular UI
+		 	widget, others may be tied to the lifecycle of a plug-in. Due to this great variety,
+		 	there is no one single method of service publication that is appropriate for all service
+		 	providers. 
+		 	</p>
+		 	<p>
+		 	In general, services are published in e4 using the OSGi service mechanism. Services
+		 	can either be registered and removed programmatically, or via OSGi declarative
+		 	services. Declarative services allow the service instantiation to be delayed until
+		 	required by some client. Of course, there are a wide variety of helper frameworks
+		 	that can be used for publishing OSGi services, such as Spring, iPOJO, Peaberry, etc.
+		 	By using OSGi services as the foundation for service publication, all of these frameworks
+		 	can be used seamlessly in e4.
+		 	</p>
+		 	<p>While most client code will use services, frameworks that create contexts
+		 	can simply add services directly to a context where appropriate. For example
+		 	a service associated with a widget may want to register with a context in the
+		 	widget constructor and withdraw the service when the widget is disposed. Manual
+		 	registration allows a service to be made available only to a specific context, 
+		 	rather than making it globally available via OSGi services. Finally, contexts support
+		 	outjection (reverse injection) of services back into the context via a field
+		 	or accessor method.
+		 	</p>
+		<h3 id="guimodel"><strong>Modelled GUI Applications</strong></h3>
+			<p>
+			The previous generation of the Eclipse platform UI (called the <i>workbench</i>)
+			is a complex and difficult to maintain piece of software. Although it has been made
+			somewhat more flexible over the years, it still enforces a rigid, hard-coded
+			model of the workbench structure and layout: a single workbench containing
+			workbench windows, with each window containing one or more workbench pages,
+			and each page made up of an editor area, a set of view stacks, and some
+			hard-coded trim elements (perspective switcher, progress indicator, etc). Application
+			designers have a limited palette of options to choose from when customising
+			the structure of Eclipse-based applications.
+			</p>
+			<p>
+			The e4 workbench greatly increases flexibility for application designers by providing
+			a formal model of the elements that comprise an instance of the workbench. 
+			Applications can reconfigure or extend this model to arrive at very different presentations
+			of their application with no additional coding required. Normalizing the workbench structure
+			as a well defined model has the added benefit of making the code for the
+			workbench itself much simpler and less error prone.
 			
-		<h3><strong>Modelled GUI Applications</strong></h3>
-		<h3><strong>GUI Application Styling</strong></h3>
-		<h3><strong>SWT Browser Edition</strong></h3>
-		<h3><strong>Declarative Widgets</strong></h3>
-		<h3><strong>Flexible Resource Model</strong></h3>
+		<h3 id="guistyling"><strong>GUI Application Styling</strong></h3>
+		<h3 id="swtbe"><strong>SWT Browser Edition</strong></h3>
+		<h3 id="xwt"><strong>Declarative Widgets</strong></h3>
+		<h3 id="resources"><strong>Flexible Resource Model</strong></h3>
 		<p>Some content.</p>
 	</div>
 </div>
