@@ -229,7 +229,21 @@ ob_start();
 			Applications can reconfigure or extend this model to arrive at very different presentations
 			of their application with no additional coding required. Normalizing the workbench structure
 			as a well defined model has the added benefit of making the code for the
-			workbench itself much simpler and less error prone.
+			workbench itself much simpler and less error prone. Most importantly, this
+			allows for very different workbench UI structures, such as parts living outside
+			of perspectives, views and editors in dialogs, and other designs not previously
+			allowed by the older generation workbench with its rigid hand-crafted model.
+			Having a model also allows for more advanced tool support for application 
+			designers, such as visual design tools.
+			</p>
+			<p>
+			The e4 workbench model can also be manipulated on the fly, and model
+			changes are rendered immediately in the UI. This opens the door to scripted
+			manipulation of the workbench structure and state, much like how Javascript
+			manipulates a document object model in a web browser. In figure 3, we see
+			a model editor that is being used to customize the running application - in this
+			case changing the name and tooltip of the traditional Eclipse problems view.
+		 	<img border="1" alt="e4 model editor" src="model-editor.png">
 			</p>
 			
 		<h3 id="guistyling"><strong>GUI Application Styling</strong></h3>
