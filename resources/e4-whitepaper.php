@@ -200,6 +200,17 @@ ob_start();
 		 	outjection (reverse injection) of services back into the context via a field
 		 	or accessor method.
 		 	</p>
+		 	<p>Putting this all together, we have a model where the typical service
+		 	consumer knows nothing about who provided the service, or about what
+		 	broker was used to bind and obtain the service. The service producer
+		 	can also be largely decoupled from the service broker by separating the service
+		 	configuration data from the service implementation itself (either using declarative
+		 	mechanisms such as DS, outjection, or simply by separating the framework-aware
+		 	code doing the registration from the service implementation itself. This model is
+		 	illustrated in figure 2.
+		 	<img border="1" width="350" alt="Diagram of e4 service model" src="e4-service-model.png">
+		 	</p>
+		 	
 		<h3 id="guimodel"><strong>Modelled GUI Applications</strong></h3>
 			<p>
 			The previous generation of the Eclipse platform UI (called the <i>workbench</i>)
@@ -219,6 +230,7 @@ ob_start();
 			of their application with no additional coding required. Normalizing the workbench structure
 			as a well defined model has the added benefit of making the code for the
 			workbench itself much simpler and less error prone.
+			</p>
 			
 		<h3 id="guistyling"><strong>GUI Application Styling</strong></h3>
 		<h3 id="swtbe"><strong>SWT Browser Edition</strong></h3>
