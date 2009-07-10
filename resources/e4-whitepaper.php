@@ -11,7 +11,7 @@
 	$Nav->addCustomNav("What is e4?", "#whatise4", "_self", 3);
 	$Nav->addCustomNav("Programming Model", "#progmodel", "_self", 3);
 	$Nav->addCustomNav("Modelled GUI Applications", "#guimodel", "_self", 3);
-	$Nav->addCustomNav("GUI Application Styling", "#guistyling", "_self", 3);
+	$Nav->addCustomNav("Declarative Styling", "#styling", "_self", 3);
 	$Nav->addCustomNav("SWT Browser Edition", "#swtbe", "_self", 3);
 	$Nav->addCustomNav("Declarative Widgets", "#xwt", "_self", 3);
 	$Nav->addCustomNav("Flexible Resource Model", "#resources", "_self", 3);
@@ -129,7 +129,7 @@ ob_start();
 		 	the Eclipse extension registry, nicely decouple service providers from consumers,
 		 	but often require service providers and consumers to have explicit knowledge
 		 	of the particular container or service broker.
-		 	<img border="1" width="350" alt="Diagram of simple service model" src="simple-service-model.png">
+		 	<img border="1" width="350" alt="Diagram of simple service model" src="images/simple-service-model.png">
 		 	</p>
 		 	<p>
 		 	The e4 programming model aims to further decouple these participants by
@@ -208,7 +208,7 @@ ob_start();
 		 	mechanisms such as DS, outjection, or simply by separating the framework-aware
 		 	code doing the registration from the service implementation itself. This model is
 		 	illustrated in figure 2.
-		 	<img border="1" width="350" alt="Diagram of e4 service model" src="e4-service-model.png">
+		 	<img border="1" width="350" alt="Diagram of e4 service model" src="images/e4-service-model.png"/>
 		 	</p>
 		 	
 		<h3 id="guimodel"><strong>Modelled GUI Applications</strong></h3>
@@ -220,8 +220,8 @@ ob_start();
 			workbench windows, with each window containing one or more workbench pages,
 			and each page made up of an editor area, a set of view stacks, and some
 			hard-coded trim elements (perspective switcher, progress indicator, etc). Application
-			designers have a limited palette of options to choose from when customising
-			the structure of Eclipse-based applications.
+			designers have a strictly limited set of options when customising the structure of 
+			Eclipse-based applications.
 			</p>
 			<p>
 			The e4 workbench greatly increases flexibility for application designers by providing
@@ -243,10 +243,31 @@ ob_start();
 			manipulates a document object model in a web browser. In figure 3, we see
 			a model editor that is being used to customize the running application - in this
 			case changing the name and tooltip of the traditional Eclipse problems view.
-		 	<img border="1" alt="e4 model editor" src="e4-model-editor.png">
+		 	<img border="1" alt="e4 model editor" src="images/e4-model-editor.png" width="350"/>
 			</p>
+			<p>
+				The e4 workbench model is translated into widgets via a <i>renderer</i>.
+				The workbench comes with a default renderer that instantiates the model
+				as SWT widgets, but alternate renders can be supplied to render the application
+				differently. This can be used to make subtle changes to the concrete widgets
+				shown to the user, or even to allow rendering in a completely different widget
+				library or runtime environment such as a web browser.
+			</p>
+		<h3 id="styling"><strong>Declarative Styling</strong></h3>
+			<p>While the basic translation of the workbench model into widgets
+			is performed by the renderer, a pluggable <i>styling engine</i> is used
+			to customize the fonts, colors, and other aspects of widget presentation. As
+			we have learned from the evolution of web presentation technologies, separating
+			document structure (HTML) from style (CSS) is a powerful way to ensure a 
+			consistent look and feel across many documents, and to allow style changes
+			to be made easily in a single place.
+			<p>
+			- IStylingEngine is interface with model/renderers
+			- Can theoretically have different styling engines that aren't CSS based
+			- CSS uses a mixture of standard HTML attributes, and custom attributes
+			- Styling operates strictly at the widget level, it knows nothing of models
+			- Can express different styleable application-specific widget states ("busy view", "active editor", etc)
 			
-		<h3 id="guistyling"><strong>GUI Application Styling</strong></h3>
 		<h3 id="swtbe"><strong>SWT Browser Edition</strong></h3>
 		<h3 id="xwt"><strong>Declarative Widgets</strong></h3>
 		<h3 id="resources"><strong>Flexible Resource Model</strong></h3>
