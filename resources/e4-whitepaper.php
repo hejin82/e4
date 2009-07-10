@@ -208,13 +208,13 @@ ob_start();
 		 	mechanisms such as DS, outjection, or simply by separating the framework-aware
 		 	code doing the registration from the service implementation itself. This model is
 		 	illustrated in figure 2.
-		 	<img border="1" width="350" alt="Diagram of e4 service model" src="images/e4-service-model.png"/>
+		 	<img border="1" width="350" alt="Diagram of e4 service model" src="images/service-model.png"/>
 		 	</p>
 		 	
 		<h3 id="guimodel"><strong>Modelled GUI Applications</strong></h3>
 			<p>
 			The previous generation of the Eclipse platform UI (called the <i>workbench</i>)
-			is a complex and difficult to maintain piece of software. Although it has been made
+			was a complex and difficult to maintain piece of software. Although it has been made
 			somewhat more flexible over the years, it still enforces a rigid, hard-coded
 			model of the workbench structure and layout: a single workbench containing
 			workbench windows, with each window containing one or more workbench pages,
@@ -243,15 +243,21 @@ ob_start();
 			manipulates a document object model in a web browser. In figure 3, we see
 			a model editor that is being used to customize the running application - in this
 			case changing the name and tooltip of the traditional Eclipse problems view.
-		 	<img border="1" alt="e4 model editor" src="images/e4-model-editor.png" width="350"/>
+		 	<img border="1" alt="e4 model editor" src="images/model-editor.png" width="350"/>
 			</p>
 			<p>
-				The e4 workbench model is translated into widgets via a <i>renderer</i>.
-				The workbench comes with a default renderer that instantiates the model
-				as SWT widgets, but alternate renders can be supplied to render the application
-				differently. This can be used to make subtle changes to the concrete widgets
-				shown to the user, or even to allow rendering in a completely different widget
-				library or runtime environment such as a web browser.
+			The e4 workbench model is translated into widgets via a <i>renderer</i>.
+			The workbench comes with a default renderer that instantiates the model
+			as SWT widgets, but alternate renders can be supplied to render model elements
+			differently. This can be used to make subtle changes to the concrete widgets
+			shown to the user, or even to allow rendering in a completely different widget
+			library or runtime environment such as a web browser. Renderers are contributed
+			at the level of individual model elements, rather than a single monolithic renderer
+			for the entire application. A single renderer can supply rendering for one or more
+			model elements, or conversely there can be multiple renderers available for a
+			given model element. This fine granularity of extensibility allows clients to extend
+			the workbench model with their own elements, and then insert custom renderers
+			for rendering their own model elements in a particular way.
 			</p>
 		<h3 id="styling"><strong>Declarative Styling</strong></h3>
 			<p>While the basic translation of the workbench model into widgets
@@ -261,6 +267,17 @@ ob_start();
 			document structure (HTML) from style (CSS) is a powerful way to ensure a 
 			consistent look and feel across many documents, and to allow style changes
 			to be made easily in a single place.
+			</p>
+			<p>
+			The e4 styling engine has no knowledge of the model-based UI, and in fact
+			can run as a completely independent piece on earlier Eclipse versions. The engine takes
+			concrete widgets and styling data as input, and performs the styling on the
+			instantiated widgets to produce the styled result. Figure 4 shows the flow
+			from the model, into widgets via on or more renderers, and then to a styled
+			output using the styling engine and the separate declarative styling data.
+		 	<img border="1" alt="Rendering and styling data flow" src="images/render-dataflow.png" width="350"/>
+		 	</p>
+			
 			<p>
 			- IStylingEngine is interface with model/renderers
 			- Can theoretically have different styling engines that aren't CSS based
