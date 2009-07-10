@@ -280,7 +280,27 @@ ob_start();
 			<p>
 		 	<img border="1" alt="Rendering and styling data flow" src="images/render-dataflow.png" width="400"/>
 		 	</p>
-			
+			<p>
+			The declarative styling support in e4 currently uses CSS syntax for styling
+			data, although other data types are possible. A mixture of standard HTML CSS
+			styling attributes are supported, such as fonts, margins, and colors, in addition
+			to some custom attributes specific to Eclipse widgets.
+			CSS classes are used to specify styling for particular types of a model element,
+			such as parts that are views rather than editors. Similarly, CSS pseudo-classes are
+			used to specify styles based on a particular widget state, such as making 
+			the editor in focus have a different title color. For example, the following
+			snippet specifies one color for general tab folders, but a different color
+			for a selected editor:
+			<code>
+			&nbsp;&nbsp;&nbsp;CTabFolder {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(241, 240, 245);
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font: normal;
+			&nbsp;&nbsp;&nbsp;}
+			&nbsp;&nbsp;&nbsp;CTabFolder.editors:selected {
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(255, 255, 255) rgb(255, 247, 229);
+			&nbsp;&nbsp;&nbsp;}
+			</code>
+			</p>
 			<p>
 			- IStylingEngine is interface with model/renderers
 			- Can theoretically have different styling engines that aren't CSS based
