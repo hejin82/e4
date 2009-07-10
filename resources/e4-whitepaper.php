@@ -242,7 +242,8 @@ ob_start();
 			manipulation of the workbench structure and state, much like how Javascript
 			manipulates a document object model in a web browser. In figure 3, we see
 			a model editor that is being used to customize the running application - in this
-			case changing the name and tooltip of the traditional Eclipse problems view.
+			case changing the name and tooltip of the traditional Eclipse problems view.</p>
+			<p>
 		 	<img border="1" alt="e4 model editor" src="images/model-editor.png" width="350"/>
 			</p>
 			<p>
@@ -275,7 +276,9 @@ ob_start();
 			instantiated widgets to produce the styled result. Figure 4 shows the flow
 			from the model, into widgets via on or more renderers, and then to a styled
 			output using the styling engine and the separate declarative styling data.
-		 	<img border="1" alt="Rendering and styling data flow" src="images/render-dataflow.png" width="350"/>
+			</p>
+			<p>
+		 	<img border="1" alt="Rendering and styling data flow" src="images/render-dataflow.png" width="400"/>
 		 	</p>
 			
 			<p>
