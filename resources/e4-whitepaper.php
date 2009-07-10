@@ -12,7 +12,8 @@
 	$Nav->addCustomNav("Programming Model", "#progmodel", "_self", 3);
 	$Nav->addCustomNav("Modelled GUI Applications", "#guimodel", "_self", 3);
 	$Nav->addCustomNav("Declarative Styling", "#styling", "_self", 3);
-	$Nav->addCustomNav("SWT Browser Edition", "#swtbe", "_self", 3);
+	$Nav->addCustomNav("Web to Desktop", "#web2desktop", "_self", 3);
+	$Nav->addCustomNav("Desktop to Web", "#desktop2web", "_self", 3);
 	$Nav->addCustomNav("Declarative Widgets", "#xwt", "_self", 3);
 	$Nav->addCustomNav("Flexible Resource Model", "#resources", "_self", 3);
 
@@ -301,14 +302,36 @@ ob_start();
 			&nbsp;&nbsp;&nbsp;}
 			</code>
 			</p>
+		<h3 id="web2desktop"><strong>Web to Desktop</strong></h3>
 			<p>
-			- IStylingEngine is interface with model/renderers
-			- Can theoretically have different styling engines that aren't CSS based
-			- CSS uses a mixture of standard HTML attributes, and custom attributes
-			- Styling operates strictly at the widget level, it knows nothing of models
-			- Can express different styleable application-specific widget states ("busy view", "active editor", etc)
-			
-		<h3 id="swtbe"><strong>SWT Browser Edition</strong></h3>
+			Blurring of distinction between browser apps and traditional desktops.
+			Desire to "single source" components that can run in either world.
+			Java isn't always the most appropriate language for these components.
+			e4 seeks to enable writing bundles in multiple languages, and support tight
+			integration of those languages to the Eclipse runtime. Bidirectional interaction
+			between components written in Java and other languages. Focusing on Javascript
+			as exemplar for this work. Prototype Javascript module system similar to OSGi.
+			Integration of Javascript components in the Eclipse extension registry.
+			This is supported by the e4 programming model of service-based interaction and
+			injection of depenencies. Services can be implemented in any language.
+			Sample view in e4 written purely in Javascript with first class integration into
+			the workbench.
+			</p>
+		<h3 id="desktop2web"><strong>Desktop to Web</strong></h3>
+			<p>
+			SWT addresses a need to provide a common API for interacting with native
+			widgets in a consistent way. Building on a single API applications can get
+			high native fidelity on a wide range of platforms. Similarly the web technology
+			world is high fractured: Dojo, Flex, Sliverlight, Java FX, etc.
+			People are worried about committing to one particular web technology in a shifting technology
+			landscape. Feature of lock-in/obsolesence. Enter SWT/BE. Much like SWT allows applications
+			to deploy to many runtimes with one code base, SWT/BE allows clients to deploy 
+			to both the usual SWT desktop platforms, in addition to the new browser platforms,
+			with a single code base.
+			</p>
+			<p>
+			e4 RAP integration.
+			</p>
 		<h3 id="xwt"><strong>Declarative Widgets</strong></h3>
 		<h3 id="resources"><strong>Flexible Resource Model</strong></h3>
 		<p>Some content.</p>
