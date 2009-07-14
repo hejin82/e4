@@ -3,14 +3,14 @@
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "Whitepaper: e4 Technical Overview";
 	$pageKeywords	= "Eclipse, e4, white paper";
-	$pageAuthor		= "John Arthorne";
+	$pageAuthor		= "John Arthorne, IBM Canada Inc.";
 	
 	# Add page-specific Nav bars here
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
 	$Nav->addNavSeparator("e4 Whitepaper", "e4-whitepaper.php");
 	$Nav->addCustomNav("What is e4?", "#whatise4", "_self", 3);
 	$Nav->addCustomNav("Programming Model", "#progmodel", "_self", 3);
-	$Nav->addCustomNav("Modelled GUI Applications", "#guimodel", "_self", 3);
+	$Nav->addCustomNav("Modeled User Interface", "#guimodel", "_self", 3);
 	$Nav->addCustomNav("Declarative Styling", "#styling", "_self", 3);
 	$Nav->addCustomNav("Web to Desktop", "#web2desktop", "_self", 3);
 	$Nav->addCustomNav("Desktop to Web", "#desktop2web", "_self", 3);
@@ -33,8 +33,7 @@ ob_start();
 <div id="maincontent">
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
-		<font size="-1">John Arthorne, IBM Canada Inc.</font>
-
+		<font size="-1"><?= $pageAuthor ?></font>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
@@ -217,7 +216,7 @@ ob_start();
 		 	illustrated in figure 2.
 		 	<img border="1" width="350" alt="Diagram of e4 service model" src="images/service-model.png"/>
 		 	</p>
-		<h3 id="guimodel"><strong>Modelled GUI Applications</strong></h3>
+		<h3 id="guimodel"><strong>Modeled User Interface</strong></h3>
 			<p>
 			The previous generation of the Eclipse platform UI (called the <i>workbench</i>)
 			was a complex and difficult to maintain piece of software. Although it has been made
@@ -342,6 +341,8 @@ ob_start();
 			in a browser and elsewhere. To enable this, e4 is investigating bringing both 
 			the benefits of Eclipse to the JavaScript world (modularity, extensibility, 
 			and tooling), and JavaScript components into the Eclipse desktop environment.
+			While the current e4 focus is on JavaScript, the intent of this work more generally
+			is to make it easier to write Eclipse components in a variety of different languages.
 			</p>
 			<p>
 
