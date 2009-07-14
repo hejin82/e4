@@ -33,7 +33,7 @@ ob_start();
 <div id="maincontent">
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
-		<font size="-1"><?= $pageAuthor ?></font>
+		<font size="-1">&nbsp;&nbsp;&nbsp;<?= $pageAuthor ?></font>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
