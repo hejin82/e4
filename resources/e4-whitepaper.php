@@ -69,6 +69,9 @@ ob_start();
 			reuse it in a completely different application or environment.</p>
 			<p>The e4 vision is to make it much easier to write components that are
 			more reusable and customizable for a wide range of applications and environments.
+			There are two ways to achieve this goal: reduce the external dependencies
+			and assumptions made by components, and widen the set of languages
+			and technologies that can be seamlessly integrated into the Eclipse runtime.
 			This is achieved with a number of new e4 technologies:</p>
 			<ul>
 				<li>A new programming model that aggressively avoids components reaching 
@@ -78,11 +81,13 @@ ob_start();
 				interface with little or no coding effort.</li>
 				<li>Use of web styling technology (CSS), allows the presentation of user interface 
 				elements to be infinitely tweaked and reconfigured without any modification of application code.</li>
-				<li>A new port of SWT, dubbed "browser edition", that allows existing SWT
-				applications to be executed on web platforms such as ActionScript/Flash.</li>
+				<li>Bringing Eclipse runtime technology into the JavaScript world, and enabling
+				software written in JavaScript to be executed in the Eclipse runtime.</li>
 				<li>A framework for defining the design and structure of SWT applications
 				declaratively. This eliminates writing of repetitive boilerplate SWT code, thus 
 				reducing development cost, improving UI consistency, and enabling customized application rendering.</li>
+				<li>A new port of SWT, dubbed "browser edition", that allows existing SWT
+				applications to be executed on web platforms such as ActionScript/Flash.</li>
 				<li>In the development tools space, a more flexible resource model that
 				provides better support for complex project project layouts.</li>
 			</ul>
@@ -211,7 +216,6 @@ ob_start();
 		 	illustrated in figure 2.
 		 	<img border="1" width="350" alt="Diagram of e4 service model" src="images/service-model.png"/>
 		 	</p>
-		 	
 		<h3 id="guimodel"><strong>Modelled GUI Applications</strong></h3>
 			<p>
 			The previous generation of the Eclipse platform UI (called the <i>workbench</i>)
@@ -240,7 +244,7 @@ ob_start();
 			<p>
 			The e4 workbench model can also be manipulated on the fly, and model
 			changes are rendered immediately in the UI. This opens the door to scripted
-			manipulation of the workbench structure and state, much like how Javascript
+			manipulation of the workbench structure and state, much like how JavaScript
 			manipulates a document object model in a web browser. In figure 3, we see
 			a model editor that is being used to customize the running application - in this
 			case changing the name and tooltip of the traditional Eclipse problems view.</p>
@@ -275,8 +279,8 @@ ob_start();
 			can run as a completely independent piece on earlier Eclipse versions. The engine takes
 			concrete widgets and styling data as input, and performs the styling on the
 			instantiated widgets to produce the styled result. Figure 4 shows the flow
-			from the model, into widgets via on or more renderers, and then to a styled
-			output using the styling engine and the separate declarative styling data.
+			from the model, into widgets via one or more renderers, and then to a styled
+			output using the styling engine and the declarative styling data (CSS files).
 			</p>
 			<p>
 		 	<img border="1" alt="Rendering and styling data flow" src="images/render-dataflow.png" width="400"/>
@@ -302,19 +306,57 @@ ob_start();
 			&nbsp;&nbsp;&nbsp;}
 			</code>
 			</p>
+			<p>
+			This use of CSS classes and pseudo-classes enables highly customized styling,
+			both of particular workbench parts, and of particular part states. For example
+			views can have <i>busy</i> or <i>updated</i> states when they are running
+			background tasks, and the styling can describe what kind of presentation to
+			associate that state: different fonts, changed border, or even no styling at
+			all if desired. The result is a more consistent application of GUI affordances
+			and metaphors, making applications easier for users to understand and interact with.
+			</p>
 		<h3 id="web2desktop"><strong>Web to Desktop</strong></h3>
 			<p>
+			The past few years has seen a blurring of distinctions between browser-based
+			applications and traditional desktop applications. Browsers and the widget and
+			language frameworks within them are beginning to approach the sophistication
+			of desktop operating systems. At the same time, desktop applications are
+			becoming more web-enabled, and are adopting some of the user interaction
+			and stylistic trademarks of web applications. While there will be demand for
+			both traditional desktop and browser applications for some time, there is
+			increasing demand for software <i>components</i> to be able to live in
+			both of these worlds. In component-oriented software such as Eclipse, we
+			no longer select a target platform and then build a monolithic software stack
+			on top. We begin with a large collection of available components, and then
+			stitch them together to build an application that suits our requirements. If
+			we can reuse the same components in multiple runtime environments, it
+			greatly reduces development and maintenance costs.
+			</p>
+			<p>
+			In e4 there are several areas of investigation seeking to enable component
+			reuse across multiple target platforms and technologies. One such area
+			is investigation of writing Eclipse components in JavaScript. As the de facto
+			standard language for client-side browser programming, JavaScript
+			is a good choice for anyone seeking to writing components that will run both
+			in a browser and elsewhere. To enable this, e4 is investigating bringing both 
+			the benefits of Eclipse to the JavaScript world (modularity, extensibility, 
+			and tooling), and JavaScript components into the Eclipse desktop environment.
+			</p>
+			<p>
+
+			
+			
 			Blurring of distinction between browser apps and traditional desktops.
 			Desire to "single source" components that can run in either world.
 			Java isn't always the most appropriate language for these components.
 			e4 seeks to enable writing bundles in multiple languages, and support tight
 			integration of those languages to the Eclipse runtime. Bidirectional interaction
-			between components written in Java and other languages. Focusing on Javascript
-			as exemplar for this work. Prototype Javascript module system similar to OSGi.
-			Integration of Javascript components in the Eclipse extension registry.
+			between components written in Java and other languages. Focusing on JavaScript
+			as exemplar for this work. Prototype JavaScript module system similar to OSGi.
+			Integration of JavaScript components in the Eclipse extension registry.
 			This is supported by the e4 programming model of service-based interaction and
-			injection of depenencies. Services can be implemented in any language.
-			Sample view in e4 written purely in Javascript with first class integration into
+			injection of dependencies. Services can be implemented in any language.
+			Sample view in e4 written purely in JavaScript with first class integration into
 			the workbench.
 			</p>
 		<h3 id="desktop2web"><strong>Desktop to Web</strong></h3>
