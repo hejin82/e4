@@ -33,6 +33,7 @@ ob_start();
 <div id="maincontent">
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
+		<font size="-1">John Arthorne, IBM Canada Inc.</font>
 
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
@@ -297,13 +298,13 @@ ob_start();
 			snippet specifies one color for general tab folders, but a different color
 			for a selected editor:
 			<code>
-			&nbsp;&nbsp;&nbsp;CTabFolder {
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(241, 240, 245);
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font: normal;
-			&nbsp;&nbsp;&nbsp;}
-			&nbsp;&nbsp;&nbsp;CTabFolder.editors:selected {
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(255, 255, 255) rgb(255, 247, 229);
-			&nbsp;&nbsp;&nbsp;}
+			<br>&nbsp;&nbsp;&nbsp;CTabFolder {
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(241, 240, 245);
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font: normal;
+			<br>&nbsp;&nbsp;&nbsp;}
+			<br>&nbsp;&nbsp;&nbsp;CTabFolder.editors:selected {
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(255, 255, 255) rgb(255, 247, 229);
+			<br>&nbsp;&nbsp;&nbsp;}
 			</code>
 			</p>
 			<p>
