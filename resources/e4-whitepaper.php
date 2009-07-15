@@ -83,7 +83,7 @@ ob_start();
 				elements to be infinitely tweaked and reconfigured without any modification of application code.</li>
 				<li>Bringing Eclipse runtime technology into the JavaScript world, and enabling
 				software written in JavaScript to be executed in the Eclipse runtime.</li>
-				<li>A framework for defining the design and structure of SWT applications
+				<li>A framework for defining the design and structure of Standard Widget Toolkit (SWT) applications
 				declaratively. This eliminates writing of repetitive boilerplate SWT code, thus 
 				reducing development cost, improving UI consistency, and enabling customized application rendering.</li>
 				<li>A new port of SWT, dubbed "browser edition", that allows existing SWT
@@ -377,7 +377,7 @@ ob_start();
 			OSGi runtime. Figure 5 illustrates the architecture of the e4 JavaScript framework
 			and its relationship with pure JavaScript bundles as well as regular Java bundles.
 			<p>
-		 	<img border="1" alt="Rendering and styling data flow" src="images/js-framework.png" width="400"/>
+		 	<img border="1" alt="e4 JavaScript framework architecture" src="images/js-framework.png" width="400"/>
 		 	</p>
 		 	<p>
 		 	The e4 JavaScript framework is written in Java and runs as a pure OSGi bundle.
@@ -447,38 +447,44 @@ ob_start();
 			functionality can be quickly made available to other bundles written in other languages.
 			A small JavaScript API for interacting with these core e4 services is currently available
 			in the bundle <tt>org.eclipse.e4.ui.web</tt>. As a proof of concept, e4
-			includes a re-implementation of the PDE update site editor written purely
-			in JavaScript. This editor can be run in a web browser, or seamlessly
-			integrated into the Eclipse platform user interface.
+			includes a re-implementation of the Plug-in Development Environment (PDE) 
+			update site editor written purely in JavaScript (illustrated in figure 6). This editor 
+			can be run in a web browser, or seamlessly integrated into the Eclipse 
+			platform user interface.
 		 	</p>
-			
-			
-			
-			Blurring of distinction between browser apps and traditional desktops.
-			Desire to "single source" components that can run in either world.
-			Java isn't always the most appropriate language for these components.
-			e4 seeks to enable writing bundles in multiple languages, and support tight
-			integration of those languages to the Eclipse runtime. Bidirectional interaction
-			between components written in Java and other languages. Focusing on JavaScript
-			as exemplar for this work. Prototype JavaScript module system similar to OSGi.
-			Integration of JavaScript components in the Eclipse extension registry.
-			This is supported by the e4 programming model of service-based interaction and
-			injection of dependencies. Services can be implemented in any language.
-			Sample view in e4 written purely in JavaScript with first class integration into
-			the workbench.
-			</p>
+			<p>
+		 	<img border="1" alt="e4 JavaScript site editor" src="images/js-site-editor.png" width="400"/>
+		 	</p>
 		<h3 id="desktop2web"><strong>Desktop to Web</strong></h3>
 			<p>
-			SWT addresses a need to provide a common API for interacting with native
-			widgets in a consistent way. Building on a single API applications can get
-			high native fidelity on a wide range of platforms. Similarly the web technology
-			world is high fractured: Dojo, Flex, Sliverlight, Java FX, etc.
-			People are worried about committing to one particular web technology in a shifting technology
-			landscape. Feature of lock-in/obsolesence. Enter SWT/BE. Much like SWT allows applications
-			to deploy to many runtimes with one code base, SWT/BE allows clients to deploy 
-			to both the usual SWT desktop platforms, in addition to the new browser platforms,
-			with a single code base.
+			We have shown how components built for the web can be integrated into the
+			Eclipse platform. However, desktop/web interoperability can also be approached
+			from the other direction. Applications written for the desktop using traditional
+			enterprise languages such as Java can be ported to run on Web platforms.
+			In e4 there are two areas of exploration for this kind of desktop-to-web integration:
+			A new port of SWT, and the <a href="http://www.eclipse.org/rap/">Eclipse Rich Ajax Platform (RAP)</a>.
+			<p>
+			The Eclipse Standard Widget Toolkit (SWT), provides a common API for
+			graphical desktop applications across a wide range of operating systems
+			and native widget toolkits. SWT allows developers to write an application once,
+			and have it rendered with high performance and native platform look and feel
+			on each target platform. Similarly, there are a wide range of programming languages
+			and widget toolkits for web browser programming. This web technology landscape
+			is changing rapidly, and application developers are reluctant to wholly embrace
+			a single technology for fear of obsolescence or lock-in.
 			</p>
+			<p>A new port of SWT in e4, called <i>SWT browser edition</i> (SWT/BE),
+			aims to provide a common platform for web UI programming just as
+			it has done for traditional desktop programming. This potentially allows
+			existing SWT applications to run on the web, and allows developers to build
+			web UI applications without being locked into a single web technology. SWT/BE
+			currently supports ActionScript/Flex as a prototype example of the technology,
+			but ports to other web platforms such as JavaScript/Dojo, Silverlight, Java FX,
+			etc, are also possible. Figure 7 shows the SWT Control example, which contains
+			all major SWT widgets, running on <a href="http://www.adobe.com/products/flex/">Flex</a>.
+			<p>
+		 	<img border="1" alt="SWT/BE on Flex" src="images/swt-flex.png" width="400"/>
+		 	</p>
 			<p>
 			e4 RAP integration.
 			</p>
