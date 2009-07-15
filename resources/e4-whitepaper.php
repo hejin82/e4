@@ -216,6 +216,24 @@ ob_start();
 		 	illustrated in figure 2.
 		 	<img border="1" width="350" alt="Diagram of e4 service model" src="images/service-model.png"/>
 		 	</p>
+		 	<h4 id="appservices">Eclipse application services (the &quot;twenty things&quot;)</h4>
+		 	<p>
+		 	To support this decoupled service programming model, Eclipse APIs need to
+		 	be made available as services rather than via the singleton accessor model
+		 	of the past (<tt>Platform</tt>, <tt>IWorkbench</tt>, etc). However, over
+		 	the years the Eclipse platform has accumulated a vast API, of which many
+		 	components use only a few. This API breadth alone make Eclipse a challenging
+		 	platform to build applications on; the steep learning curve increases time
+		 	to value and discourages casual developers from building on the platform. This
+		 	is being addressed in e4 by defining a core set of services that capture a broad
+		 	swath of useful platform functionality. The goal is that many developers should
+		 	be able to build well integrated e4 bundles using only these core services. These
+		 	core services are occasionally referred to in e4 discussions as the &quot;twenty things&quot;,
+		 	to capture the fact that it is a bounded set of important services. These core
+		 	services also define a good starting point for integration of the Eclipse platform
+		 	with other programming languages. This is discussed further in the later
+		 	section on <a href="#20thingsJavaScript">JavaScript integration</a>.
+		 	</p>
 		<h3 id="guimodel"><strong>Modeled User Interface</strong></h3>
 			<p>
 			The previous generation of the Eclipse platform UI (called the <i>workbench</i>)
@@ -371,15 +389,25 @@ ob_start();
 		 	level (as with the <tt>Require-Bundle</tt> OSGi header), or at the level of individual
 		 	script files (similar to the <tt>Import-Package</tt> OSGi header). These
 		 	dependencies are expressed in the JavaScript manifest, written as a 
-		 	<a href="http://www.json.org/">JSON</a> file:
+		 	<a href="http://www.json.org/">JSON</a> file. Here is an example of a simple
+		 	JavaScript bundle manifest:
 			<code>
-			<br>&nbsp;&nbsp;&nbsp;
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<br>&nbsp;&nbsp;&nbsp;
-			<br>&nbsp;&nbsp;&nbsp;
-			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<br>&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;{
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Bundle-SymbolicName":"sample.jsbundle",
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Bundle-Version":"1.0",
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Bundle-ScriptPath":"script.js",
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Import-Package":"a.resource;version=[1.0.0,2.0.0)",
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Export-Package":"sample.resource;version=1.0.0",
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Require-Bundle:"some.other.bundle", 
+			<br>&nbsp;&nbsp;&nbsp;}
+			</code>
+			</p>
+			<p>
+			A JavaScript bundle can be defined and installed into the framework programmatically,
+			or the presence of a JavaScript bundle can be declared in a regular OSGi bundle
+			using an additional manifest header:
+			<code>
+			<br>&nbsp;&nbsp;&nbsp;{JavaScript-Bundle: scripts/bundle.json
 			</code>
 			</p>
 			<p>
@@ -394,11 +422,35 @@ ob_start();
 			provides an Eclipse extension factory for instantiating Eclipse extensions written
 			purely in JavaScript. A JavaScript bundle can simply declare a <tt>plugin.xml</tt>
 			file with their contributions to the extension registry, without writing a line of 
-			Java code. This interaction between JavaScript and Java bundles is illustrated
-			in figure 5.
+			Java code. Bundles written in Java can then consume those extensions without
+			knowing they are written in another language. Conversely, a JavaScript bundle
+			can declare an extension point with some corresponding Java API that can
+			be implemented by Java bundles, and then load and use extensions contributed
+			to that extension point in JavaScript code. These types of interaction between 
+			JavaScript and Java bundles are illustrated in figure 5.
 			</p>
-		 	
-		 	It performs all of the duties that the OSGi framework 
+			<p>
+			The e4 JavaScript framework itself defines API in both Java and JavaScript. Thus
+			pure Java bundles can query or manipulate the JavaScript framework (for example
+			install a new JavaScript bundle), and bundles written in JavaScript can interact
+			with the framework through its JavaScript API. This is illustrated in figure 5 by
+			the <i>e4 JS Framework</i> block extending across the Java/JavaScript boundary.
+			</p>
+			<p id="20thingsJavaScript">
+			The e4 programming model also directly supports integration of components
+			written in other languages such as JavaScript. With service-based interaction
+			between components, and dependency injection, components never need
+			to know what language services are implemented in, or what languages are
+			being used to consume the services they expose. Similarly, the pared down
+			<a href="#appservices">Eclipse Application Services</a> can be exposed
+			as API stubs in other languages so that a broad segment of the Eclipse platform
+			functionality can be quickly made available to other bundles written in other languages.
+			A small JavaScript API for interacting with these core e4 services is currently available
+			in the bundle <tt>org.eclipse.e4.ui.web</tt>. As a proof of concept, e4
+			includes a re-implementation of the PDE update site editor written purely
+			in JavaScript. This editor can be run in a web browser, or seamlessly
+			integrated into the Eclipse platform user interface.
+		 	</p>
 			
 			
 			
