@@ -33,7 +33,7 @@ ob_start();
 <div id="maincontent">
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
-		<font size="-1">&nbsp;&nbsp;&nbsp;<?= $pageAuthor ?></font>
+		<p><font size="-1"><?= $pageAuthor ?></font></p>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
@@ -72,7 +72,7 @@ ob_start();
 			There are two ways to achieve this goal: reduce the external dependencies
 			and assumptions made by components, and widen the set of languages
 			and technologies that can be seamlessly integrated into the Eclipse runtime.
-			This is achieved with a number of new e4 technologies:</p>
+			Both of these approaches are taken in e4, through several avenues of exploration:</p>
 			<ul>
 				<li>A new programming model that aggressively avoids components reaching 
 				out to, or making assumptions about their application container.</li>
@@ -333,19 +333,73 @@ ob_start();
 			greatly reduces development and maintenance costs.
 			</p>
 			<p>
-			In e4 there are several areas of investigation seeking to enable component
-			reuse across multiple target platforms and technologies. One such area
-			is investigation of writing Eclipse components in JavaScript. As the de facto
-			standard language for client-side browser programming, JavaScript
+			e4 is exploring component reuse across multiple target platforms and technologies 
+			in a number of ways. One such area is writing Eclipse components in JavaScript. 
+			As the de facto standard language for client-side browser programming, JavaScript
 			is a good choice for anyone seeking to writing components that will run both
-			in a browser and elsewhere. To enable this, e4 is investigating bringing both 
+			in a browser and elsewhere. To that end, e4 is investigating bringing both 
 			the benefits of Eclipse to the JavaScript world (modularity, extensibility, 
 			and tooling), and JavaScript components into the Eclipse desktop environment.
 			While the current e4 focus is on JavaScript, the intent of this work more generally
 			is to make it easier to write Eclipse components in a variety of different languages.
 			</p>
 			<p>
-
+			While JavaScript has long been used as a browser scripting language, it has
+			rarely been used to build large scale applications like we see in the Java world.
+			One weakness in this area is lack of a good modularity mechanism. There is
+			no mechanism for defining and accessing namespaces, for expressing the
+			dependencies of segments of JavaScript code, or for querying and consuming
+			services defined in other components in an extensible way. In Java and Eclipse, we have
+			the powerful and mature <a href="http://www.osgi.org/">OSGi</a> modularity system,
+			among others, that satisfy these requirements.</p>
+			<p>
+			To address these limitations, e4 includes a modularity framework based on OSGi for use
+			in JavaScript applications. This allows creation of modular, large scale pure JavaScript
+			applications, as well as integration of JavaScript bundles in a traditional Java-based
+			OSGi runtime. Figure 5 illustrates the architecture of the e4 JavaScript framework
+			and its relationship with pure JavaScript bundles as well as regular Java bundles.
+			<p>
+		 	<img border="1" alt="Rendering and styling data flow" src="images/js-framework.png" width="400"/>
+		 	</p>
+		 	<p>
+		 	The e4 JavaScript framework is written in Java and runs as a pure OSGi bundle.
+		 	It is responsible for parsing the manifests of JavaScript bundles and performing
+		 	the resolution of dependencies between JavaScript bundles. The OSGi framework
+		 	has no knowledge of JavaScript bundles or their dependencies - The JavaScript
+		 	framework essentially runs as a complete nested framework within an OSGi
+		 	instance. Dependencies between JavaScript bundles can be expressed at the bundle
+		 	level (as with the <tt>Require-Bundle</tt> OSGi header), or at the level of individual
+		 	script files (similar to the <tt>Import-Package</tt> OSGi header). These
+		 	dependencies are expressed in the JavaScript manifest, written as a 
+		 	<a href="http://www.json.org/">JSON</a> file:
+			<code>
+			<br>&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;
+			</code>
+			</p>
+			<p>
+			Although JavaScript and Java bundles can interact with each other
+			by direct invocation, the recommended way to interact between the two
+			worlds is via the OSGi service registry, or the Eclipse extension registry.
+			For example, a JavaScript bundle can also declare itself as a regular OSGi
+			bundle, and contribute a service to the OSGi service registry either programmatically
+			or using declarative mechanisms such as OSGi DS. A regular OSGi bundle
+			can then consume that service, without ever knowing the implementation
+			of that service is written in JavaScript. Similarly, the e4 JavaScript framework
+			provides an Eclipse extension factory for instantiating Eclipse extensions written
+			purely in JavaScript. A JavaScript bundle can simply declare a <tt>plugin.xml</tt>
+			file with their contributions to the extension registry, without writing a line of 
+			Java code. This interaction between JavaScript and Java bundles is illustrated
+			in figure 5.
+			</p>
+		 	
+		 	It performs all of the duties that the OSGi framework 
+			
 			
 			
 			Blurring of distinction between browser apps and traditional desktops.
