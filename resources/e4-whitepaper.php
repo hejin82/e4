@@ -33,8 +33,8 @@ ob_start();
 <div id="maincontent">
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
-		<p><font size="-1"><?= $pageAuthor ?></font></p>
-		<p><font size="-1">Revision: 0.9</font></p>
+		<p><font size="-1"><?= $pageAuthor ?><br>
+		Revision: 0.9</font></p>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
@@ -408,7 +408,7 @@ ob_start();
 			or the presence of a JavaScript bundle can be declared in a regular OSGi bundle
 			using an additional manifest header:
 			<code>
-			<br>&nbsp;&nbsp;&nbsp;{JavaScript-Bundle: scripts/bundle.json
+			<br>&nbsp;&nbsp;&nbsp;JavaScript-Bundle: scripts/manifest.json
 			</code>
 			</p>
 			<p>
@@ -487,7 +487,26 @@ ob_start();
 		 	<img border="1" alt="SWT/BE on Flex" src="images/swt-flex.png" width="400"/>
 		 	</p>
 			<p>
-			e4 RAP integration.
+			The Eclipse Rich Ajax Platform (RAP) provides an implementation of Eclipse
+			components such as SWT, JFace, and the Workbench UI that runs on the web.
+			Similar to SWT/BE, RAP provides the opportunity for the same application
+			to run on both the desktop and web with a common code base. However,
+			the original RAP implementation required a fork of the Eclipse platform code
+			to support the web target environment. In particular, web applications typically
+			must support multiple concurrent user sessions in a single application instance,
+			which is not generally supported by the Eclipse workbench due to the heavy
+			use of singletons.
+			</p>
+			<p>
+			The e4 programming model is much more conducive to multiple concurrent 
+			sessions due to its service-oriented injection programming style. Early experiments
+			with running e4 applications on the RAP runtime have been promising, with
+			many fewer changes required to the workbench to support running on RAP.
+			This RAP integration work provides validation that the e4 goal of supporting
+			a wide range of runtime environments is attainable. Ongoing work with
+			running e4 applications on target platforms such as RAP are helping to
+			ensure the continued flexibility and openness of the e4 architecture and programming
+			model.
 			</p>
 		<h3 id="declarative-widgets"><strong>Declarative Widgets</strong></h3>
 			<p>
@@ -526,7 +545,41 @@ ob_start();
 			<p>
 			</p>
 		<h3 id="resources"><strong>Flexible Resource Model</strong></h3>
-		<p>Some content.</p>
+			<p>
+			While much of e4 is directed at the Eclipse platform as a general-purpose
+			application framework, development tools remain an important part
+			of the Eclipse eco-system. One area many IDE developers found wanting
+			in the previous generation of Eclipse was its support for more complex
+			project layouts. Development tool users often have pre-existing layouts
+			of their source code and other development resources, and bringing these
+			layouts into Eclipse-based IDEs was often challenging due to the rigidity of the
+			Eclipse resource model. e4 includes a new enhanced resource model that 
+			provides better support for importing and managing more complex project 
+			layouts in Eclipse workspaces. Some enhancements in this model include:
+			<ul>
+			<li>The ability to define path variables at the project level, and create linked resources
+			relative to those project-specific path variables. This allows projects containing
+			complex link structures to be moved around without breaking links.</li>
+			<li>New virtual folders called <i>groups</i>. Groups don't exist in the file
+			system, but they can be used to create arbitrarily complex virtual project trees
+			containing links to concrete resources elsewhere on disk.</li>
+			<li>Support for filters on projects and folders, which exclude specific resources
+			or patterns of resources from the Eclipse workspace tree. Filters allow an Eclipse 
+			project to include folders that contains thousands of elements, but only include a 
+			fraction of them in the project, with no extra memory overhead for the excluded resources.</li>
+			<li>Creation and manipulation of linked resources via drag and drop. When dragging
+			a file tree from outside Eclipse, you can now drop the tree into the Eclipse workspace
+			as a virtual tree made up of links and groups, rather than as a concrete file system tree.</li>
+			<li>The ability to edit the location of existing linked resources, or to convert
+			links between absolute or variable-relative paths.</li>
+			</ul>
+			Together these enhancements allow users to quickly set up complex project
+			structures in the Eclipse workspace, and share those projects with other
+			users while keeping the virtual project structure intact.
+			</p>
+		<h3 id="conclusion"><strong>Conclusion</strong></h3>
+			<p>
+			</p>
 	</div>
 </div>
 
