@@ -482,7 +482,7 @@ ob_start();
 			currently supports ActionScript/Flex as a prototype example of the technology,
 			but ports to other web platforms such as JavaScript/Dojo, Silverlight, Java FX,
 			etc, are also possible. Figure 7 shows the SWT Control example, which contains
-			all major SWT widgets, running on <a href="http://www.adobe.com/products/flex/">Flex</a>.
+			all major SWT widgets, running on <a href="http://www.adobe.com/products/flex/">Adobe Flex</a>.
 			<p>
 		 	<img border="1" alt="SWT/BE on Flex" src="images/swt-flex.png" width="400"/>
 		 	</p>
@@ -580,6 +580,15 @@ ob_start();
 		<h3 id="conclusion"><strong>Conclusion</strong></h3>
 			<p>
 			</p>
+
+		<hr>
+		<p>
+		Copyright IBM Corporation 2009.
+		<br>Java, JavaScript, and all Java-based marks are trademarks or registered trademarks of Sun 
+		Microsystems, Inc. in the United States and other countries.
+		<br>Silverlight is a trademark of Microsoft Corporation in the United States and/or other countries.
+		<br>Adobe Flex and Flash are a registered trademark of Adobe Systems Incorporated in the United States and other countries.
+		<br>Other company, product, and service names may be trademarks or service marks of others.
 	</div>
 </div>
 
