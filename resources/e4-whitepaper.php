@@ -9,12 +9,12 @@
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
 	$Nav->addNavSeparator("e4 Whitepaper", "e4-whitepaper.php");
 	$Nav->addCustomNav("What is e4?", "#whatise4", "_self", 3);
-	$Nav->addCustomNav("Programming Model", "#progmodel", "_self", 3);
-	$Nav->addCustomNav("Modeled User Interface", "#guimodel", "_self", 3);
+	$Nav->addCustomNav("Programming Model", "#programming-model", "_self", 3);
+	$Nav->addCustomNav("Modeled User Interface", "#gui-model", "_self", 3);
 	$Nav->addCustomNav("Declarative Styling", "#styling", "_self", 3);
 	$Nav->addCustomNav("Web to Desktop", "#web2desktop", "_self", 3);
 	$Nav->addCustomNav("Desktop to Web", "#desktop2web", "_self", 3);
-	$Nav->addCustomNav("Declarative Widgets", "#xwt", "_self", 3);
+	$Nav->addCustomNav("Declarative Widgets", "#declarative-widgets", "_self", 3);
 	$Nav->addCustomNav("Flexible Resource Model", "#resources", "_self", 3);
 
 	# End: page-specific settings
@@ -34,6 +34,7 @@ ob_start();
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
 		<p><font size="-1"><?= $pageAuthor ?></font></p>
+		<p><font size="-1">Revision: 0.9</font></p>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
@@ -98,33 +99,33 @@ ob_start();
 			<a href="http://www.eclipse.org/whitepapers/eclipse-overview.pdf">Eclipse Platform Technical Overview</a> for 
 			background information.
 			</p>
-		<h3 id="progmodel"><strong>Programming Model</strong></h3>
+		<h3 id="programming-model"><strong>Programming Model</strong></h3>
 			<p>The e4 programming model starts with the existing principles of programming
 			in Eclipse:</p>
 			<ul>
 				<li>Applications are made up of modular, loosely coupled components called <i>plug-ins</i> or
-				<i>bundles</i>. Plug-ins can be made up of code written in Java and other
+				<i>bundles</i>. Bundles can be made up of code written in Java and other
 				languages, and/or other resources such as documentation and source code.</li>
-				<li>Plug-ins can declare points where they can be customized or extended using
-				<i>extension points</i>, and customize or extend other plug-ins by defining
+				<li>Bundles can declare points where they can be customized or extended using
+				<i>extension points</i>, and customize or extend other bundles by defining
 				<i>extensions</i>.</li>
-				<li>A very large number of plug-ins can be installed at a time, but only those
-				plug-ins that are actually in use will be loaded and consume system resources.</li>
+				<li>A very large number of bundles can be installed at a time, but only those
+				bundles that are actually in use will be loaded and consume system resources.</li>
 			</ul>
 			<p>
 			Where e4 differs from this traditional Eclipse programming model is in how
-			plug-ins interact with each other outside the extension registry mechanism.
-			Plug-ins often need to provide data and software services to other plug-ins
+			bundles interact with each other outside the extension registry mechanism.
+			Bundles often need to provide data and software services to other bundles
 		 	in ways that aren't suited to the Eclipse extension registry. This was most
-		 	commonly achieved by plug-ins <i>reaching out</i> to other plug-ins by
-		 	directly referencing methods and constants defined in API Java classes. Plug-ins
+		 	commonly achieved by bundles <i>reaching out</i> to other bundles by
+		 	directly referencing methods and constants defined in API Java classes. Bundles
 		 	would typically define entry points for obtaining singleton instances of services
 		 	(for example classes such as <tt>Platform</tt>, <tt>IDE</tt>, <tt>ResourcesPlugin</tt>,
 		 	<tt>JavaCore</tt>, etc). This practice of reaching out led to tight coupling
-		 	from plug-ins using services to a particular provider of that service, and the
+		 	from bundles using services to a particular provider of that service, and the
 		 	prevalence of singleton accessors made it difficult or impossible for alternate
 		 	service implementations to be substituted, or for multiple implementations to be 
-		 	available at the same time. The resulting plug-ins were therefore difficult to 
+		 	available at the same time. The resulting bundles were therefore difficult to 
 		 	reconfigure or reuse in different environments where different or multiple service
 		 	implementations would be needed.</p>
 		 	<p>
@@ -179,12 +180,12 @@ ob_start();
 		 	</p>
 		 	<h4>Service providers</h4>
 		 	<p>
-		 	There is great variety in the services and data that plug-ins make available for
-		 	consumption by other plug-ins. Some services are very lightweight and may
+		 	There is great variety in the services and data that bundles make available for
+		 	consumption by other bundles. Some services are very lightweight and may
 		 	be consumed and discarded thousands of times, while others are heavyweight
 		 	services designed to live for long periods of time. There are many different
 		 	life-cycles to these services - some come and go based on the existence of a particular UI
-		 	widget, others may be tied to the lifecycle of a plug-in. Due to this great variety,
+		 	widget, others may be tied to the lifecycle of a bundle. Due to this great variety,
 		 	there is no one single method of service publication that is appropriate for all service
 		 	providers. 
 		 	</p>
@@ -234,7 +235,7 @@ ob_start();
 		 	with other programming languages. This is discussed further in the later
 		 	section on <a href="#20thingsJavaScript">JavaScript integration</a>.
 		 	</p>
-		<h3 id="guimodel"><strong>Modeled User Interface</strong></h3>
+		<h3 id="gui-model"><strong>Modeled User Interface</strong></h3>
 			<p>
 			The previous generation of the Eclipse platform UI (called the <i>workbench</i>)
 			was a complex and difficult to maintain piece of software. Although it has been made
@@ -488,7 +489,42 @@ ob_start();
 			<p>
 			e4 RAP integration.
 			</p>
-		<h3 id="xwt"><strong>Declarative Widgets</strong></h3>
+		<h3 id="declarative-widgets"><strong>Declarative Widgets</strong></h3>
+			<p>
+			The modeled e4 workbench provides an abstract representation of the workbench
+			itself: windows, pages, perspectives, view, etc. This model is then transformed
+			into SWT using renderers and customized using the declarative styling engine.
+			However, within individual workbench views the user interface is still constructed
+			with plain SWT. This SWT code is often very repetitive, and hard-codes styling
+			decisions such as font and margin sizes directly into the widget construction code.
+			To avoid this repetitive and hard to customize SWT code, e4 is exploring ways
+			of pushing the concept of model/renderer separation down into all places
+			where SWT is used today. This exploration currently has two directions:
+			XML-based widgets, and model-based widgets.
+			</p>
+		 	<h4 id="xwt">XWT: Declarative widgets in XML</h4>
+			<p>
+			XML UI for SWT (XWT), is a framework for writing SWT widgets
+			declaratively in XML. In XWT, the complete structure of an application
+			or widget hierarchy is expressed declaratively, along with bindings of the
+			widgets to some underlying application model or to Java-based callbacks
+			implementing the widget behavior.
+			</p>
+			<p>
+			XWT takes declarative UI data as input, along with an application model that
+			will be bound to the widgets at runtime. XWT includes a simple model for
+			classes that conform to the JavaBean conventions of simple data accessor
+			and setter methods. Additional models can also be defined and contributed
+			to XWT via an extension point. The declarative UI data and model defintion
+			are combined by the XWT <i>UI generator</i> to produce the resulting SWT
+			and JFace controls at runtime. This XWT architecture is illustrated in figure 8.
+			</p>
+			<p>
+		 	<img border="1" alt="XWT Architecture" src="images/xwt-architecture.png" width="400"/>
+		 	</p>
+		 	<h4 id="TM">TM: Declarative widgets in EMF</h4>
+			<p>
+			</p>
 		<h3 id="resources"><strong>Flexible Resource Model</strong></h3>
 		<p>Some content.</p>
 	</div>
