@@ -540,9 +540,46 @@ ob_start();
 			<p>
 		 	<img border="1" alt="XWT Architecture" src="images/xwt-architecture.png" width="400"/>
 		 	</p>
-		 	<h4 id="TM">TM: Declarative widgets in EMF</h4>
+		 	<h4 id="tm">TM: Declarative widgets in EMF</h4>
 			<p>
+			The Toolkit Model (TM), is an abstract EMF model of user interface elements.
+			This model is bound to a set of concrete widgets (such as SWT) at runtime.
+			The TM builder maintains synchronization between this model and the concrete
+			widgets as the application runs, propagating changes in both directions as
+			required to keep the model and widgets synchronized. Applications typically
+			interact at runtime with the toolkit model rather than the concrete widgets,
+			resulting in a simpler abstraction for application developers to work with.
 			</p>
+			<p>
+			This higher level widget abstraction makes it possible to change the concrete
+			widget implementation, either in subtle ways, or radical changes such as
+			interacting with concrete widget instances running in a different process or
+			a different physical machine. For example an application running on a web server
+			can be manipulating a toolkit model living on the server, and the TM runtime
+			can transparently implement that model with widgets running on a different
+			machine, such as a browser-based web client.
+			</p>
+			<p>
+			Events in the toolkit model are handled by event handlers written in JavaScript,
+			although Java can also be used. JavaScript interacts with the toolkit model in
+			much the same way JavaScript manipulates an HTML document object model (DOM)
+			in a web browser. Since graphical tools are available for building and manipulating
+			EMF models, this combination of EMF and JavaScript allows for rapid prototyping
+			of application design and behavior.
+			</p>
+			<p>
+			Figure 9 illustrates the Toolkit Model architecture. A <i>builder</i> is responsible
+			for creating widgets and binding them to the model. The builder does this by
+			finding a suitable <i>binder</i> for each kind of widget being constructed. The
+			binder constructs the concrete widgets, and manages the synchronization between
+			the widgets and model elements after construction. There is one binder for
+			each kind of widget, rather than one binder per widget instance. JavaScript code 
+			supplies the model with behavior, both callbacks from widget events and other application
+			behavior.
+			</p>
+			<p>
+		 	<img border="1" alt="TM Architecture" src="images/tm-architecture.png" width="400"/>
+		 	</p>
 		<h3 id="resources"><strong>Flexible Resource Model</strong></h3>
 			<p>
 			While much of e4 is directed at the Eclipse platform as a general-purpose
@@ -555,6 +592,7 @@ ob_start();
 			Eclipse resource model. e4 includes a new enhanced resource model that 
 			provides better support for importing and managing more complex project 
 			layouts in Eclipse workspaces. Some enhancements in this model include:
+			</p>
 			<ul>
 			<li>The ability to define path variables at the project level, and create linked resources
 			relative to those project-specific path variables. This allows projects containing
@@ -572,6 +610,7 @@ ob_start();
 			<li>The ability to edit the location of existing linked resources, or to convert
 			links between absolute or variable-relative paths.</li>
 			</ul>
+			<p>
 			Together these enhancements allow users to quickly set up complex project
 			structures in the Eclipse workspace, and share those projects with other
 			users while keeping the virtual project structure intact.
@@ -593,7 +632,7 @@ ob_start();
 			<p>
 			For more information, visit <a href="//www.eclipse.org/e4">http://eclipse.org/e4</a>,
 			or the e4 wiki page at <a href="//wiki.eclipse.org/e4">http://wiki.eclipse.org/e4</a>.
-
+			</p>
 		<hr>
 		<p>
 		Copyright IBM Corporation 2009.
