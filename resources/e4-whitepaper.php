@@ -578,7 +578,21 @@ ob_start();
 			</p>
 		<h3 id="conclusion"><strong>Conclusion</strong></h3>
 			<p>
+			The e4 project introduces a broad set of new technologies that modernize
+			the architecture and design principles of the Eclipse platform. 
+			These changes should position the Eclipse platform well for the future, opening
+			up the platform to support more programming languages and target runtime
+			environments. Components designed for e4 will be easier to customize, configure,
+			and reuse in different applications without modification. The separation of style
+			and presentation logic from application logic will allow Eclipse applications to be
+			easily skinned in a consistent way. Developers building components and applications
+			in accordance with e4 design principles will be more insulated from technology 
+			changes in underlying operating systems and web browsers, and will gain 
+			portability and flexibility above and beyond the abstraction provided by the Java virtual machine.
 			</p>
+			<p>
+			For more information, visit <a href="//www.eclipse.org/e4">http://eclipse.org/e4</a>,
+			or the e4 wiki page at <a href="//wiki.eclipse.org/e4">http://wiki.eclipse.org/e4</a>.
 
 		<hr>
 		<p>
