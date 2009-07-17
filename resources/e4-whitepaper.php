@@ -90,7 +90,7 @@ ob_start();
 				<li>A new port of SWT, dubbed "browser edition", that allows existing SWT
 				applications to be executed on web platforms such as ActionScript/Flash.</li>
 				<li>In the development tools space, a more flexible resource model that
-				provides better support for complex project project layouts.</li>
+				provides better support for complex project layouts.</li>
 			</ul>
 			<p>
 			The remainder of this paper will outline these new technologies in more detail.
@@ -158,8 +158,7 @@ ob_start();
 		 	contexts have a pluggable lookup strategy that allows external parties to "teach"
 		 	the context how to retrieve certain kinds of values. The lookup strategy enables interoperability
 		 	between e4 contexts and other service brokers such as the OSGi service registry.
-		 	This flexibility at the service broker level is a very powerful enabler for reuse - 
-		 	all kinds of different service lookup and brokerage systems can easily be integrated
+		 	This flexibility means all manner of different service lookup and brokerage systems can be integrated
 		 	into the e4 context mechanism. This ability to create context hierarchies and insert
 		 	service lookup strategies allows contexts to scale up from very simple map-like
 		 	service registration and lookup to highly complex and dynamic service arbitration mechanisms.
@@ -244,7 +243,7 @@ ob_start();
 			workbench windows, with each window containing one or more workbench pages,
 			and each page made up of an editor area, a set of view stacks, and some
 			hard-coded trim elements (perspective switcher, progress indicator, etc). Application
-			designers have a strictly limited set of options when customising the structure of 
+			designers have a strictly limited set of options when customizing the structure of 
 			Eclipse-based applications.
 			</p>
 			<p>
@@ -254,7 +253,7 @@ ob_start();
 			of their application with no additional coding required. Normalizing the workbench structure
 			as a well defined model has the added benefit of making the code for the
 			workbench itself much simpler and less error prone. Most importantly, this
-			allows for very different workbench UI structures, such as parts living outside
+			allows for very different workbench UI layouts, such as parts living outside
 			of perspectives, views and editors in dialogs, and other designs not previously
 			allowed by the older generation workbench with its rigid hand-crafted model.
 			Having a model also allows for more advanced tool support for application 
@@ -306,7 +305,7 @@ ob_start();
 		 	</p>
 			<p>
 			The declarative styling support in e4 currently uses CSS syntax for styling
-			data, although other data types are possible. A mixture of standard HTML CSS
+			data, although other styling languages are possible. A mixture of standard HTML CSS
 			styling attributes are supported, such as fonts, margins, and colors, in addition
 			to some custom attributes specific to Eclipse widgets.
 			CSS classes are used to specify styling for particular types of a model element,
@@ -355,8 +354,8 @@ ob_start();
 			e4 is exploring component reuse across multiple target platforms and technologies 
 			in a number of ways. One such area is writing Eclipse components in JavaScript. 
 			As the de facto standard language for client-side browser programming, JavaScript
-			is a good choice for anyone seeking to writing components that will run both
-			in a browser and elsewhere. To that end, e4 is investigating bringing both 
+			is a good choice for anyone seeking to write components that will run in a 
+			broad set of runtime environments. To that end, e4 is investigating bringing both 
 			the benefits of Eclipse to the JavaScript world (modularity, extensibility, 
 			and tooling), and JavaScript components into the Eclipse desktop environment.
 			While the current e4 focus is on JavaScript, the intent of this work more generally
@@ -438,8 +437,8 @@ ob_start();
 			the <i>e4 JS Framework</i> block extending across the Java/JavaScript boundary.
 			</p>
 			<p id="20thingsJavaScript">
-			The e4 programming model also directly supports integration of components
-			written in other languages such as JavaScript. With service-based interaction
+			The e4 programming model also facilitates integration of components
+			written in other languages. With service-based interaction
 			between components, and dependency injection, components never need
 			to know what language services are implemented in, or what languages are
 			being used to consume the services they expose. Similarly, the pared down
@@ -526,7 +525,7 @@ ob_start();
 			XML UI for SWT (XWT), is a framework for writing SWT widgets
 			declaratively in XML. In XWT, the complete structure of an application
 			or widget hierarchy is expressed declaratively, along with bindings of the
-			widgets to some underlying application model or to Java-based callbacks
+			widgets to some underlying application model or to Java-based call-backs
 			implementing the widget behavior.
 			</p>
 			<p>
@@ -534,7 +533,7 @@ ob_start();
 			will be bound to the widgets at runtime. XWT includes a simple model for
 			classes that conform to the JavaBean conventions of simple data accessor
 			and setter methods. Additional models can also be defined and contributed
-			to XWT via an extension point. The declarative UI data and model defintion
+			to XWT via an extension point. The declarative UI data and model definition
 			are combined by the XWT <i>UI generator</i> to produce the resulting SWT
 			and JFace controls at runtime. This XWT architecture is illustrated in figure 8.
 			</p>
@@ -550,7 +549,7 @@ ob_start();
 			application framework, development tools remain an important part
 			of the Eclipse eco-system. One area many IDE developers found wanting
 			in the previous generation of Eclipse was its support for more complex
-			project layouts. Development tool users often have pre-existing layouts
+			project layouts. Development tool users often have well established layouts
 			of their source code and other development resources, and bringing these
 			layouts into Eclipse-based IDEs was often challenging due to the rigidity of the
 			Eclipse resource model. e4 includes a new enhanced resource model that 
@@ -587,7 +586,7 @@ ob_start();
 		<br>Java, JavaScript, and all Java-based marks are trademarks or registered trademarks of Sun 
 		Microsystems, Inc. in the United States and other countries.
 		<br>Silverlight is a trademark of Microsoft Corporation in the United States and/or other countries.
-		<br>Adobe Flex and Flash are a registered trademark of Adobe Systems Incorporated in the United States and other countries.
+		<br>Adobe Flex and Flash are registered trademarks of Adobe Systems Incorporated in the United States and other countries.
 		<br>Other company, product, and service names may be trademarks or service marks of others.
 	</div>
 </div>
