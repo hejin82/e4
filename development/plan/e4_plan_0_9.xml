@@ -17,9 +17,10 @@
 <div>
 
 <p>
-  Last revised 11:30 ET Feb 2, 2009
+Last revised 16:00 ET July13, 2009 (<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> marks
+interesting changes since the previous draft of Feb 2, 2009)
 </p>
-<p><i>Please send comments about this draft plan to the</i> <a href="mailto:e4-dev@eclipse.org">e4-dev@eclipse.org</a> <i>developer
+<p><i>Please send comments about this plan to the</i> <a href="mailto:e4-dev@eclipse.org">e4-dev@eclipse.org</a> <i>developer
   mailing list.</i>
 </p>
 <p>This document lays out the feature and API set for the first feature release
@@ -280,7 +281,7 @@ Compatibility with Eclipse 3.x is anticipated to be a major focus of the subsequ
     investigating it, we are not yet in a position to commit to it, or to say
     that we won't be able to address it. After due consideration, a proposal
     will either be committed or deferred. In bugzilla, such items are reflected
-    by having a target milestone "3.5" or "---" assigned.</li>
+    by having a target milestone "0.9" or "---" assigned.</li>
   <li><b>Deferred</b> plan item - A reasonable proposal that will not make it in
     to this release for some reason is marked as deferred with a brief note as
     to why it was deferred. Deferred plan items may resurface as committed plan
@@ -302,17 +303,15 @@ easier to build applications and extensions upon.
 </p:description>
 
 <p:committed>
-  <p><i>None at this time.</i></p>
-</p:committed>
-
-<p:proposed>
 <ul>
-<li><strong>Support declarative definition of user-interfaces.</strong> 
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> committed)
+<strong>Support declarative definition of user-interfaces.</strong> 
   We will work with the community to identify and provide access to a best-of-breed
   declarative mechanism for defining widget-based user-interfaces in Eclipse. [Platform UI, SWT]
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252648">252648</a>)</li>
 
-<li><strong>Model-based workbench.</strong>
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> committed)
+<strong>Model-based workbench.</strong>
   The functionality of the Eclipse Workbench and IDE have grown significantly
   since they were created. In some cases, older capabilities have been superceded
   by newer ones or have been proven to be unwieldy or otherwise unsatisfying.
@@ -320,13 +319,15 @@ easier to build applications and extensions upon.
   will make development simpler, but more flexible and dynamic. [Platform UI]
  (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id= 252650"> 252650</a>) </li>
 
-<li><strong>Skinnable UI.</strong>
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> committed)
+<strong>Skinnable UI.</strong>
   We will enable developers to have greater control over the Eclipse UI, 
   making it simple to customize the appearance of Eclipse-based applications
   using industry standard mechanisms such as CSS. [Platform UI, SWT]
  (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id= 252653"> 252653</a>) </li>
 
-<li><strong>Investigate scripting languages for Eclipse programmability.</strong> 
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> committed)
+<strong>Investigate scripting languages for Eclipse programmability.</strong> 
   We will investigate the use of scripting languages such as JavaScript, Ruby, etc., 
   in Eclipse development. Since this capability will require function from the
   model-based workbench, as well as support from the Equinox project, and 
@@ -334,13 +335,18 @@ easier to build applications and extensions upon.
   is planned during the R3.5 cycle. [All]
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252654">252654</a>)</li>
 
-<li><strong>Compatibility layer.</strong>
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> committed)
+<strong>Compatibility layer.</strong>
   Although the 0.9 release will not itself be backward compatible with earlier versions
   of the Eclipse platform, we will develop a compatibility layer that will allow
   plug-ins built against earlier versions of the platform to run without modification
   in e4. [All]
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 </ul>
+</p:committed>
+
+<p:proposed>
+  <p><i>None at this time.</i></p>
 </p:proposed>
 
 <p:deferred>
@@ -365,18 +371,9 @@ easier to build applications and extensions upon.
 </p:description>
 
 <p:committed>
-  <p><i>None at this time.</i></p>
-</p:committed>
-
-<p:proposed>
 <ul>
-<li><strong>Support advanced animation API in SWT.</strong> 
-  A prototype API was developed during the R3.3 cycle that was implemented
-  on top of several desktop and web UI technologies. This work needs to be
-  completed. [SWT]
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252656">252656</a>)</li>
-
-<li><strong>Support running SWT in a browser.</strong> 
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> committed)
+<strong>Support running SWT in a browser.</strong> 
   The RAP project has shown that it is possible to achieve good performance
   and function for server-side, widget-based web applications. Investigations
   have also been made into client-side technologies. Based on these efforts,
@@ -384,10 +381,21 @@ easier to build applications and extensions upon.
   in web browsers. [SWT]
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252659">252659</a>)</li>
 </ul>
+</p:committed>
+
+<p:proposed>
+  <p><i>None at this time.</i></p>
 </p:proposed>
 
 <p:deferred>
-  <p><i>None at this time.</i></p>
+<ul>
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> deferred)
+<strong>Support advanced animation API in SWT.</strong> 
+  A prototype API was developed during the R3.3 cycle that was implemented
+  on top of several desktop and web UI technologies. This work needs to be
+  completed. [SWT]
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252656">252656</a>)</li>
+</ul>
 </p:deferred>
 
 </p:theme>
@@ -403,18 +411,19 @@ C/C++, parallel, and server-side developer environments.</p>
 </p:description>
 
 <p:committed>
-  <p><i>None at this time.</i></p>
-</p:committed>
-
-<p:proposed>
 <ul>
-<li><strong>Flexible resources</strong> 
+<li>(<img src="http://www.eclipse.org/eclipse/development/new.gif" alt="(new)" border="0" height="12" width="12" /> committed)
+<strong>Flexible resources</strong> 
   The Resource architecture that Eclipse uses has been criticized for being
   overly Java-centric and constraining for some use cases. We will 
   generalize the Resource layer (and related areas, such as EFS) to better
   address these uses. [Workspace, Platform UI]
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252647">252647</a>)</li>
 </ul>
+</p:committed>
+
+<p:proposed>
+  <p><i>None at this time.</i></p>
 </p:proposed>
 
 <p:deferred>
