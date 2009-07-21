@@ -296,7 +296,7 @@ ob_start();
 			The e4 styling engine has no knowledge of the model-based UI, and in fact
 			can run as a completely independent piece on earlier Eclipse versions. The engine takes
 			concrete widgets and styling data as input, and performs the styling on the
-			instantiated widgets to produce the styled result. Figure 4 shows the flow
+			instantiated widgets to produce the styling result. Figure 4 shows the flow
 			from the model, into widgets via one or more renderers, and then to a styled
 			output using the styling engine and the declarative styling data (CSS files).
 			</p>
@@ -304,16 +304,19 @@ ob_start();
 		 	<img border="1" alt="Rendering and styling data flow" src="images/render-dataflow.png" width="400"/>
 		 	</p>
 			<p>
-			The declarative styling support in e4 currently uses CSS syntax for styling
-			data, although other styling languages are possible. A mixture of standard HTML CSS
-			styling attributes are supported, such as fonts, margins, and colors, in addition
-			to some custom attributes specific to Eclipse widgets.
-			CSS classes are used to specify styling for particular types of a model element,
-			such as parts that are views rather than editors. Similarly, CSS pseudo-classes are
-			used to specify styles based on a particular widget state, such as making 
-			the editor in focus have a different title color. For example, the following
-			snippet specifies one color for general tab folders, but a different color
-			for a selected editor:
+			The declarative styling support in e4 is based on standard CSS syntax.  A large 
+			subset of standard HTML CSS property names and type formats are supported, 
+			such as fonts, margins, and colors. In addition, e4 has custom properties and 
+			pseudo selectors specific to many Eclipse widgets.  
+			<p>
+			CSS supports the standard set of selectors, mapped where appropriate to SWT.  
+			Where in CSS you would use type selectors, in e4 you can use the widget class 
+			name as a selector. CSS class selectors and IDs are also supported so that the 
+			same widget can be styled in different ways. For example, the views might be tagged 
+			&quot;.views&quot; and editors &quot;.editors&quot;, with different styling rules for each. 
+			Similarly, CSS pseudo-classes are used to select style rules based on the widget state, 
+			allowing you to say style the selected tab with a different font color.  For example, the following
+			snippet specifies one color for general tab folders, but a different color for a selected editor:
 			<code>
 			<br>&nbsp;&nbsp;&nbsp;CTabFolder {
 			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: rgb(241, 240, 245);
@@ -327,9 +330,9 @@ ob_start();
 			<p>
 			This use of CSS classes and pseudo-classes enables highly customized styling,
 			both of particular workbench parts, and of particular part states. For example
-			views can have <i>busy</i> or <i>updated</i> states when they are running
+			views can be tagged with <i>busy</i> or <i>updated</i> CSS class selectors when they are running
 			background tasks, and the styling can describe what kind of presentation to
-			associate that state: different fonts, changed border, or even no styling at
+			associate with that state: different fonts, changed border, or even no styling at
 			all if desired. The result is a more consistent application of GUI affordances
 			and metaphors, making applications easier for users to understand and interact with.
 			</p>
