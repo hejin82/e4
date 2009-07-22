@@ -34,7 +34,7 @@ ob_start();
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
 		<p><font size="-1"><?= $pageAuthor ?><br>
-		Revision: 0.9</font></p>
+		Revision: 0.9. Last modified July 22, 2009.</font></p>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
