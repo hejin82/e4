@@ -1,67 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head><title>IP Log for eclipse.e4</title><meta name="author" content="" />
-<meta name="keywords" content="" /><link rel="stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/small.css" title="small" /><link rel="alternate stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/large.css" title="large" /><link rel="stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/visual.css" media="screen" /><link rel="stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/layout.css" media="screen" />
-<!--[if IE]> 	<link rel="stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/ie_style.css" media="screen"/> <![endif]-->
-<!--[if IE 6]> 	<link rel="stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/ie6_style.css" media="screen"/> <![endif]-->
-<link rel="stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/print.css" media="print" />
-<link rel="stylesheet" type="text/css" href="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/css/header.css" media="screen" />
-<script type="text/javascript" src="/eclipse.org-common/themes/Phoenix/styleswitcher.js"></script>
-</head>
-<body>
-<div id="header">
-	<div id="header-graphic" class="eclipse-main">
+<?php  																														require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	$App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());    # All on the same line to unclutter the user's desktop'
 
-		<a href="http://www.eclipse.org/"><img src="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/images/eclipse_home_header.jpg" alt="" /></a><h1>Eclipse</h1>	
-	</div>
-	<div id="header-global-holder" class="eclipse-main-global">
-		<div id="header-global-links"><ul>
-<li><a href="http://www.eclipse.org/org/foundation/contact.php" class="first_one">Contact</a></li><li><a href="http://www.eclipse.org/legal/">Legal</a></li>
-			</ul>
-		</div>
-		<div id="header-icons">
-
-<a href="http://live.eclipse.org"><img src="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/images/Icon_Live.png" width="28" height="28" alt="Eclipse Live" title="Eclipse Live" /></a>
-<a href="http://www.eclipseplugincentral.com"><img src="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/images/Icon_plugin.png" width="28" height="28" alt="Eclipse Plugin Central" title="Eclipse Plugin Central" /></a>
-<a href="http://www.planeteclipse.org"><img src="http://www.eclipse.org/eclipse.org-common/themes/Phoenix/images/Icon_planet.png" width="28" height="28" alt="Planet Eclipse" title="Planet Eclipse" /></a>
-		</div>
-	</div></div><div id="header-menu"><div id="header-nav">
-		<ul>
-		<li><a class="first_one" href="http://www.eclipse.org/" target="_self">Home</a></li> 
-				<li><a  href="http://www.eclipse.org/downloads/" target="_self">Downloads</a></li> 
-				<li><a  href="http://www.eclipse.org/users/" target="_self">Users</a></li> 
-				<li><a  href="http://www.eclipse.org/membership/" target="_self">Members</a></li> 
-				<li><a  href="http://www.eclipse.org/committers/" target="_self">Committers</a></li> 
-				<li><a  href="http://www.eclipse.org/resources/" target="_self">Resources</a></li> 
-				<li><a  href="http://www.eclipse.org/projects/" target="_self">Projects</a></li> 
-				<li><a  href="http://www.eclipse.org/org/" target="_self">About Us</a></li> 
-				</ul>
-
-	</div>
-	<div id="header-utils">
-		<form action="http://www.google.com/cse" id="searchbox_017941334893793413703:sqfrdtd112s">
-	 	<input type="hidden" name="cx" value="017941334893793413703:sqfrdtd112s" />
-  		<input type="text" name="q" size="25" />
-  		<input type="submit" name="sa" value="Search" />
-		</form>
-		<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_017941334893793413703%3Asqfrdtd112s&lang=en"></script>		<ul>
-
-						<li class="text_size"><a class="smallText" title="Small Text" href="#" onclick="setActiveStyleSheet('small');return false;">A</a> <a class="largeText" title="Large Text" href="#" onclick="setActiveStyleSheet('large');return false;">A</a></li>
-		</ul>
-	</div></div>
+	#*****************************************************************************
+	#
+	# index.php
+	#
+	# Author: 		
+	# Date:			2009-06-09
+	#
+	# Description: Eclipse e4 project IP log main page
+	#
+	#
+	#****************************************************************************
 	
-			
-				<div id="leftcol">
-<ul id="leftnav">
-<li><a href="http://dev.eclipse.org/site_login/">login</a></li>
-<li style="background-image: url(/eclipse.org-common/themes/Phoenix/images/leftnav_fade.jpg); background-repeat: repeat-x; border-style: none;"><br /><br /><br /><br /><br /><br /><br /><br />
-</li>
-</ul>
+	#
+	# Begin: page-specific settings.  Change these. 
+	$pageTitle 		= "Eclipse e4 Project IP Logs";
+	$pageKeywords	= "eclipse, e4, IP, intellectual property";
+	$pageAuthor		= "";
+	
+	# Add page-specific Nav bars here
+	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
+	# $Nav->addNavSeparator("My Page Links", 	"downloads.php");
+	# $Nav->addCustomNav("My Link", "mypage.php", "_self", 3);
+	# $Nav->addCustomNav("Google", "http://www.google.com/", "_blank", 3);
 
-</div>
+	# End: page-specific settings
+	#
+		
+	# Paste your HTML content between the markers!	
+ob_start();
+?>		
 <div id="container"><div id="maincontent">
 <div id="midcolumn">
-<h1>IP Log for eclipse.e4</h1>
+<h1>IP Log for the 0.9 release of eclipse.e4 (July 30, 2009)</h1>
 
 <h2>Licenses</h2>
 	<ul>

@@ -34,7 +34,7 @@ ob_start();
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
 		<p>Eclipse projects are required to maintain intellectual property (IP) logs for each release. This page
-		contains all such logs for the <a href="http://eclipse.org/e4">Eclipse e4</a>project. For
+		contains all such logs for the <a href="http://eclipse.org/e4">Eclipse e4</a> project. For
 		more details on IP logs, see the <a href="http://www.eclipse.org/projects/dev_process/project-log.php">
 		Eclipse Development Process</a> documentation.</p>
 		<div class="homeitem3col">
@@ -47,7 +47,7 @@ ob_start();
 			<h3>IP Logs For Past Releases</h3>
 			<p>The following are approved IP logs for past Eclipse project releases.</p>
 			<ul>
-				<li><a href=e4_iplog_0.9.html">e4 0.9 release</a></li>
+				<li><a href="e4_iplog_0.9.html">e4 0.9 release</a></li>
 			</ul>
 		</div>
 	</div>
