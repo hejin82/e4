@@ -47,7 +47,7 @@ ob_start();
 			<h3>IP Logs For Past Releases</h3>
 			<p>The following are approved IP logs for past Eclipse project releases.</p>
 			<ul>
-				<li><a href="e4_iplog_0.9.html">e4 0.9 release (July 30, 2009)</a></li>
+				<li><a href="e4_iplog_0.9.php">e4 0.9 release (July 30, 2009)</a></li>
 			</ul>
 		</div>
 	</div>

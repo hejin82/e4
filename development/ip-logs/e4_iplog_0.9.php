@@ -5,16 +5,16 @@
 	# index.php
 	#
 	# Author: 		
-	# Date:			2009-06-09
+	# Date:			2009-07-23
 	#
-	# Description: Eclipse e4 project IP log main page
+	# Description: Eclipse e4 project 0.9 release IP log
 	#
 	#
 	#****************************************************************************
 	
 	#
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "Eclipse e4 Project IP Logs";
+	$pageTitle 		= "e4 0.9 Release IP Log";
 	$pageKeywords	= "eclipse, e4, IP, intellectual property";
 	$pageAuthor		= "";
 	
@@ -30,8 +30,8 @@
 	# Paste your HTML content between the markers!	
 ob_start();
 ?>		
-<div id="midcolumn">
-<h1>IP Log for the 0.9 release of eclipse.e4 (July 30, 2009)</h1>
+	<div id="midcolumn">
+		<h1><?= $pageTitle ?></h1>
 
 <h2>Licenses</h2>
 	<ul>
