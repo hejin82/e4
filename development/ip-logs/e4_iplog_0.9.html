@@ -30,7 +30,6 @@
 	# Paste your HTML content between the markers!	
 ob_start();
 ?>		
-<div id="container"><div id="maincontent">
 <div id="midcolumn">
 <h1>IP Log for the 0.9 release of eclipse.e4 (July 30, 2009)</h1>
 
@@ -753,21 +752,10 @@ ob_start();
 <div style='padding-left: 2em'>/cvsroot/eclipse/e4</div>
 <p>
 </div><!-- midcolumn -->
-</div><!-- maincontent -->
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-		var pageTracker = _gat._getTracker("UA-910670-2");
-		pageTracker._initData();
-		pageTracker._trackPageview();
-		</script></div><div id="footer">
-<ul id="footernav">
-<li class="first"><a href="http://www.eclipse.org/">Home</a></li>
+<?php
+	$html = ob_get_contents();
+	ob_end_clean();
 
-<li><a href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li>
-<li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
-</ul>
-<p>Copyright &copy; 2009 The Eclipse Foundation. All Rights Reserved</p>
-</div></body></html>
+	# Generate the web page
+	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
+?>
