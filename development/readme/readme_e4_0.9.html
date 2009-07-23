@@ -367,6 +367,7 @@ only be used when running on Carbon.
   <a href="#R-Demos">4.2 Running the e4 demo applications</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Photo">4.2.1 Photo demo application</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Contacts">4.2.2 Contacts demo application</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Flex">4.2.3 SWT Flex examples</a><br>
 
 </blockquote>
 
@@ -511,7 +512,7 @@ Then, have a look at the <tt>Application.xmi</tt> file to see how the demo appli
 and/or look at the source files for the individual pieces (views and command handlers). 
 </p>
 
-<h3>4.2.2 <a name="R-Contacts-Photo">Contacts demo application</a></h3>
+<h3>4.2.2 <a name="R-Demos-Contacts">Contacts demo application</a></h3>
 <p>
 The e4 contacts demo is a simple application that illustrates various concepts of the e4
 architecture:
@@ -542,6 +543,81 @@ Back in the workbench, view and edit the CSS
 files under the <tt>org.eclipse.e4.demo.contacts/css</tt> folder to experiment with different application styling. Browse
 and edit the <tt>Application.xmi</tt> file to customize the application model.
 </p>
-
+<h3>4.2.3 <a name="R-Demos-Flex">SWT Flex examples</a></h3>
+<p>
+The SWT port for Flex consists of the Adobe Flex environment (the ActionScript compiler), 
+the SWT ActionScript development tools plugins (which provides the tools needed to build, 
+launch and debug Java code in a Flash player) and the Eclipse target environment (the 
+running plugins, the SWT port itself and example code).
+</p>
+<p>
+<b>Setup Flex environment</b>
+</p>
+<ol>
+	<li>Download and install the Adobe Open Source Flex SDK (available from 
+	<a href="http://opensource.adobe.com">http://opensource.adobe.com</a>). 
+	NOTE: The path where you install the Flex SDK must contain no spaces. This is due to a bug in FCSH.</li>
+	<li>Verify that your Flex install works by opening a command prompt, changing to the Flex SDK bin 
+	directory, typing &quot;mxmlc&quot; and hitting Enter. If you get an error message, you will need to add a 
+	JAVA_HOME environment variable that points to the home dir or edit the bin/jvm.config file in the Flex SDK.</li>
+</ol>
+<p>
+<b>Setup the Flex tools:</b>
+</p>
+<ol>
+	<li>Update your eclipse.ini file and add another line at the end, -Dflex.sdk=<your path to the installed sdk> 
+	Note: Make sure you don't edit the command line (for example in a launch shortcut) as it 
+	overrides the .ini file and loses the Flex settings.</li>
+	<li>Make sure that you are using at least a Java SE 5 JRE to run Eclipse as the ActionScript tools plugin requires it.</li>
+	<li>Launch the e4 compatibility platform with a new Eclipse workspace. Note: The path 
+	where you create the workspace must contain no spaces.</li>
+	<li>Select <b>Help &gt; Install New Software...</b></li>
+	<li>Go to the <a href="http://download.eclipse.org/e4/downloads/">e4 download page</a> for the 0.9 release, and find the link
+	at the bottom right corner called <b>online p2 repo link</b>. Drag that link into the <b>Work with</b> field.</li>
+	<li>Expand <b>E4 SWT</b> and select <b>Eclipse e4 ActionScript Developer Tools</b>.</li>
+	<li>Click <b>Next</b> twice. Review and accept the license, and click <b>Finish</b>.</li>
+	<li>Restart the workbench when prompted</li>
+</ol>
+<p>
+<b>Setup the Eclipse target environment:</b>
+</p>
+<ol>
+	<li>Turn off auto build (<b>Project &gt; Build Automatically</b>)</li>
+	<li>Download the SWT source zip from the e4 release download page (The zip is named 
+	org.eclipse.swt.e4.flex-incubation-I[timestamp].zip).</li>
+	<li>Import this zip into your project (<b>File &gt; Import &gt; General &gt; Existing Projects into Workspace &gt; Select archive file</b>).</li>
+	<li>Add a new ActionScript VM. (<b>Window &gt; Preferences &gt; Java &gt; Installed JREs</b>).
+	<ol>
+		<li>Click <b>Add...</b></li>
+		<li>Select <b>ActionScript VM</b>, click <b>Next</b>.</li>
+		<li>Click <b>Directory...</b> and browse to either your Firefox or IE install directory.</li>
+		<li>Click <b>OK</b>, click <b>Finish</b>.</li>
+	</ol></li>
+</ol>
+<p>
+<b>Get the demos</b>
+</p>
+<ol>
+	<li>Select <b>File &gt; Import...</b> and select <b>CVS &gt; Projects from CVS</b>, click <b>Next</b>.</li>
+	<li>Enter the e4 repository information. Host: dev.eclipse.org, Repository path: /cvsroot/eclipse, User: anonymous, Connection type: pserver.</li>
+	<li>Click <b>Next</b> and select the second option Use an existing module.</li>
+	<li>Drill down as follows: <b>e4 &gt; releng</b> and select <b>org.eclipse.e4.swt.releng</b>. Click <b>Next</b>.</li>
+	<li>Important: Do not click Finish just yet. Advance to the last wizard page using <b>Next</b>, 
+	then click <b>Refresh Tags</b>. Select <b>R0_9</b> and click <b>Finish</b>.</li>
+	<li>In the project you just checked out, select the file <tt>e4.swt.as.demo.psf</tt>, and 
+	  select <b>Import Project Set...</b> from the context menu (If prompted for username:password, you should use anonymous:anonymous).</li>
+	<li>Delete the file <tt>.classpath</tt>, and rename the file <tt>.classpath_flex</tt> 
+	to <tt>.classpath</tt> in the <tt>org.eclipse.swt.examples</tt> project. 
+	(Note that in order to see the classpath files, you have to turn off the resources filter 
+	in the <b>Project Explorer</b>by clicking on the drop down arrow menu in the top 
+	right hand corner of the view, selecting <b>Filters</b> and unchecking <b>*.resources</b>).</li>
+	<li>Turn on <b>Build Automatically</b> in the <b>Project</b> menu (You can 
+	watch the build progress in the <b>ActionScript Build Console</b>, available from the <b>Console</b> view)</li>
+	<li>You can run any of the demos from <tt>org.eclipse.swt.e4.examples</tt> by 
+	clicking on them and Selecting <b>Run As &gt; ActionScript Application</b>.</li>
+</ol>
+<p>
+For more information on working with e4 SWT, visit the 
+<a href="http://wiki.eclipse.org/E4/SWT/Running_the_demos">e4 SWT Demos</a> wiki page.
 </body>
 </html>
