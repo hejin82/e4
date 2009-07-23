@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Eclipse e4 Project Release Notes 0.9</title>
+</head>
+<body>
+
+<h1>Eclipse e4 Project Release Notes</h1>
+<p>Release 0.9<br>
+  Last revised July 22, 2009</p>
+<p align="left"><strong>This software is OSI Certified Open Source Software.<br>
+OSI Certified is a certification mark of the Open Source Initiative.&nbsp;</strong></p>
+<blockquote>
+  <p align="left"><a href="#TargetOperatingEnvironments">1. Target Operating
+  Environments</a><br>
+  <a href="#Compatibility">2. Compatibility with Previous Releases</a><br>
+  <a href="#Known Issues">3. Known Issues</a><br>
+  <a href="#Running Eclipse">4. Running Eclipse</a><br>
+  </p>
+</blockquote>
+
+<h2>1. <a name="TargetOperatingEnvironments"></a>Target Operating Environments</h2>
+<p>In order to remain current, each e4 Project release targets reasonably current
+  operating environments.</p>
+<p>Most of the e4 Project is &quot;pure&quot; Java code and has no direct dependence
+  on the underlying operating system. The chief dependence is therefore on the
+  Java Platform itself. Portions are targeted to specific classes of operating
+  environments, requiring their source code to only reference facilities available
+  in particular class libraries (e.g. J2ME Foundation 1.0, J2SE 1.3 and 1.4,
+  etc.). In general, the 0.9 release of the Eclipse Project is developed on Java SE 5.</p>
+<p>e4 has dependencies on components from other Eclipse projects, notably the Platform
+project, and the EMF project. While specific version dependencies may specify
+a wider range, e4 is generally built and tested against the versions contained in the 
+Galileo release train.</p>
+<p>There are many different implementations of the Java Platform running atop
+  a variety of operating systems. We focus our testing on a handful of
+  popular combinations of operating system and Java Platform; these are our <em>reference
+  platforms</em>. Eclipse undoubtedly runs fine in many operating environments
+  beyond the reference platforms we test. However, since we do not systematically test
+  them we cannot vouch for them. Problems encountered when running Eclipse on a
+  non-reference platform that cannot be recreated on any reference platform will
+  be given lower priority than problems with running Eclipse on a reference platform.</p>
+<p>e4 also has dependencies on browser technologies such as JavaScript and Flash. The
+reference platforms listed below show the versions of these technologies that we
+are developing and testing against.</p>
+<p>e4 0.9 is tested and validated on the following reference platforms:</p>
+  
+<center>
+  <table border="1" cellpadding="2" cellspacing="2" width="80%" summary="Reference Platforms">
+    <tbody>
+      <tr align="center">
+        <td><b>Reference Platforms</b></td>
+      </tr>
+      <tr>
+        <td><b>Microsoft Windows Vista, x86-32, Win32</b> running (any of):
+          <ul>
+            <li>Sun Java Standard Edition 5 Update 14 for Microsoft Windows</li>
+            <li>IBM 32-bit SDK for Windows, Java 2 Technology Edition 5.0, SR6b</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td><b>Microsoft Windows XP, x86-32, Win32</b> running (any of):
+          <ul>
+            <li>Sun Java Standard Edition 5 Update 14 for Microsoft Windows</li>
+            <li>IBM 32-bit SDK for Windows, Java 2 Technology Edition 5.0, SR6b</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td><b>Red Hat Enterprise Linux 5.0, x86-32, GTK</b> running (any of):
+          <ul>
+            <li>Sun Java Standard Edition 5 Update 14 for Linux x86</li>
+            <li>IBM 32-bit SDK for Linux on Intel architecture, Java 2 Technology Edition 5.0, SR6b</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td><b>Apple Mac OS X 10.5, Universal, Cocoa</b> running:
+          <ul>
+            <li>Apple Java for Mac OS X 10.5, Update 1</li>
+          </ul></td>
+      </tr>
+    </tbody>
+  </table>
+
+</center>
+<p>As stated above, <i>we expect that e4 works fine on other current
+  Java VM and OS versions but we cannot flag these as reference platforms without
+  significant community support for testing them.</i></p>
+
+<h2>2. <a name="Compatibility"></a>Compatibility with Previous Releases</h2>
+<h3>Compatibility of e4 0.9 with previous Eclipse project releases</h3>
+<p>Portions of e4 will be compatible with Eclipse 3.5 (and all earlier 3.x versions).
+However, compatibility is not a primary focus for this initial release of e4, and there
+is no firm promise of compatibility between e4 and earlier Eclipse releases of any kind.
+Compatibility with Eclipse 3.x is anticipated to be a major focus of the subsequent e4 release.
+</p>
+  
+<p><strong>Workspace Compatibility:</strong> e4 0.9 will be upwards
+  workspace-compatible with earlier 3.x versions of the Eclipse SDK unless noted.
+  This means that workspaces and projects created with Eclipse SDK 3.5 .. 3.0 can be successfully
+  opened by e4 0.9 and upgraded to an e4 workspace. This includes both
+  hidden metadata, which is localized to a particular workspace, as well as metadata
+  files found within a workspace project (e.g., the .project file), which may
+  propagate between workspaces via file copying or team repositories. Individual
+  plug-ins developed for e4 0.9 should provide similar upwards compatibility
+  for their hidden and visible workspace metadata created by earlier versions;
+  0.9 plug-in developers are responsible for ensuring that their plug-ins recognize
+  metadata from earlier versions and process it appropriately. User
+  interface session state may be discarded when a workspace is upgraded. Downward
+  workspace compatibility is not supported. A workspace created (or opened) by
+  a product based on e4 0.9 will be unusable with a product based an earlier
+  version of Eclipse. Visible metadata files created (or overwritten) by e4 0.9
+  will generally be unusable with earlier versions of Eclipse. </p>
+  
+<p><strong>Non-compliant usage of API's</strong>: All non-API methods and classes,
+  and certainly everything in a package with &quot;internal&quot; in its name,
+  are considered implementation details which may vary between operating environment
+  and are subject to change without notice. Client plug-ins that directly depend
+  on anything other than what is specified in the Eclipse SDK API are inherently
+  unsupportable and receive no guarantees about compatibility within a single
+  release much less with earlier releases. Refer to
+  <a href="http://www.eclipse.org/articles/Article-API%20use/eclipse-api-usage-rules.html">
+    <em>How to Use the Eclipse API</em>
+  </a> for information about how to write compliant plug-ins. </p>
+
+<h2>3. <a name="Known Issues"></a> Known Issues</h2>
+<blockquote>
+  <a href="#I-General">
+  3.1 General problems</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-General-Startup">3.1.1 Startup</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-General-GCJ">3.1.2 GCJ</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-General-64bitJava">3.1.3 64-bit Java HotSpot(TM) VM</a><br>
+  <a href="#I-Platform">3.2 e4 Compatibility Platform</a><br>
+
+</blockquote>
+<p>Note: Bug numbers refer to the Eclipse project bug database at <a href="http://dev.eclipse.org/bugs/">http://bugs.eclipse.org/bugs/</a></p>
+
+<h3>3.1 <a name="I-General">General problems</a></h3>
+<h3>3.1.1 <a name="I-General-Startup">General - Startup</a></h3>
+<h4>Installation/Configuration issues that can cause Eclipse to fail start</h4>
+<p>Here are some common problems that can cause Eclipse not to start:</p>
+<ul>
+  <li>As shown <a href="#TargetOperatingEnvironments">above</a>, Eclipse e4 0.9 requires 
+    at least a Java SE 5 VM. Perhaps an older version of the VM is being found in 
+    your path. To explicitly specify which VM to run with, use the Eclipse <tt>-vm</tt> 
+    command-line argument. (See also the <a href="#Running Eclipse">Running Eclipse</a> 
+    section below.)</li>
+  <li>
+    Running Eclipse on Gentoo Linux may result in the following error message:
+    <div style="margin-left: 40px;">
+<tt>* run-java-tool is not available for sun-jdk-1.6 on i686<br>* IMPORTANT: some Java tools are not available on some VMs on some architectures</tt>
+    </div>
+
+If this occurs, start Eclipse by specifying a -vm argument, either
+specify the path to a java vm or use: <tt>eclipse -vm `java-config</tt>
+--java` (bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=176021">176021</a>)</li>
+<li>Eclipse must be installed to a clean directory and not installed over top of
+a previous installation. If you have done this then please re-install to a new
+directory. If your workspace is in a child directory of your old installation
+directory, then see the instructions below on "<a href="#upgrading">Upgrading Workspace from a
+Previous Release"</a>.</li>
+
+<li>Java sometimes has difficulty detecting whether a file system is writable. In
+particular, the method java.io.File.canWrite() appears to return true in
+unexpected cases (e.g., using Windows drive sharing where the share is a
+read-only Samba drive). The Eclipse runtime generally needs a writable
+configuration area and as a result of this problem, may erroneously detect the
+current configuration location as writable. The net result is that Eclipse will
+fail to start and depending on the circumstances, may fail to write a log file
+with any details. To work around this, we suggest users experiencing this
+problem set their configuration area explicitly using the <tt>-configuration</tt> command
+line argument. (bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=67719">67719</a>)</li>
+</ul>
+
+<h4><b>Invalid characters in install directory prevents Eclipse from starting</b></h4>
+<p>Eclipse will fail to launch if installed in a directory whose path
+contains certain invalid characters, including :%#&lt;&gt;&quot;!. The
+workaround is to install Eclipse in a directory whose path does not contain
+invalid characters. (bugs <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=3109">3109</a>
+and <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=17281">17281</a>)</p>
+
+<h4>Hanging during class loading when out of permanent generation memory</h4>
+<p>
+The Sun VM may hang indefinitely during class loading if it runs out of permanent
+generation memory.  This will cause CPU usage to stay at 100% until the process
+is ended.  See the section <a href="#Running Eclipse">Running Eclipse</a> for details
+on addressing this VM problem.
+</p>
+
+<h3>3.1.2 <a name="I-General-GCJ">General - GCJ</a></h3>
+<p>GCJ is an effort by the GCC team to provide an open source Java compiler and
+runtime environment to interpret Java bytecode. Unfortunately, the GCJ runtime
+environment is not an environment that is often tested on by Eclipse developers.</p>
+
+<p>The most common problems surrounding GCJ are:</p>
+<ul>
+<li>Eclipse does not start at all</li>
+<li>Eclipse throws a 'java.lang.ClassNotFoundException: org.eclipse.core.runtime.Plugin' that can be found in the logs (located in
+workspace/.metadata/.log)</li>	
+</ul>
+
+<p>The workspace's log file is a good place to check to identify whether GCJ is
+being used or not. Every Eclipse log session is prepended with
+information about the runtime environment that was used to run Eclipse. The log
+may include something like the following:</p>
+
+<code>java.fullversion=GNU libgcj 4.2.1 (Debian 4.2.1-5)</code>
+
+<p>If Eclipse does start, one can check which runtime environment is being used to
+run Eclipse by going to <b>Help &gt; About Eclipse SDK &gt; Installation Details &gt; Configuration</b>. The
+<b>About</b> dialog itself can also provide other information, the build identifier
+can be of particular interest as it is tagged by some distributions. This allows the
+user to identify whether Eclipse was downloaded through the distribution's
+package management system or directly from the eclipse.org website.</p>
+
+Eg: <code>Build id: M20070212-1330 (Ubuntu version: 3.2.2-0ubuntu3)</code>
+
+<p>The two most common workarounds are:</p><ul>
+<li>download the Eclipse binary from eclipse.org directly</li>
+<li>run Eclipse using an alternate Java runtime environment</li></ul>
+
+<p>To download Eclipse, try one of the links below:</p><ul>
+<li><a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a></li>
+<li><a href="http://download.eclipse.org/eclipse/downloads/">http://download.eclipse.org/eclipse/downloads/</a></li></ul>
+
+It is imperative that 64-bit builds are downloaded and used if a 64-bit Java
+runtime environment has been installed. Below are two sample tarball names of
+version 3.5.0 of the Eclipse SDK packaged for 32-bit and 64-bit processors.
+
+<pre>eclipse-SDK-3.5-linux-gtk.tar.gz (32-bit)
+eclipse-SDK-3.5-linux-gtk-x86_64.tar.gz (64-bit)</pre>
+
+<p>To run Eclipse with an alternate Java runtime environment, the path to the Java
+virtual machine's binary must be identified. With an Eclipse installation from
+the distribution, altering the $PATH variable to include the path to the
+alternate Java runtime environment is often not enough as the Eclipse that
+Linux distributions package often performs a scan internally to pick up GCJ by
+itself whilst ignoring what's on the $PATH. An example of the terminal's output
+is shown below:</p>
+
+<code>searching for compatible vm...<br>
+  testing /usr/lib/jvm/java-7-icedtea...not found<br>
+  testing /usr/lib/jvm/java-gcj...found</code>
+
+<p>Once the path to the virtual machine's binary has been identified, try running
+Eclipse with the following command:</p>
+
+<code>./eclipse -vm /path/to/jre/bin/java</code>
+
+<p>For an actual example, it might look something like the following:</p>
+
+<code>./eclipse -vm /usr/lib/jvm/sun-java-6/bin/java<br>
+./eclipse -vm /opt/sun-jdk-1.6.0.02/bin/java</code>
+
+<p>If this seems to solve the problem, it is likely that the problem really was
+related to the use of GCJ as the Java runtime for running Eclipse. The
+eclipse.ini file located within Eclipse's folder can be altered to
+automatically pass this argument to Eclipse at startup. An example of its
+content is presented below:</p>
+
+<code>-showsplash<br>
+org.eclipse.platform<br>
+--launcher.XXMaxPermSize<br>
+256m<br>
+-vm<br>
+/opt/sun-jdk-1.6.0.02/bin/java<br>
+-vmargs<br>
+-Xms40m<br>
+-Xmx512m</code>
+
+<p>Note that every argument must be on its own line. More information about the
+eclipse.ini file can be found at <a href="http://wiki.eclipse.org/Eclipse.ini">http://wiki.eclipse.org/Eclipse.ini</a>.</p>
+
+<p>If problems persists after downloading an installation of Eclipse from
+eclipse.org and using a supported Java runtime environment (a list of which may be found <a href="#TargetOperatingEnvironments">above</a>), 
+you can seek further assistance through the <a href="http://www.eclipse.org/newsgroups/">newsgroups</a>, 
+the IRC <a href="irc://irc.freenode.net/#eclipse">channel</a>, 
+and/or <a href="https://bugs.eclipse.org/bugs/">bugzilla</a>.
+</p>
+
+<h3>3.1.3 <a name="I-General-64bitJava">General - 64-bit Java HotSpot(TM) VM</a></h3>
+<p>
+There is a known issue with the Java HotSpot(TM) 1.6.0 VM compiler which causes eclipse to 
+crash (see Sun bug <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6614100">http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6614100</a>,
+and Eclipse bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=214092">214092</a>).
+The crash usually occurs within a VM CompilerThread when attempting to compile the method org.eclipse.core.internal.dtree.DataTreeNode.forwardDeltaWith.
+</p>
+<p>
+This problem has been addressed in Sun Java 6 update 11, so the simplest resolution is
+to obtain the latest JRE release for your platform.
+To work around the issue you can exclude the method org.eclipse.core.internal.dtree.DataTreeNode.forwardDeltaWith from being compiled with the following
+VM argument:
+</p>
+
+<code>
+-XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith
+</code>
+
+<p>
+This VM argument can be placed in the eclipse.ini file after the -vmargs line like the following:
+</p>
+
+<code>
+-startup<br>
+plugins/org.eclipse.equinox.launcher.win32.win32.x86_1.0.200.v20090306-1900<br>
+--launcher.library<br>
+plugins/org.eclipse.equinox.launcher_1.0.200.v20090429-1630.jar<br>
+-showsplash<br>
+org.eclipse.platform<br>
+--launcher.XXMaxPermSize<br>
+256m<br>
+-vmargs<br>
+-XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith<br>
+-Xms40m<br>
+-Xmx256m<br>
+</code>
+
+<p>
+There have been reports of other classes that cause the compiler to crash.  If all else fails you can 
+disable the compiler with the VM arg &quot;-Xint&quot;. 
+</p>
+
+<h3>3.2 <a name="I-Platform">e4 Compatibility Platform</a></h3>
+<h4>Web UI does not work on Mac OS X</h4>
+ On Mac OS X, the embedded web UI does not currently work due to a Jetty configuration problem. 
+ As a workaround, add "-Dorg.eclipse.equinox.http.jetty.http.port=8080" to the end of the eclipse.ini file.
+</body>
+</html>
+
