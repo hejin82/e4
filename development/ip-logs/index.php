@@ -39,13 +39,13 @@ ob_start();
 		Eclipse Development Process</a> documentation.</p>
 		<div class="homeitem3col">
 			<h3>Current IP Log</h3>
-			<p>To see a draft IP log for the Eclipse project release currently under development,
+			<p>To see a draft IP log for the e4 project release currently under development,
 			view the <a href="http://www.eclipse.org/projects/ip_log.php?projectid=eclipse.e4">auto-generated IP log</a>.
 			Note the auto-generated log has not been reviewed for accuracy or approved by the Eclipse Foundation legal team.
 		</div>
 		<div class="homeitem3col">
 			<h3>IP Logs For Past Releases</h3>
-			<p>The following are approved IP logs for past Eclipse project releases.</p>
+			<p>The following are approved IP logs for past e4 project releases.</p>
 			<ul>
 				<li><a href="e4_iplog_0.9.php">e4 0.9 release (July 30, 2009)</a></li>
 			</ul>
