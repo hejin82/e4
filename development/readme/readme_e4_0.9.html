@@ -368,6 +368,7 @@ only be used when running on Carbon.
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Photo">4.2.1 Photo demo application</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Contacts">4.2.2 Contacts demo application</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Flex">4.2.3 SWT Flex examples</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-CSS">4.2.4 Customizing the workbench style</a><br>
 
 </blockquote>
 
@@ -619,5 +620,36 @@ running plugins, the SWT port itself and example code).
 <p>
 For more information on working with e4 SWT, visit the 
 <a href="http://wiki.eclipse.org/E4/SWT/Running_the_demos">e4 SWT Demos</a> wiki page.
+
+<h3>4.2.4 <a name="R-Demos-CSS">Customizing the workbench style</a></h3>
+<p>
+You can experiment with the e4 declarative styling support by manipulating the stylesheet
+for the e4 compatibility platform itself. If you've downloaded the e4 SDK, you can find it on disk in: 
+</p>
+<p>
+<code>
+&nbsp;&nbsp;&nbsp;eclipse\plugins\org.eclipse.e4.ui.examples.legacy.workbench_0.9.0.vSomeBuildDate\css\webby.css 
+</code>
+</p>
+<p>
+Changes in the style sheet will be picked up in the self hosting workbench but you need 
+to tell it that the style sheet changed.  To do so, click <b>Window &gt; Reload Style Sheet</b>.
+This will re-read the style sheet in and update the UI.  Thus you can modify the style 
+sheet on disk and then click the menu to live update the workbench look.  You don't need to restart Eclipse.
+</p>
+<p>
+If you decide to create a new CSS file, you''ll need to change the following property in 
+<tt>org.eclipse.e4.ui.examples.legacy.workbench/plugin.xml</tt>:
+</p>
+<p>
+<code> 
+&nbsp;&nbsp;&nbsp;&lt;property<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="applicationCSS" <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="platform:/plugin/org.eclipse.e4.ui.examples.legacy.workbench/css/webby.css"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;/property&gt;<br>
+</code>
+</p>
+to point to your new file.  This of course will require a restart in order to be picked up.</p>
+
 </body>
 </html>
