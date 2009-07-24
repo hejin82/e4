@@ -56,8 +56,7 @@ ob_start();
 		<div class="homeitem3col">
 			<h3>e4 Components</h3>
 			<p>The e4 subproject is broken down into components. Each component operates 
-				like a project unto its own, with its own set of committers, bug categories 
-				and mailing lists.
+				like a project unto its own, with its own CVS folders and bugzilla categories.
 			</p>
 	      <table width="100%" border="0">
 	        <tr> 
@@ -75,6 +74,14 @@ ob_start();
 	        <tr> 
 	          <td width="20%" valign="top">UI</td>
 	          <td width="82%">Platform user interface</td>
+	        </tr>
+	        <tr> 
+	          <td width="20%" valign="top">Languages</td>
+	          <td width="82%">Framework pieces for creating bundles in other languages, such as JavaScript</td>
+	        </tr>
+	        <tr> 
+	          <td width="20%" valign="top">XWT</td>
+	          <td width="82%">Declarative toolkit for writing SWT/JFace user interface components in XML</td>
 	        </tr>
 	      </table>
 		</div>
