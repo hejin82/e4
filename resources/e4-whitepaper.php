@@ -34,7 +34,7 @@ ob_start();
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
 		<p><font size="-1"><?= $pageAuthor ?><br>
-		Revision: 0.9. Last modified July 22, 2009.</font></p>
+		Revision: 0.9. Last modified July 27, 2009.</font></p>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
@@ -193,7 +193,7 @@ ob_start();
 		 	can either be registered and removed programmatically, or via OSGi declarative
 		 	services. Declarative services allow the service instantiation to be delayed until
 		 	required by some client. Of course, there are a wide variety of helper frameworks
-		 	that can be used for publishing OSGi services, such as Spring, iPOJO, Peaberry, etc.
+		 	that can be used for publishing OSGi services, such as Spring DM, iPOJO, Peaberry, etc.
 		 	By using OSGi services as the foundation for service publication, all of these frameworks
 		 	can be used seamlessly in e4.
 		 	</p>
@@ -651,7 +651,7 @@ ob_start();
 		<div class="sideitem">
 			<h6>Whitepaper</h6>
 				<ul>
-					<li><a href="e4-whitepaper-20090724.pdf">PDF Version</a></li>
+					<li><a href="e4-whitepaper-20090727.pdf">PDF Version</a></li>
 				</ul>
 			</h6>
 		</div>
