@@ -148,6 +148,7 @@ Compatibility with Eclipse 3.x is anticipated to be a major focus of the subsequ
   <a href="#I-Platform">3.2 e4 Compatibility Platform</a><br>
   <a href="#I-Components">3.3 e4 Components</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-Components-XWT">3.3.1 XWT</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-Components-SWT">3.3.2 SWT</a><br>
 
 </blockquote>
 <p>Note: Bug numbers refer to the Eclipse project bug database at <a href="http://dev.eclipse.org/bugs/">http://bugs.eclipse.org/bugs/</a></p>
@@ -341,7 +342,7 @@ disable the compiler with the VM arg &quot;-Xint&quot;.
 <h4>Workbench layout is not restored</h4>
 <p>
 When you shutdown and restart the workbench, any changes you made to the workbench
-layout are not persisted. The e4 compatibility workbench always opens in the default
+layout are not persisted. The e4 compatibility platform always opens in the default
 perspective with the default layout.
 </p>
  
@@ -351,13 +352,34 @@ perspective with the default layout.
  As a workaround, add "-Dorg.eclipse.equinox.http.jetty.http.port=8080" to the end of the eclipse.ini file.
  (bug <a href="https://bugs.eclipse.org/284433">284433</a>).
  </p>
- 
+
+<h4>Debugging with multiple copies of a source editor open</h4>
+<p>
+When hitting a debug breakpoint, if the source editor has already been open in
+a non-debug perspective, the duplicate source editor might not appear in the
+debug perspective or might not get scrolled to the breakpoint location. 
+</p>
+<p>
+This problem should be eliminated once the support for shared model parts is
+implemented. For details please see bug <a href="https://bugs.eclipse.org/284610">284610</a>.
+</p>
+
+
+
  <h3>3.3 <a name="I-Components">e4 Components</a></h3>
 <h3>3.3.1 <a name="I-Components-XWT">XWT</a></h3>
 <h4>XWT Editor does not support Cocoa</h4>
 <p>
 On Mac OS X, the XWT editor does not currently support Cocoa. The XWT editor can
 only be used when running on Carbon.
+</p>
+
+<h3>3.3.2 <a name="I-Components-SWT">SWT</a></h3>
+<h4>SWT/BE only available on Flex</h4>
+<p>
+Although there has been some work on porting SWT/BE to both JavaScript/Dojo and
+Silverlight, the 0.9 release only includes support for the ActionScript/Flex port. Other
+ports may become available in the future depending on level of interest.
 </p>
 
 <h2>4. <a name="Running Eclipse">Running Eclipse</a></h2>
