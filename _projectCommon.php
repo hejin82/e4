@@ -44,13 +44,6 @@ $rightcolumn = <<<EOHTML
 
 	<div id="rightcolumn">
 		<div class="sideitem">
-			<h6>EclipseCon 2009</h6>
-			<center>
-			<a href="http://www.eclipsecon.org/2009/"><img border="0" src="http://www.eclipsecon.org/2009/static/image/100x100_speaking.gif"
- height="100" width="100" alt="I'm speaking at EclipseCon 2009"/></a>
-			</center>
-      	</div>		
-		<div class="sideitem">
 			<h6>Incubation Phase</h6>
 			<center>
 					<a href="/projects/what-is-incubation.php"><img 
