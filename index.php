@@ -72,15 +72,15 @@ ob_start();
 	          <td width="82%">Standard Widget Toolkit</td>
 	        </tr>
 	        <tr> 
-	          <td width="20%" valign="top">UI</td>
+	          <td width="20%" valign="top"><b>UI</b></td>
 	          <td width="82%">Platform user interface</td>
 	        </tr>
 	        <tr> 
-	          <td width="20%" valign="top">Languages</td>
+	          <td width="20%" valign="top"><b>Languages</b></td>
 	          <td width="82%">Framework pieces for creating bundles in other languages, such as JavaScript</td>
 	        </tr>
 	        <tr> 
-	          <td width="20%" valign="top">XWT</td>
+	          <td width="20%" valign="top"><b>XWT</b></td>
 	          <td width="82%">Declarative toolkit for writing SWT/JFace user interface components in XML</td>
 	        </tr>
 	      </table>
