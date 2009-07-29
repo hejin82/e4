@@ -51,6 +51,10 @@ ob_start();
 				wiki also provides more detailed planning information, and a variety of
 				channels for communicating with the e4 developers.
       	   </li>
+      	   <li><a href="http://wwwi.eclipse.org/e4/resources/e4-whitepaper.php">e4 white paper</a><br>
+      	   		The e4 white paper provides a detailed technical overview of the active areas of
+      	   		exploration in the e4 project at the time of the e4 0.9 technology preview release.
+      	   </li>
       	 </ul>
 		</div>
 		<div class="homeitem3col">
