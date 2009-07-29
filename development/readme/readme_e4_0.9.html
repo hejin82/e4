@@ -410,7 +410,7 @@ bug <a href="https://bugs.eclipse.org/285014">285014</a>.
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Contacts">4.2.2 Contacts demo application</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Flex">4.2.3 SWT Flex examples</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-CSS">4.2.4 Customizing the workbench style</a><br>
-
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Model">4.2.5 Manipulating the workbench model</a><br>
 </blockquote>
 
 <h3>4.1 <a name="R-General">Running the e4 SDK</a></h3>
@@ -715,6 +715,17 @@ If you decide to create a new CSS file, you''ll need to change the following pro
 to point to your new file.  This of course will require a restart in order to be picked up.
 For more details on what CSS properties are supported for various widgets, see
 the <a href="http://wiki.eclipse.org/E4/CSS/SWT_Mapping">CSS SWT Mapping</a> wiki page.</p>
+
+<h3>4.2.5 <a name="R-Demos-Model">Manipulating the workbench model</a></h3>
+<p>
+You can experiment with the e4 modeled workbench by browsing and manipulating
+the model of the compatibility platform itself. When the compatibility platform is running,
+select <b>e4 &gt; UI Editor</b> from the top level menu. This opens the e4 workbench
+model editor. You can browse through the structure of the workbench itself in the top
+pane. Try finding a perspective or view and changing its name, tooltip, or other properties
+in the <b>Basic</b> and <b>Advanced</b> tabs at the bottom. Notice how model
+changes are reflected immediately in the workbench window state underneath!
+</p>
 
 </body>
 </html>
