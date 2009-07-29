@@ -92,10 +92,10 @@ ob_start();
 			<h6>The 0.9 Release is Available!</h6>
 			<ul>
 				<li><a href="http://download.eclipse.org/e4/">Download it</a></li>
-				<li><a href="http://download.eclipse.org/e4/resources/e4-whitepaper.php">Read the white paper</a></li>
+				<li><a href="http://www.eclipse.org/e4/resources/e4-whitepaper.php">Read the white paper</a></li>
 				<li><a href="http://download.eclipse.org/e4/">Read the New &amp; Noteworthy</a></li>
 				<li><a href="http://www.eclipse.org/org/press-release/20090731_e4alpha.php">Read the press release</a></li>
-				<li><a href="http://eclipse.org/e4/development/readme/readme_e4_0.9.html#R-Demos">Run the demos</a></li>
+				<li><a href="http://www.eclipse.org/e4/development/readme/readme_e4_0.9.html#R-Demos">Run the demos</a></li>
       		</ul>				
 		</div>
 	</div>
