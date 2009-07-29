@@ -98,7 +98,7 @@ ob_start();
 				<li><a href="http://www.eclipse.org/e4/development/readme/readme_e4_0.9.html#R-Demos">Run the demos</a></li>
 				<li><a href="http://www.eclipse.org/community/e4webinar/abstracts.php">Watch the Webinars</a></li>
       		</ul>
-      		<img width="100" src="resources/images/0.9-splash.png"/>
+      		<img width="200" src="resources/images/0.9-splash.png"/>
 		</div>
 	</div>
 	
