@@ -369,7 +369,7 @@ implemented. For details please see bug <a href="https://bugs.eclipse.org/284610
 <h4>Views have missing toolbar buttons</h4>
 <p>
 The Outline view is missing its toolbar buttons, and the Synchronize view only opens with
-2 buttons.  Closing and then re-opening the Synchronize view after a sync operation will
+two buttons.  Closing and then re-opening the Synchronize view after a sync operation will
 restore its buttons. (bug <a href="https://bugs.eclipse.org/284387">284387</a>).
 </p>
 
@@ -519,6 +519,23 @@ install area. To achieve this, after unzipping Eclipse distribution, run Eclipse
 option from an account that has a write access to the install directory.</p>
 
 <h3>4.2 <a name="R-Demos">Running the e4 demo applications</a></h3>
+<h4 id="R-Demos-Loading">Loading the example projects</h4>
+<p>The e4 compatibility platform includes a special menu item for quickly getting
+setup to run the e4 sample projects. To use it, do the following:
+</p>
+<ol>
+	<li>Start the e4 compatibility platform.</li>
+	<li>Select <b>e4 &gt; Generate e4 Example Project</b> from the top level menu.</li>
+	<li>A project called <tt>org.eclipse.e4.examples.psf</tt> will be created. Select the
+	file <tt>e4-examples.psf</tt> in this project, and click <b>Import Project Set...</b>
+	in the context menu.</li>
+	<li>If prompted for a username/password, enter a username of &quot;anonymous&quot;
+	and leave the password field blank.</li>
+</ol>
+<p>
+These steps will load the source code of the e4 sample applications into your workspace.
+To launch and work with the demos, see the following readme sections.
+</p>
 <h3>4.2.1 <a name="R-Demos-Photo">Photo demo application</a></h3>
 <p>
 The e4 photo demo is a simple application that illustrates various concepts of the e4
@@ -530,7 +547,9 @@ architecture:
 	<li>Custom view presentation using CSS</li>
 </ul>
 <p>
-Perform the following to install and run the e4 photo demo:
+Perform the following to install and run the e4 photo demo. Note that steps 1-6 can
+be skipped if the steps for <a href="#R-Demos-Loading">Loading the example projects</a>
+above are followed.
 </p>
 <ol>
 	<li>Start the e4 compatibility platform with an empty workspace directory.</li>
@@ -565,7 +584,9 @@ architecture:
 	<li>Data binding</li>
 </ul>
 <p>
-Perform the following to install and run the e4 contacts demo:
+Perform the following to install and run the e4 contacts demo. Note that steps 1-6 can
+be skipped if the steps for <a href="#R-Demos-Loading">Loading the example projects</a>
+above are followed.
 </p>
 <ol>
 	<li>Start the e4 compatibility platform with an empty workspace directory.</li>
