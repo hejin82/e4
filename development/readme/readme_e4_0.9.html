@@ -149,6 +149,7 @@ Compatibility with Eclipse 3.x is anticipated to be a major focus of the subsequ
   <a href="#I-Components">3.3 e4 Components</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-Components-XWT">3.3.1 XWT</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-Components-SWT">3.3.2 SWT</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#I-Components-Styling">3.3.3 Declarative Styling</a><br>
   <a href="#I-Demos">3.4 e4 Demos</a><br>
 
 </blockquote>
@@ -373,8 +374,6 @@ two buttons.  Closing and then re-opening the Synchronize view after a sync oper
 restore its buttons. (bug <a href="https://bugs.eclipse.org/284387">284387</a>).
 </p>
 
-
-
  <h3>3.3 <a name="I-Components">e4 Components</a></h3>
 <h3>3.3.1 <a name="I-Components-XWT">XWT</a></h3>
 <h4>XWT Editor does not support Cocoa</h4>
@@ -389,6 +388,25 @@ only be used when running on Carbon.
 Although there has been some work on porting SWT/BE to both JavaScript/Dojo and
 Silverlight, the 0.9 release only includes support for the ActionScript/Flex port. Other
 ports may become available in the future depending on level of interest.
+</p>
+
+<h3>3.3.3 <a name="I-Components-Styling">Declarative Styling</a></h3>
+
+<h4>ETabFolder body / tab keylines don't line up</h4>
+<p>
+Although the top and bottom border colors of the ETabFolder can be set
+differently, e.g.
+</p>
+<code>
+&nbsp;&nbsp;ETabFolder {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-top-color: rgb(246, 246, 251);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-bottom-color: rgb(201, 200, 204);<br>
+&nbsp;&nbsp;}<br>
+</code>
+<p>
+The lines don't match up quite right. Thus in practice, you should just use
+<tt>border-color:</tt>.  However, if you wish to experiment with this, there is a patch
+in bug <a href="https://bugs.eclipse.org/283882">283882</a> to fix this.
 </p>
 
 <h3>3.4 <a name="I-Demos">e4 Demos</a></h3>
