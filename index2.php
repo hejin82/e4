@@ -102,6 +102,8 @@ ob_start();
 		</div>
 	</div>
 	
+	<?= $rightcolumn ?>
+	
 <?php
 	$html = ob_get_contents();
 	ob_end_clean();
