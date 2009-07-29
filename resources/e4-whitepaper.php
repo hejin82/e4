@@ -1,13 +1,13 @@
 <?php  																														require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	$App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());    # All on the same line to unclutter the user's desktop'
 	#
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "Whitepaper: e4 Technical Overview";
+	$pageTitle 		= "White Paper: e4 Technical Overview";
 	$pageKeywords	= "Eclipse, e4, white paper";
 	$pageAuthor		= "John Arthorne, IBM Canada Inc.";
 	
 	# Add page-specific Nav bars here
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
-	$Nav->addNavSeparator("e4 Whitepaper", "e4-whitepaper.php");
+	$Nav->addNavSeparator("e4 White Paper", "e4-whitepaper.php");
 	$Nav->addCustomNav("What is e4?", "#whatise4", "_self", 3);
 	$Nav->addCustomNav("Programming Model", "#programming-model", "_self", 3);
 	$Nav->addCustomNav("Modeled User Interface", "#gui-model", "_self", 3);
