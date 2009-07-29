@@ -345,6 +345,7 @@ disable the compiler with the VM arg &quot;-Xint&quot;.
 When you shutdown and restart the workbench, any changes you made to the workbench
 layout are not persisted. The e4 compatibility platform always opens in the default
 perspective with the default layout.
+(bug <a href="https://bugs.eclipse.org/284473">284473</a>).
 </p>
  
 <h4>Web UI does not work on Mac OS X</h4>
@@ -363,6 +364,13 @@ debug perspective or might not get scrolled to the breakpoint location.
 <p>
 This problem should be eliminated once the support for shared model parts is
 implemented. For details please see bug <a href="https://bugs.eclipse.org/284610">284610</a>.
+</p>
+
+<h4>Views have missing toolbar buttons</h4>
+<p>
+The Outline view is missing its toolbar buttons, and the Synchronize view only opens with
+2 buttons.  Closing and then re-opening the Synchronize view after a sync operation will
+restore its buttons. (bug <a href="https://bugs.eclipse.org/284387">284387</a>).
 </p>
 
 
