@@ -97,8 +97,8 @@ ob_start();
 				<li><a href="http://www.eclipse.org/org/press-release/20090731_e4alpha.php">Read the press release</a></li>
 				<li><a href="http://www.eclipse.org/e4/development/readme/readme_e4_0.9.html#R-Demos">Run the demos</a></li>
 				<li><a href="http://www.eclipse.org/community/e4webinar/abstracts.php">Watch the Webinars</a></li>
-
-      		</ul>				
+      		</ul>
+      		<img src="resources/images/0.9-splash.png"/>
 		</div>
 	</div>
 	
