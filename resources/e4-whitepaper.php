@@ -651,7 +651,7 @@ ob_start();
 		<div class="sideitem">
 			<h6>Whitepaper</h6>
 				<ul>
-					<li><a href="e4-whitepaper-20090727.pdf">PDF Version</a></li>
+					<li><a href="e4-whitepaper-20090729.pdf">PDF Version</a></li>
 				</ul>
 			</h6>
 		</div>
