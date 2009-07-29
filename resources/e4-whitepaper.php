@@ -34,7 +34,7 @@ ob_start();
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
 		<p><font size="-1"><?= $pageAuthor ?><br>
-		Revision: 0.9. Last modified July 27, 2009.</font></p>
+		Revision: 0.9. Last modified July 29, 2009.</font></p>
 		<h3><strong>Executive Summary</strong></h3>
 			<p>
 		      The Eclipse platform was first targeted at building an extensible IDE component 
@@ -75,8 +75,8 @@ ob_start();
 			and technologies that can be seamlessly integrated into the Eclipse runtime.
 			Both of these approaches are taken in e4, through several avenues of exploration:</p>
 			<ul>
-				<li>A new programming model that aggressively avoids components reaching 
-				out to, or making assumptions about their application container.</li>
+				<li>A service-oriented programming model, based on OSGi, that provides 
+				better isolation of software components from their surrounding environment.</li>
 				<li>The GUI is represented as a uniform model that can be generically queried, 
 				manipulated, tooled, and extended, allowing for rapid design and customization of the user 
 				interface with little or no coding effort.</li>
