@@ -346,7 +346,8 @@ disable the compiler with the VM arg &quot;-Xint&quot;.
 When you shutdown and restart the workbench, any changes you made to the workbench
 layout are not persisted. The e4 compatibility platform always opens in the default
 perspective with the default layout.
-(bug <a href="https://bugs.eclipse.org/284473">284473</a>).
+(bug <a href="https://bugs.eclipse.org/284473">284473</a>).  As a side effect, you
+will sometimes see errors when closing the workbench, but they won't cause problems.
 </p>
  
 <h4>Web UI does not work on Mac OS X</h4>
@@ -394,9 +395,11 @@ When there is only one perspective open, it cannot be closed. The workaround is 
 open another perspective before closing the one you no longer want to use (bug <a href="https://bugs.eclipse.org/285081">285081</a>).
 </p>
 
-<h4>Cannot open an internal browser view or editor</h4>
+<h4>Cannot open a file in the internal web browser editor</h4>
 <p>
-As a workaround eclipse will open the file or URL in an external browser.
+You can open the Interal Web Browser view, but if you double-click on a file
+in the Package Explorer or use Open the file will be opened in an
+external web browser.
 (bug <a href="https://bugs.eclipse.org/284050">284050</a>).
 </p>
 
