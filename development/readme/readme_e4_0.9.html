@@ -374,11 +374,41 @@ two buttons.  Closing and then re-opening the Synchronize view after a sync oper
 restore its buttons. (bug <a href="https://bugs.eclipse.org/284387">284387</a>).
 </p>
 
+<h4>No main toolbar</h4>
+<p>
+The main menu is available, but support for the main toolbar is not currently hooked up. 
+(bug <a href="https://bugs.eclipse.org/269269">269269</a>).
+</p>
+
+<h4>Cannot open second Console or Properties views</h4>
+<p>
+Multi-instance views such as the Console or Properties view cannot be opened
+or the second view functions incorrectly.  Please see bug 
+<a href="https://bugs.eclipse.org/279807">279807</a> for details.
+</p>
+
+
 <h4>Cannot close the last perspective</h4>
 <p>
 When there is only one perspective open, it cannot be closed. The workaround is to
 open another perspective before closing the one you no longer want to use (bug <a href="https://bugs.eclipse.org/285081">285081</a>).
 </p>
+
+<h4>Cannot open an internal browser view or editor</h4>
+<p>
+As a workaround eclipse will open the file or URL in an external browser.
+(bug <a href="https://bugs.eclipse.org/284050">284050</a>).
+</p>
+
+<h4>Cannot type in a editor sometimes after clicking on a tab</h4>
+<p>
+Sometimes if you switch editors by clicking on the tab, focus goes to the tab
+and you can't type in the editor.  The workaround is to &lt;TAB&gt; (which will move
+focus into the editor) or simply click in the editor.
+(bug <a href="https://bugs.eclipse.org/285001">285001</a>).
+</p>
+
+
 
  <h3>3.3 <a name="I-Components">e4 Components</a></h3>
 <h3>3.3.1 <a name="I-Components-XWT">XWT</a></h3>
