@@ -385,7 +385,7 @@ open another perspective before closing the one you no longer want to use (bug <
 <h4>XWT Editor does not support Cocoa</h4>
 <p>
 On Mac OS X, the XWT editor does not currently support Cocoa. The XWT editor can
-only be used when running on Carbon.
+only be used when running on Carbon (bug <a href="https://bugs.eclipse.org/282358">282358</a>).
 </p>
 
 <h3>3.3.2 <a name="I-Components-SWT">SWT</a></h3>
@@ -436,6 +436,7 @@ bug <a href="https://bugs.eclipse.org/285014">285014</a>.
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-CSS">4.2.4 Customizing the workbench style</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-Model">4.2.5 Manipulating the workbench model</a><br>
   &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-RAP">4.2.6 e4 RAP integration</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp; <a href="#R-Demos-XWT">4.2.7 e4 XWT integration</a><br>
 </blockquote>
 
 <h3>4.1 <a name="R-General">Running the e4 SDK</a></h3>
@@ -580,7 +581,7 @@ above are followed.
 	<li>Start the e4 compatibility platform with an empty workspace directory.</li>
 	<li>Select <b>File &gt; Import...</b> and select <b>CVS &gt; Projects from CVS</b>, click <b>Next</b>.</li>
 	<li>Enter the e4 repository information. Host: dev.eclipse.org, Repository path: /cvsroot/eclipse, User: anonymous, Connection type: pserver.</li>
-	<li>Click <b>Next</b> and select the second option Use an existing module.</li>
+	<li>Click <b>Next</b> and select the second option, <b>Use an existing module</b>.</li>
 	<li>Drill down as follows: <b>e4 &gt; org.eclipse.e4.ui &gt; examples</b> and select <b>org.eclipse.e4.demo.e4photo</b>. Click <b>Next</b>.</li>
 	<li>Important: Do not click Finish just yet. Advance to the last wizard page using <b>Next</b>, then click <b>Refresh Tags</b>. Select <b>R0_9</b> and click <b>Finish</b>.</li>
 	<li>This will check out one project into your workspace. Expand the project in the <b>Package Explorer</b> and open the e4photo.product file.</li>
@@ -617,7 +618,7 @@ above are followed.
 	<li>Start the e4 compatibility platform with an empty workspace directory.</li>
 	<li>Select <b>File &gt; Import...</b> and select <b>CVS &gt; Projects from CVS</b>, click <b>Next</b>.</li>
 	<li>Enter the e4 repository information. Host: dev.eclipse.org, Repository path: /cvsroot/eclipse, User: anonymous, Connection type: pserver.</li>
-	<li>Click <b>Next</b> and select the second option Use an existing module.</li>
+	<li>Click <b>Next</b> and select the second option, <b>Use an existing module</b>.</li>
 	<li>Drill down as follows: <b>e4 &gt; org.eclipse.e4.ui &gt; examples</b> and select <b>org.eclipse.e4.demo.contacts</b>. Click <b>Next</b>.</li>
 	<li>Important: Do not click Finish just yet. Advance to the last wizard page using <b>Next</b>, then click <b>Refresh Tags</b>. Select <b>R0_9</b> and click <b>Finish</b>.</li>
 	<li>This will check out one project into your workspace. Expand the project in the <b>Package Explorer</b> and open the contacts.product file.</li>
@@ -760,5 +761,29 @@ see the <a href="http://wiki.eclipse.org/E4/RAP_Integration/Experimental">e4 RAP
 Also see the e4 demos running on RAP <a href="http://www.eclipse.org/rap/demos.php">here</a>.
 </p>
 
+<h3>4.2.7 <a name="R-Demos-XWT">e4 XWT integration</a></h3>
+<p>
+This release includes an initial integration between XWT and e4. This integration
+supports CSS Styling out-of-the-box and provides some facilities for communication
+between e4 and XWT events, and between e4 contexts and XWT data binding.
+</p>
+<p>
+XWT versions of the e4 contacts and photo demos are also available. To load these
+demos, perform the following:
+</p>
+<ol>
+	<li>Start the e4 compatibility platform with an empty workspace directory.</li>
+	<li>Select <b>File &gt; Import...</b> and select <b>CVS &gt; Projects from CVS</b>, click <b>Next</b>.</li>
+	<li>Enter the e4 repository information. Host: dev.eclipse.org, Repository path: /cvsroot/eclipse, User: anonymous, Connection type: pserver.</li>
+	<li>Click <b>Next</b> and select the second option, <b>Use an existing module</b>.</li>
+	<li>Drill down as follows: <b>e4 &gt; org.eclipse.e4.xwt &gt; examples</b> and select <b>org.eclipse.e4.demo.contacts</b> or <b>org.eclipse.e4.demo.photos</b>. Click <b>Next</b>.</li>
+	<li>Important: Do not click Finish just yet. Advance to the last wizard page using <b>Next</b>, then click <b>Refresh Tags</b>. Select <b>R0_9</b> and click <b>Finish</b>.</li>
+	<li>This will check out one project into your workspace. Expand the project in the <b>Package Explorer</b> and open the e4photo.product file.</li>
+	<li>Click on the link <b>Launch an Eclipse Application</b> at the bottom left of the e4photo.product file editor.</li>
+</ol>
+<p>
+For more details on running e4 with XWT, see the XWT <a href="http://wiki.eclipse.org/E4/XWT">wiki page</a>,
+and the XWT <a href="http://wiki.eclipse.org/E4/XWT/Running_the_demos">demos wiki page</a>.
+</p>
 </body>
 </html>
