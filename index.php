@@ -51,6 +51,10 @@ ob_start();
 				wiki also provides more detailed planning information, and a variety of
 				channels for communicating with the e4 developers.
       	   </li>
+      	   <li><a href="http://wwwi.eclipse.org/e4/resources/e4-whitepaper.php">e4 white paper</a><br>
+      	   		The e4 white paper provides a detailed technical overview of the active areas of
+      	   		exploration in the e4 project at the time of the e4 0.9 technology preview release.
+      	   </li>
       	 </ul>
 		</div>
 		<div class="homeitem3col">
@@ -84,6 +88,21 @@ ob_start();
 	          <td width="82%">Declarative toolkit for writing SWT/JFace user interface components in XML</td>
 	        </tr>
 	      </table>
+		</div>
+	</div>
+	
+	<div id="rightcolumn">
+		<div class="sideitem">
+			<h6>The 0.9 Release is Available!</h6>
+			<ul>
+				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.9-200907291930/index.html">Download it</a></li>
+				<li><a href="http://www.eclipse.org/e4/resources/e4-whitepaper.php">Read the white paper</a></li>
+				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.9-200907291930/e4-news-all.html">Browse the new &amp; noteworthy</a></li>
+				<li><a href="http://www.eclipse.org/org/press-release/20090731_e4alpha.php">See the press release</a></li>
+				<li><a href="http://www.eclipse.org/e4/development/readme/readme_e4_0.9.html#R-Demos">Run the demos</a></li>
+				<li><a href="http://www.eclipse.org/community/e4webinar/abstracts.php">Watch the webinars</a></li>
+      		</ul>
+      		<img width="200" src="resources/images/0.9-splash.png"/>
 		</div>
 	</div>
 	
