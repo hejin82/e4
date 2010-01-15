@@ -17,7 +17,7 @@
 <div>
 
 <p>
-Last revised 16:00 ET January 15, 2010.
+Last revised 17:00 ET January 15, 2010.
 </p>
 <p><i>Please send comments about this plan to the</i> <a href="mailto:e4-dev@eclipse.org">e4-dev@eclipse.org</a> <i>developer
   mailing list.</i>
@@ -230,7 +230,6 @@ are developing and testing against.</p>
   BIDI locales are supported by e4 everywhere but on Motif.</p>
 <p>e4 supports GB 18030 (level 1), the Chinese code page standard,
   on Windows XP and 2000, Linux/GTK and the Macintosh.</p>
-<p>German and Japanese locales are tested.</p>
 </p:internationalization>
 
 </p:target_environments>
@@ -241,34 +240,24 @@ are developing and testing against.</p>
 <div>
 
 <h3>Compatibility of e4 1.0 with previous Eclipse project releases</h3>
-<p>Portions of e4 will be compatible with Eclipse 3.5 (and all earlier 3.x versions).
-However, compatibility is not a primary focus for this initial release of e4, and there
-is no firm promise of compatibility between e4 and earlier Eclipse releases of any kind.
-Compatibility with Eclipse 3.x is anticipated to be a major focus of the subsequent e4 release.
+<p>e4 1.0 will not be compatible with previous releases of e4, such as the e4 0.9 release.
+This includes binary compatibility, contract compatibility, workbench model compatibility,
+and workspace compatibility.
 </p>
-  
-<p><strong>Workspace Compatibility:</strong> e4 1.0 will be upwards
-  workspace-compatible with ealier 3.x versions of the Eclipse SDK unless noted.
-  This means that workspaces and projects created with Eclipse SDK 3.4 .. 3.0 can be successfully
-  opened by e4 1.0 and upgraded to an e4 workspace. This includes both
-  hidden metadata, which is localized to a particular workspace, as well as metadata
-  files found within a workspace project (e.g., the .project file), which may
-  propagate between workspaces via file copying or team repositories. Individual
-  plug-ins developed for e4 1.0 should provide similar upwards compatibility
-  for their hidden and visible workspace metadata created by earlier versions;
-  1.0 plug-in developers are responsible for ensuring that their plug-ins recognize
-  metadata from earlier versions and process it appropriately. User
-  interface session state may be discarded when a workspace is upgraded. Downward
-  workspace compatibility is not supported. A workspace created (or opened) by
-  a product based on e4 1.0 will be unusable with a product based an earlier
-  version of Eclipse. Visible metadata files created (or overwritten) by e4 1.0
-  will generally be unusable with earlier versions of Eclipse. </p>
+<p>
+e4 1.0 includes a set of bundles that are binary and API contract compatible with Eclipse Platform UI
+API from the Eclipse Helios (3.6) release. This set of bundles is known as the compatibility
+layer, and is intended to be used to create a full Eclipse SDK release on e4 that is fully
+compatible with previous Eclipse project releases. Thus while e4 1.0 itself is not 
+compatible with previous Eclipse project releases, it provides the necessary
+infrastructure to allow a fully compatible e4-based release of the Eclipse SDK to be created.
+</p>
   
 <p><strong>Non-compliant usage of API's</strong>: All non-API methods and classes,
   and certainly everything in a package with &quot;internal&quot; in its name,
   are considered implementation details which may vary between operating environment
   and are subject to change without notice. Client plug-ins that directly depend
-  on anything other than what is specified in the Eclipse SDK API are inherently
+  on anything other than what is specified in the Eclipse e4 API are inherently
   unsupportable and receive no guarantees about compatibility within a single
   release much less with earlier releases. Refer to
   <a href="http://www.eclipse.org/articles/Article-API%20use/eclipse-api-usage-rules.html">
@@ -284,13 +273,12 @@ Compatibility with Eclipse 3.x is anticipated to be a major focus of the subsequ
 
 <p:preamble>
 <div>
-<p>The plan items listed below were defined according to contributor requirements and the Eclipse
-  <a href="http://wiki.eclipse.org/RequirementsCouncilThemesAndPriorities">Themes and Priorities</a>
-  set forth by the Eclipse Requirements Council. Each plan item covers a feature or API that is
+<p>The plan items listed below were defined according to contributor requirements and the 
+  themes and priorities established by the e4 Project. Each plan item covers a feature or API that is
   to be added to the e4 Project deliverables, or some aspect of the e4 Project that is
   to be improved. Each plan item has its own entry in the Eclipse bugzilla database, with a title
   and a concise summary (usually a single paragraph) that explains the work item at a suitably
-  high enough level so that everyone can readily understand what the work item.</p>
+  high enough level so that everyone can readily understand what the work item entails.</p>
 <p> Although there are several components under the e4 project, there
   is a significant amount of commonality and shared effort between them. In general,
   many plan items involve coordinated changes to multiple components, and thus
@@ -324,60 +312,53 @@ Compatibility with Eclipse 3.x is anticipated to be a major focus of the subsequ
 
 <!-- ============================================== -->
 
-<p:theme name="Design for Extensibility">
+<p:theme name="Easier to Develop">
 <p:description>
 <p>Over the years the Eclipse platform has accumulated a large body of API,
 resulting in a platform that is very powerful, but also very difficult for non-experts
-to extend. This theme encompasses work to make the Eclipse platform much
-easier to build applications and extensions upon.
+to use and extend. This theme encompasses work to make it easier to develop
+software components for the Eclipse platform.
 </p>
 </p:description>
 
 <p:committed>
+  <p><i>None at this time.</i></p>
+</p:committed>
+
+<p:proposed>
 <ul>
 <li>
-<strong>Support declarative definition of user-interfaces.</strong> 
+<strong>Integrate web UI technologies into the Eclipse platform</strong>
+  There is growing demand for software components that can run both in
+  traditional desktop environments, and Web browser environments. We will
+  support this demand by providing first-class integration of web-based components
+  in the Eclipse platform. In particular, we will support embedding of user interface components 
+  written in JavaScript into the e4 UI, and provide access to e4 API for JavaScript components.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+
+<li>
+<strong>Support declarative and visual definition of user-interfaces.</strong> 
   We will work with the community to identify and provide access to a best-of-breed
-  declarative mechanism for defining widget-based user-interfaces in Eclipse. [Platform UI, SWT]
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252648">252648</a>)</li>
+  declarative mechanism for defining widget-based user-interfaces in Eclipse. We
+  will provide visual design tools to allow such user-interfaces to be crafted without
+  requiring extensive programming knowledge.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
 <li>
-<strong>Model-based workbench.</strong>
-  The functionality of the Eclipse Workbench and IDE have grown significantly
-  since they were created. In some cases, older capabilities have been superceded
-  by newer ones or have been proven to be unwieldy or otherwise unsatisfying.
-  We will create a new model of the underlying structure of the Eclipse UI, which
-  will make development simpler, but more flexible and dynamic. [Platform UI]
- (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id= 252650"> 252650</a>) </li>
-
-<li>
-<strong>Skinnable UI.</strong>
-  We will enable developers to have greater control over the Eclipse UI, 
-  making it simple to customize the appearance of Eclipse-based applications
-  using industry standard mechanisms such as CSS. [Platform UI, SWT]
- (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id= 252653"> 252653</a>) </li>
-
-<li>
-<strong>Investigate scripting languages for Eclipse programmability.</strong> 
-  We will investigate the use of scripting languages such as JavaScript, Ruby, etc., 
-  in Eclipse development. Since this capability will require function from the
-  model-based workbench, as well as support from the Equinox project, and 
-  will potentially impact many other areas, only the initial investigation
-  is planned during the R3.5 cycle. [All]
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252654">252654</a>)</li>
+<strong>Eclipse application services.</strong>
+  We will provide a new, simplified API for accessing basic Eclipse platform services.
+  This will allow developers to create components for Eclipse by learning and using
+  a much smaller set of API.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
 <li>
 <strong>Compatibility layer.</strong>
   Although the 1.0 release will not itself be backward compatible with earlier versions
-  of the Eclipse platform, we will develop a compatibility layer that will allow
-  plug-ins built against earlier versions of the platform to run without modification
-  in e4. [All]
+  of the Eclipse platform, we will develop a compatibility layer that will allow the
+  full Eclipse platform and all API-clean platform plug-ins to run without modification
+  on e4.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 </ul>
-</p:committed>
-
-<p:proposed>
-  <p><i>None at this time.</i></p>
 </p:proposed>
 
 <p:deferred>
@@ -388,51 +369,61 @@ easier to build applications and extensions upon.
     
 <!-- ============================================== -->
 
-<p:theme name="Rich Internet Applications">
+<p:theme name="Easier to Assemble">
 <p:description>
-<p>Eclipse is well-established as the cross-platform IDE of choice, but it has become
-  much more than that. The extensive and diverse range of applications that are being
-  built on the Eclipse code base, and the constantly changing capabilities of the
-  underlying systems on which it runs, are driving us to push the limits of our
-  technology in almost every dimension. In particular, there is increasing demand for an equivalent
-  of the Eclipse platform in the Rich Internet Application (RIA) space. Having a single
-  platform that can be used to build and run applications on a wide variety of web and desktop 
-  technologies, would enable application writers to exploit a wide range of 
-  deployment options from a common code base.</p>
+<p>The Eclipse platform provides an excellent basis for producing extensible
+integrated development environments (IDEs). However, it can be difficult to 
+assemble and customize Eclipse components into different kinds of applications
+or for different runtime environments. This theme encompasses work to 
+make it easier to rearrange, customize, and otherwise mash up Eclipse components
+into very different kinds of applications.
+</p>
 </p:description>
 
 <p:committed>
-<ul>
-</ul>
+  <p><i>None at this time.</i></p>
 </p:committed>
 
 <p:proposed>
-  <p><i>None at this time.</i></p>
-</p:proposed>
-
-<p:deferred>
-  <p><i>None at this time.</i></p>
-</p:deferred>
-
-</p:theme>
-
-<!-- ============================================== -->
-
-<p:theme name="Ease of Use">
-<p:description>
-<p>The Eclipse IDE platform provides sufficient capabilities for a wide range of
-developers, but has limitations that make it difficult to use as an IDE for certain kinds of development.
-This theme encompasses work to make the Eclipse IDE easier to use for embedded,
-C/C++, parallel, and server-side developer environments.</p>
-</p:description>
-
-<p:committed>
 <ul>
-</ul>
-</p:committed>
+<li>
+<strong>Model-based workbench.</strong>
+  The functionality of the Eclipse Workbench and IDE have grown significantly
+  since they were created. In some cases, older capabilities have been superceded
+  by newer ones or have been proven to be unwieldy or otherwise unsatisfying.
+  We will create a new model of the underlying structure of the Eclipse UI, which
+  will make development simpler, but more flexible and dynamic. [Platform UI]
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
-<p:proposed>
-  <p><i>None at this time.</i></p>
+<li>
+<strong>Visual design tools for application assembly.</strong>
+  We will provide visual design tools to support assembling and laying out e4
+  applications. This will allow authoring and customization of the application's
+  model without requiring knowledge of the underlying programming and modelling
+  technologies.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+
+<li>
+<strong>Skinnable UI.</strong>
+  We will enable developers to have greater control over the Eclipse UI, 
+  making it simple to customize the appearance of Eclipse-based applications
+  using industry standard mechanisms such as CSS. [Platform UI, SWT]
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+
+<li>
+<strong>OpenSocial container for Eclipse.</strong>
+  We will provide a container for integrating OpenSocial components into the Eclipse
+  platform. This will allow rapid assembly and customization of applications by drawing
+  from the large library of available OpenSocial components.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+
+<li>
+<strong>Service-oriented programming model.</strong>
+  We will define and use a more service-oriented programming model for the e4 API.
+  This will avoid use of singleton APIs and allow a greater variety of Eclipse platform capabilities to be
+  interchanged, customized, reimplemented, or reused in other environments.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+</ul>
 </p:proposed>
 
 <p:deferred>
