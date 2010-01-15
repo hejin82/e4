@@ -22,7 +22,7 @@ Last revised 17:00 ET January 15, 2010.
 <p><i>Please send comments about this plan to the</i> <a href="mailto:e4-dev@eclipse.org">e4-dev@eclipse.org</a> <i>developer
   mailing list.</i>
 </p>
-<p>This document lays out the feature and API set for the first feature release
+<p>This document lays out the feature and API set for the next feature release
   of the Eclipse e4 project, designated release 1.0.
 </p>
 
@@ -128,11 +128,11 @@ Last revised 17:00 ET January 15, 2010.
   Java Platform itself. Portions are targeted to specific classes of operating
   environments, requiring their source code to only reference facilities available
   in particular class libraries (e.g. J2ME Foundation 1.0, J2SE 1.3 and 1.4,
-  etc.). In general, the 1.0 release of the Eclipse Project is developed on Java SE 5.</p>
+  etc.). In general, the 1.0 release of the e4 Project is developed on Java SE 5.</p>
 <p>e4 has dependencies on components from other Eclipse projects, notably the Platform
 project, and the EMF project. While specific version dependencies may specify
 a wider range, e4 is generally built and tested against the versions contained in the 
-Helios release train.</p>
+<a href="http://wiki.eclipse.org/Helios">Helios</a> release train.</p>
 <p>There are many different implementations of the Java Platform running atop
   a variety of operating systems. We focus our testing on a handful of
   popular combinations of operating system and Java Platform; these are our <em>reference
@@ -141,7 +141,7 @@ Helios release train.</p>
   them we cannot vouch for them. Problems encountered when running Eclipse on a
   non-reference platform that cannot be recreated on any reference platform will
   be given lower priority than problems with running Eclipse on a reference platform.</p>
-<p>e4 also has dependencies on browser technologies such as Javascript. The
+<p>e4 also has dependencies on browser technologies such as JavaScript. The
 reference platforms listed below show the versions of these technologies that we
 are developing and testing against.</p>
 <p>e4 1.0 is tested and validated on the following reference platforms
@@ -300,12 +300,12 @@ infrastructure to allow a fully compatible e4-based release of the Eclipse SDK t
     investigating it, we are not yet in a position to commit to it, or to say
     that we won't be able to address it. After due consideration, a proposal
     will either be committed or deferred. In bugzilla, such items are reflected
-    by having a target milestone "1.0" or "---" assigned.</li>
+    by having a target milestone "1.0" assigned.</li>
   <li><b>Deferred</b> plan item - A reasonable proposal that will not make it in
     to this release for some reason is marked as deferred with a brief note as
     to why it was deferred. Deferred plan items may resurface as committed plan
-    items at a later point. In bugzilla, such items are reflected by having
-    a target milestone "Future" assigned.</li>
+    items at a later point. In bugzilla, such items are reflected by having no
+    target milestone assigned.</li>
 </ul>
 </div>
 </p:preamble>
@@ -353,7 +353,7 @@ software components for the Eclipse platform.
 
 <li>
 <strong>Compatibility layer.</strong>
-  Although the 1.0 release will not itself be backward compatible with earlier versions
+  Although the 1.0 release itself will not be backward compatible with earlier versions
   of the Eclipse platform, we will develop a compatibility layer that will allow the
   full Eclipse platform and all API-clean platform plug-ins to run without modification
   on e4.
@@ -392,7 +392,7 @@ into very different kinds of applications.
   since they were created. In some cases, older capabilities have been superceded
   by newer ones or have been proven to be unwieldy or otherwise unsatisfying.
   We will create a new model of the underlying structure of the Eclipse UI, which
-  will make development simpler, but more flexible and dynamic. [Platform UI]
+  will make development simpler, but more flexible and dynamic.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
 <li>
@@ -407,7 +407,7 @@ into very different kinds of applications.
 <strong>Skinnable UI.</strong>
   We will enable developers to have greater control over the Eclipse UI, 
   making it simple to customize the appearance of Eclipse-based applications
-  using industry standard mechanisms such as CSS. [Platform UI, SWT]
+  using industry standard mechanisms such as CSS.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
 <li>
