@@ -328,7 +328,7 @@ software components for the Eclipse platform.
 <p:proposed>
 <ul>
 <li>
-<strong>Integrate web UI technologies into the Eclipse platform</strong>
+<strong>Support for web UI components in the Eclipse platform</strong>
   There is growing demand for software components that can run both in
   traditional desktop environments, and Web browser environments. We will
   support this demand by providing first-class integration of web-based components
@@ -396,8 +396,8 @@ into very different kinds of applications.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
 <li>
-<strong>Visual design tools for application assembly.</strong>
-  We will provide visual design tools to support assembling and laying out e4
+<strong>Tools for application assembly.</strong>
+  We will provide design tools to support assembling and laying out e4
   applications. This will allow authoring and customization of the application's
   model without requiring knowledge of the underlying programming and modelling
   technologies.
@@ -411,10 +411,10 @@ into very different kinds of applications.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
 <li>
-<strong>OpenSocial container for Eclipse.</strong>
-  We will provide a container for integrating OpenSocial components into the Eclipse
+<strong>OpenSocial Gadget container for Eclipse.</strong>
+  We will provide a container for integrating OpenSocial gadgets into the Eclipse
   platform. This will allow rapid assembly and customization of applications by drawing
-  from the large library of available OpenSocial components.
+  from the large library of available OpenSocial gadgets.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
 
 <li>
