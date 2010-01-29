@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!--  Use this to test local rendering in firefox -->
-<?xml-stylesheet type="text/xsl" href="project-plan-render.xsl"?>
+<!-- <?xml-stylesheet type="text/xsl" href="project-plan-render.xsl"?> -->
 
-<!-- <?xml-stylesheet type="text/xsl" href="http://www.eclipse.org/projects/project-plan.xsl"?> -->
+<?xml-stylesheet type="text/xsl" href="http://www.eclipse.org/projects/project-plan.xsl"?>
 
 <p:plan
   plan-format="1.0"
@@ -17,12 +17,12 @@
 <div>
 
 <p>
-Last revised 17:00 ET January 15, 2010.
+Last revised 18:00 ET January 29, 2010.
 </p>
 <p><i>Please send comments about this plan to the</i> <a href="mailto:e4-dev@eclipse.org">e4-dev@eclipse.org</a> <i>developer
   mailing list.</i>
 </p>
-<p>This document lays out the feature and API set for the next feature release
+<p>This draft document lays out the feature and API set for the next feature release
   of the Eclipse e4 project, designated release 1.0.
 </p>
 
