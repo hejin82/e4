@@ -17,7 +17,7 @@
 <div>
 
 <p>
-Last revised 18:00 ET January 29, 2010.
+Last revised 15:00 ET February 12, 2010.
 </p>
 <p><i>Please send comments about this plan to the</i> <a href="mailto:e4-dev@eclipse.org">e4-dev@eclipse.org</a> <i>developer
   mailing list.</i>
@@ -334,7 +334,7 @@ software components for the Eclipse platform.
   support this demand by providing first-class integration of web-based components
   in the Eclipse platform. In particular, we will support embedding of user interface components 
   written in JavaScript into the e4 UI, and provide access to e4 API for JavaScript components.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302749">302749</a>)</li>
 
 <li>
 <strong>Support declarative and visual definition of user-interfaces.</strong> 
@@ -342,14 +342,14 @@ software components for the Eclipse platform.
   declarative mechanism for defining widget-based user-interfaces in Eclipse. We
   will provide visual design tools to allow such user-interfaces to be crafted without
   requiring extensive programming knowledge.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302750">302750</a>)</li>
 
 <li>
 <strong>Eclipse application services.</strong>
   We will provide a new, simplified API for accessing basic Eclipse platform services.
   This will allow developers to create components for Eclipse by learning and using
   a much smaller set of API.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302751">302751</a>)</li>
 
 <li>
 <strong>Compatibility layer.</strong>
@@ -357,7 +357,7 @@ software components for the Eclipse platform.
   of the Eclipse platform, we will develop a compatibility layer that will allow the
   full Eclipse platform and all API-clean platform plug-ins to run without modification
   on e4.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302752">302752</a>)</li>
 </ul>
 </p:proposed>
 
@@ -393,7 +393,7 @@ into very different kinds of applications.
   by newer ones or have been proven to be unwieldy or otherwise unsatisfying.
   We will create a new model of the underlying structure of the Eclipse UI, which
   will make development simpler, but more flexible and dynamic.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302753">302753</a>)</li>
 
 <li>
 <strong>Tools for application assembly.</strong>
@@ -401,28 +401,28 @@ into very different kinds of applications.
   applications. This will allow authoring and customization of the application's
   model without requiring knowledge of the underlying programming and modelling
   technologies.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302754">302754</a>)</li>
 
 <li>
 <strong>Skinnable UI.</strong>
   We will enable developers to have greater control over the Eclipse UI, 
   making it simple to customize the appearance of Eclipse-based applications
   using industry standard mechanisms such as CSS.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302755">302755</a>)</li>
 
 <li>
 <strong>OpenSocial Gadget container for Eclipse.</strong>
   We will provide a container for integrating OpenSocial gadgets into the Eclipse
   platform. This will allow rapid assembly and customization of applications by drawing
   from the large library of available OpenSocial gadgets.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302756">302756</a>)</li>
 
 <li>
 <strong>Service-oriented programming model.</strong>
   We will define and use a more service-oriented programming model for the e4 API.
   This will avoid use of singleton APIs and allow a greater variety of Eclipse platform capabilities to be
   interchanged, customized, reimplemented, or reused in other environments.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=XXXXXX">XXXXXX</a>)</li>
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302757">302757</a>)</li>
 </ul>
 </p:proposed>
 
