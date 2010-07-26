@@ -1,0 +1,694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="copyright" content="Copyright (c) Eclipse contributors and others 2010. This page is made available under license. For full details, see the LEGAL section in the documentation that contains this page."/>
+<meta http-equiv="Content-Language" content="en-us"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="text/css">
+td {border-top: solid thin black;}
+img[alt] {background-color:#ffdddd;}
+tr {vertical-align: top;}
+</style>
+<title>e4 What's New in 2010 Release</title>
+</head>
+
+<body>
+
+<h2>e4 What's New in 2010 Release</h2>
+
+<p>Here are descriptions of some of the more interesting or significant changes 
+made in the e4 incubator for the July 2010 release. They are grouped into:</p>
+
+<ul>
+<li><a href="#JSOpenSocial">JavaScript and OpenSocial</a></li>
+<li><a href="#XWT">XWT Changes</a></li>
+<li><a href="#XWTTooling">XWT Tooling Changes</a></li>
+<li><a href="#wbTooling">Workbench Tooling Changes</a></li>
+<li><a href="#Resources">Resources Changes</a></li>
+<li><a href="#Examples">Examples</a></li>
+</ul>
+
+<!-- ****************** START OF N&N TABLE ****************** -->
+<table cellpadding="10" cellspacing="0" width="600">
+  <colgroup>
+  <col width="30%"/>
+  <col width="70%"/>
+  </colgroup>
+  <tbody>
+    <!-- ******************** JavaScript/OpenSocial ********************** -->
+    <tr> 
+      <td colspan="2"><a name="JSOpenSocial"></a> <div style="font-size: 20px; font-weight: bold;">JavaScript
+      and OpenSocial</div></td>
+    </tr>
+
+	<tr id="opensocial-gadgets">
+		<td width="30%" valign="top" align="left"><b>OpenSocial gadgets </b></td>
+		<td width="70%" valign="top">
+		OpenSocial gadgets can now be opened as views in Eclipse. Gadgets are reusable
+		web UI components as defined in the <a
+			href="http://www.opensocial.org/Technical-Resources/opensocial-spec-v09/Gadgets-API-Specification.html#rfc.section.2"
+			title="OpenSocial v0.9 specification">OpenSocial Gadgets API Specification</a>. At
+		this point, only parts of the specification are implemented, but many existing gadgets
+		already work.
+		<p>Many social websites implement this specification and can host OpenSocial Gadgets,
+		for example iGoogle, hi5, LinkedIn, MySpace, orkut, Friendster, Ning, XING and others.
+		The "social" aspect of OpenSocial Gadgets, including access to user data and their network
+		of "friends", is also not yet implemented in e4 - we have focused on the Gadgets part of
+		the specification.</p> 
+		<p>The procedure to add a gadget is pretty simple:
+		<ul>
+			<li>Press <b>CTRL+3</b> to bring up Quick Access, type "Open gadget" and press Enter.</li>
+			<li>A dialog will open in which you can enter the gadget URL (for example, use
+			<code>http://www.google.com/ig/modules/dictionary.xml</code> for a Google Dictionary gadget).</li>
+			<li>A new view displaying your gadget is now available in your workbench!
+			You can repeat the process to also display your Twitter timeline, a gadget showing the
+			temperature at your home, etc.</li>
+		</ul>
+		<img src="images/opensocial-overview.png" alt="Screenshot of Eclipse with OpenSocial gadgets" /></p>
+		<p>If your gadget is customizable, you can use the <b>View</b> menu to edit its preferences on a dedicated
+		property page.</p>
+		<img src="images/opensocial-propertypage.png" alt="OpenSocial gadget preferences" />
+		<p>You can find more details, and a list of gadgets to try, on the <a href="http://wiki.eclipse.org/E4/OpenSocialGadgets"
+			title="Eclipse Wiki page - OpenSocialGadgets">e4 OpenSocial wiki page</a>. Keep in mind that
+			the implementation is in a very early stage. Many features of the OpenSocial Gadgets
+		specification are still missing or are not fully implemented.</p>
+		</td>
+	</tr>
+    <tr> 
+      <td colspan="2"><a name="XWT"></a> <div style="font-size: 20px; font-weight: bold;">XWT</div></td>
+    </tr>
+  <tr id="xwt-comboviewer">
+    <td width="30%" valign="top" align="left"><b>ComboViewer</b></td>
+    <td width="70%" valign="top">The <code>ComboViewer</code> of JFace 
+    can be defined in the same way as <code>ListViewer</code> and 
+    <code>TableViewer</code> using the standard JFace class.
+    <p><img src="images/ComboViewer.png" width="199" height="111" /></p></td>
+  </tr>
+
+  <tr id="xwt-simplified-jface-viewers">
+    <td width="30%" valign="top" align="left"><b>Simplified JFace viewers</b></td>
+    <td width="70%" valign="top">This release has simplified the declaration of JFace 
+    viewer. The <code>ILabelProvider</code> and <code>IContentProvider</code> 
+    are not needed any more. 
+      <p>Here is the code for TableViewer,</p>
+      <pre>  
+&lt;TableViewer input=&quot;{Binding Path=employees}&quot;&gt;
+	&lt;TableViewer.columns&gt;
+		&lt;TableViewerColumn width=&quot;150&quot; text=&quot;Name&quot; d<span class="style1">isplayMemberPath=&quot;name&quot;/</span>&gt;
+		&lt;TableViewerColumn width=&quot;150&quot; text=&quot;Age&quot; d<span class="style1">isplayMemberPath=&quot;age&quot;/</span>&gt;
+	&lt;/TableViewer.columns&gt;
+     	&lt;TableViewer.control.layoutData&gt;
+		&lt;GridData horizontalAlignment=&quot;FILL&quot; grabExcessHorizontalSpace=&quot;true&quot;/&gt;
+	&lt;/TableViewer.control.layoutData&gt;
+&lt;/TableViewer&gt;
+
+
+	 <img src="images/TableViewer.png" width="245" height="127" /></pre>
+      <p>Here is the code for ComboViewer,<br/>
+      </p>
+      <pre>
+  &lt;ComboViewer input=&quot;{Binding Path=employees}&quot; <strong class="style1">displayMemberPath=&quot;name&quot;</strong>&gt;<br />	&lt;ComboViewer.control.layoutData&gt;<br />		&lt;GridData horizontalAlignment=&quot;FILL&quot;<br />        		grabExcessHorizontalSpace=&quot;true&quot;/&gt;<br />	&lt;/ComboViewer.control.layoutData&gt;<br />  &lt;/ComboViewer&gt;
+	</pre>
+      <p>And the code of ListViewer<br/>
+      </p>
+    <pre>
+  &lt;ListViewer input=&quot;{Binding Path=employees}&quot; <span class="style1">displayMemberPath=&quot;name&quot;</span>&gt;<br />	&lt;ListViewer.control.layoutData&gt;<br />		&lt;GridData horizontalAlignment=&quot;FILL&quot;<br />        		grabExcessHorizontalSpace=&quot;true&quot;/&gt;<br />	&lt;/ListViewer.control.layoutData&gt;<br />  &lt;/ListViewer&gt;
+
+	 <img src="images/ListViewer.png" width="144" height="76" /></pre></td>
+  </tr>
+
+  <tr id="xwt-viewer-filter">
+    <td width="30%" valign="top" align="left"><b>Viewer Filter</b></td>
+    <td width="70%" valign="top">A new class <code>ViewerFilter</code> is provided 
+    to define a filter in a JFace viewer. This class contains a collection of <code>Condition</code> 
+    which is used as predicate to select the elements to display.
+    
+    <pre>  &lt;TableViewer Name=&quot;TableViewer&quot; input=&quot;{Binding Path=employees}&quot; &gt;<br />	<strong>&lt;</strong><span class="style1">TableViewer.filters&gt;<br />		&lt;ViewerFilter&gt;<br />			&lt;ViewerFilter.conditions&gt;<br />				&lt;Condition property=&quot;age&quot; value=&quot;30&quot; operator=&quot;GT&quot;/&gt;<br />				&lt;Condition property=&quot;name&quot; value=&quot;Th*&quot; operator=&quot;LIKE&quot;/&gt;<br />			&lt;/ViewerFilter.conditions&gt;<br />		&lt;/ViewerFilter&gt;<br />	&lt;/TableViewer.filters&gt;<strong></strong></span><strong><br /></strong>	<br />	&lt;TableViewer.columns&gt;<br />		&lt;TableViewerColumn width=&quot;150&quot; text=&quot;Name&quot; displayMemberPath=&quot;name&quot;/&gt;<br />		&lt;TableViewerColumn width=&quot;150&quot; text=&quot;Age&quot; displayMemberPath=&quot;age&quot;/&gt;<br />	&lt;/TableViewer.columns&gt;<br />  &lt;/TableViewer&gt;<br /></pre>
+    <p>This <code>TableViewer</code> displays all employees whose name starts
+    with &quot;Th&quot; and age is great than 30.</p></td>
+  </tr>
+
+  <tr id="xwt-iobservable-management">
+    <td width="30%" valign="top" align="left"><b>IObservable Management </b></td>
+    <td width="70%" valign="top">A new IObservable management is implemented in XWT 
+    for each UI resource  unit. XWT keeps now all instances of IObservable. It allows developers 
+    to get the IObservableValue and then modify observed values with automatically 
+    notifications in UI and in behind data. The service is provided in the main class <code>XWT</code>:
+    <pre>IObservableValue XWT.getObservableValue(Object control, Object data, String path);</pre>    </td>
+  </tr>
+
+  <tr id="xwt-master-detail">
+    <td width="30%" valign="top" align="left"><b>Master/Detail support</b></td>
+    <td width="70%" valign="top">XWT starts to provide a transparent  &quot;Declarative Data Binding&quot; 
+    solution to hide  all complexity   of JFace data binding. The master/detail presentation 
+    is supported straightforward   in the path expression of Data Binding. The expression language    
+    is extended to complete the missing type in  programming language.
+    
+    <p>For example, the element type of a collection is always missing in binary class in Java. 
+    This information is necessary   to build the Data binding chain in Mater/Detail pattern. 
+    In the following example, we have a class <code>Company</code> with a property 
+    &quot;employees&quot; in a collection or an array. The employees are displayed in a 
+    <code>ListViewer</code>, when user select an element, its name will be displayed 
+    in the <code>Label</code> below.. </p>
+    
+    <pre>  &lt;ListViewer name=&quot;master&quot; input=&quot;{Binding Path=employees}&quot; displayMemberPath=&quot;name&quot;&gt;<br />	&lt;ListViewer.control.layoutData&gt;<br />		&lt;GridData horizontalAlignment=&quot;FILL&quot;<br />        		grabExcessHorizontalSpace=&quot;true&quot;/&gt;<br />	&lt;/ListViewer.control.layoutData&gt;<br />  &lt;/ListViewer&gt;
+  &lt;Label text=&quot;{Binding elementName=master,path=<span class="style1">singleSelection.(j:Employee.name)}</span>&quot;/&gt;
+	</pre>
+      <p>The property &quot;name&quot; in the binding expression is prefixed by its type Employee and enclosed by parentheses. </p>
+      <p>Here is the example Snippet017 of Jface Data binding ported in XWT:</p>
+      <p><img src="images/Snippet015.png" width="437" height="298" /><br/>
+        </p></td>
+  </tr>
+
+  <tr id="xwt-heterogeneous-data-model">
+    <td width="30%" valign="top" align="left"><b>Heterogeneous data model support </b></td>
+    <td width="70%" valign="top">In a real application, the data model can be mixed together 
+    with the business model: Java Bean, POJO, dynamic EMF, Web service, XML, database etc. 
+    The previous release has supported most of them separately in one expression, data model  
+    could not be mixed. This release removes this limitation, it provides a total transparent 
+    Declarative Data Binding expression solution.
+    
+    <p>For example, if we have two classes: one in Java and another in EMF</p>
+    <pre>  public class Author {<br />      protected EObject content;<br />      ...<br />  } <br /></pre>
+    <p>where &quot;content&quot; can be an instance of Book class defined in EMF, which  is a dynamic model with one attribute &quot;title&quot;. In UI, if we just need to specify the binding in the same way, </p>
+    <pre> &lt;Text text=&quot;{Binding path=content.(Book.title)}&quot; /&gt;
+	</pre></td>
+  </tr>
+
+  <tr id="xwt-update-source-trigger">
+    <td width="30%" valign="top" align="left"><b>Update Source trigger</b></td>
+    <td width="70%" valign="top">This release integrates a new type <code>UpdateSourceTrigger</code>.  
+    In addition, a new property &quot;updateSourceTrigger&quot; has been added in the class <code>Binding</code>
+    and therefore in data binding expressions. This class indicates when modifications 
+    to the data binding source model will occur. Many UI elements have only one possible trigger,
+    such as check buttons. However text widgets have two possibilities: when the content gets changed, 
+    or when the focus is lost.
+    
+    <pre>  &lt;Text text=&quot;{Binding path=name,<strong class="style1">updateSourceTrigger=FocusOut</strong>}&quot;&gt;</pre></td>
+  </tr>
+
+  <tr id="xwt-more-ops-conditions">
+    <td width="30%" valign="top" align="left"><b>More operators in conditions</b></td>
+    <td width="70%" valign="top">The following operators have been added in <code>Condition</code> 
+    and all classes of <code>Trigger</code> to extend the expression support:
+    <p>
+      <table width="496" border="1">
+        <tr>
+          <td width="91"><strong><em>Operator</em></strong></td>
+          <td width="128"><strong><em>Data type</em></strong></td>
+          <td width="255"><strong><em>Description</em></strong></td>
+        </tr>
+        <tr>
+          <td>EG</td>
+          <td>Any</td>
+          <td>Equal</td>
+        </tr>
+        <tr>
+          <td>NE</td>
+          <td>Any</td>
+          <td>Not equal</td>
+        </tr>
+        <tr>
+          <td>LT</td>
+          <td>Number</td>
+          <td>Less then</td>
+        </tr>
+        <tr>
+          <td>GT</td>
+          <td>Number</td>
+          <td>Great then</td>
+        </tr>
+        <tr>
+          <td>LE</td>
+          <td>Number</td>
+          <td>Less and equal</td>
+        </tr>
+        <tr>
+          <td>GE</td>
+          <td>Number</td>
+          <td>Great and equal</td>
+        </tr>
+        <tr>
+          <td>LIKE</td>
+          <td>String</td>
+          <td>String matching. * and ? are supported.</td>
+        </tr>
+        <tr>
+          <td>IS_A</td>
+          <td>Any</td>
+          <td>Tests if an instance is a type</td>
+        </tr>
+        <tr>
+          <td>IS_KIND_OF</td>
+          <td>Type</td>
+          <td>Tests if a type is same or a subclass of another.</td>
+        </tr>
+      </table>
+      </p>
+    </td>
+  </tr>
+
+  <tr id="xwt-tree-viewer">
+    <td width="30%" valign="top" align="left"><b>TreeViewer</b></td>
+    <td width="70%" valign="top">JFace data binding has two classes, <tt>ObservableListTreeContentProvider</tt>
+    and <tt>ObservableSetTreeContentProvider</tt>, for <tt>TreeViewer</tt> to handle the tree content 
+    corresponding to <tt>List</tt> and <tt>Set</tt> collections. These classes require a property to 
+    determine the content of subtree nodes.
+	<p>XWT relies on the same concept to support <tt>TreeViewer</tt>. Two classes 
+	are provided and a property &quot;contentPath&quot; will be used to indicate  the sub-nodes:
+	</p>
+      <pre>  &lt;ObservableListTreeContentProvider contentPath=&quot;list&quot;/&gt;     </pre>
+	<p>or:</p>
+    <pre>  &lt;ObservableSetTreeContentProvider contentPath=&quot;set&quot;/&gt;</pre>
+    <p>The screenshot below is snippet019 from the data binding framework ported to XWT.
+    </p>
+    <p><img src="images/TreeViewer.png" width="479" height="233" /></p>
+    </td>
+  </tr>
+
+  <tr id="xwt-forms">
+    <td width="30%" valign="top" align="left"><b>Eclipse forms</b></td>
+    <td width="70%" valign="top">Eclipse Forms contains a set of customs widgets 
+    and other supporting classes to provide Web-like UIs by modestly extending SWT 
+    and/or manipulating style bits, colors, fonts and other properties in order to get the 
+    desired behavior. This technology was used throughout PDE multi-page editors and 
+    has been available as public API since Eclipse 3.0.
+	<p>The new plug-in <tt>org.eclipse.e4.xwt.forms</tt> has been added to support
+	creation of Eclipse forms in XWT. The support includes the latest forms API from Eclipse 3.5 and earlier.</p>
+    <p><a href="images/weaving-forms.png"><img src="images/weaving-forms500x300.png" width="500" height="330" /></a></p></td>
+  </tr>
+
+  <tr id="xwt-ui-profile">
+    <td width="30%" valign="top" align="left"><b>UI profile support</b></td>
+    <td width="70%" valign="top">UI profiles are a new mechanism for meta-class 
+    management. They provide a flexible solution for managing a set of UI meta-classes, for registering
+    new meta-classes, and for overwriting and restoring the predefined meta-classes as a whole.
+    <p>Three new methods are introduced in the <tt>XWT</tt> class: <tt>createProfile()</tt>,
+    <tt>applyProfile()</tt>, and <tt>restoreProfile()</tt>.
+    </p>
+    <p>This solution is used by XWT Eclipse forms to support overwriting the standard SWT Widgets. </p></td>
+  </tr>
+
+  <tr id="xwt-data-binding-change-notification">
+    <td width="30%" valign="top" align="left"><b>Data binding change notification</b></td>
+    <td width="70%" valign="top">Data binding change notification is a tracking mechanism 
+    for all events from UI elements in a resource scope. It is particularly useful for tracking the binding data state. 
+    It is used by the e4 workbench integration to track the editor part state.
+	<p>Three new API methods are added in the <tt>XWT</tt> class, and a new interface <tt>IChangeListener</tt>: </p>
+    <ul>
+      <li><tt>addObservableChangeListener(Object context, IChangeListener listener)</tt></li>
+      <li><tt>removeObservableChangeListener(Object context, IChangeListener listener)</tt></li>
+    </ul></td>
+  </tr>
+
+  <tr id="xwt-workbench-state-management">
+    <td width="30%" valign="top" align="left"><b>Workbench state management</b></td>
+    <td width="70%" valign="top">In this release of XWT, e4 workbench integration is 
+    extended to provide automatic state management for saveable/editor parts. This 
+    state management uses data binding change notification to detect and notify the 
+    data binding state in an editor part created using XWT declarative data binding.
+	<p>This solution is implemented in the class <tt>XWTSaveablePart</tt> located in the 
+	bundle <tt>org.eclipse.e4.xwt.ui.workbench</tt>. All editors should inherit from this class to leverage this support.</p>
+	<p>This state management support is used in the last version of the e4 Contacts demo 
+	to manage the change state of the <b>Details</b> 	part.</p>
+	<p><img src="images/Editor.png" width="700" height="480" /><br/>
+	</p></td>
+  </tr>
+
+  <tr id="xwt-multi-binding">
+    <td width="30%" valign="top" align="left"><b>Data binding aggregation</b></td>
+    <td width="70%" valign="top">In general, data binding establishes a binding from
+    one property of a binding source to one property of a binding target. 
+    Multi-binding provides the ability to bind one binding target property to a list of 
+    source properties, and then apply logic to produce a value with the given input.
+	<p>In the e4 Contacts demo, a full name  is composed of two properties: first name and last name. 
+	A Text field is bound to a composite virtual property:</p>
+	<pre>&lt;Text&gt;
+  &lt;Text.text&gt;
+    &lt;MultiBinding&gt;
+      &lt;Binding path=&quot;firstName&quot;/&gt;
+      &lt;Binding path=&quot;lastName&quot;/&gt; 
+    &lt;/MultiBinding&gt;
+  &lt;/Text.text&gt;
+&lt;/Text&gt;
+</pre>
+    <pre><img src="images/MultiBinding.png" width="700" height="230" /></pre></td>
+  </tr>
+
+  <tr id="xwt-animation">
+    <td width="30%" valign="top" align="left"><b>Animation</b></td>
+    <td width="70%" valign="top">This release includes initial integration 
+    with <a href="http://kenai.com/projects/trident/pages/Home">Trident</a>, an 
+    animation engine for Java. This integration consists of the following elementary classes:
+      <ul>
+        <li><tt>ColorAnimation</tt></li>
+        <li><tt>IntAnimation</tt></li>
+        <li><tt>PointAnimation</tt></li>
+        <li><tt>RectangleAnimation</tt></li>
+      </ul>
+    <p>These classes are driven by the class <tt>Storyboard</tt> via  Event Trigger. 
+    Here is an example for the fade transition:</p>
+    <pre>&lt;Shell xmlns=&quot;http://www.eclipse.org/xwt/presentation&quot;<br />	xmlns:x=&quot;http://www.eclipse.org/xwt&quot;<br />	name=&quot;window&quot;&gt;<br/>	&lt;Shell.layout&gt;<br />		&lt;GridLayout numColumns=&quot;1&quot;/&gt;<br />	&lt;/Shell.layout&gt;	<br />	&lt;Label name=&quot;labelTarget&quot; text=&quot;Int the animation&quot;/&gt;<br />
+	&lt;Button name=&quot;startButton&quot; text=&quot;Start Animation&quot;&gt;<br />	  &lt;Button.triggers&gt;<br />	    &lt;EventTrigger routedEvent=&quot;<strong>SelectionEvent</strong>&quot;&gt;<br />	      &lt;BeginStoryboard name=&quot;MyBeginStoryboard&quot;&gt;<br />	        <strong>&lt;Storyboard&gt;<br />	          &lt;IntAnimation<br />	             targetName=&quot;window&quot;<br />	             targetProperty=&quot;alpha&quot; <br />	               duration=&quot;0:0:3&quot; from=&quot;0&quot; to=&quot;255&quot; /&gt;<br />	        &lt;/Storyboard&gt;<br /></strong>	      &lt;/BeginStoryboard&gt;<br />	    &lt;/EventTrigger&gt;<br />   &lt;/Button.triggers&gt;<br />	&lt;/Button&gt;
+&lt;/Shell&gt;
+	<img src="images/animation.png" width="124" height="85" />
+	</pre>
+    <p>The fade animation starts when we click on the button &quot;Start animation&quot;, 
+    it lasts for three seconds and the alpha value will change from 0 to 255.</p></td>
+  </tr>
+
+  <tr id="itemname8">
+    <td width="30%" valign="top" align="left"><b>Data binding validation and error handling</b></td>
+    <td width="70%" valign="top">Validation is the last step in data binding 
+    operations during an update. In general, the result needs to be displayed in the UI to 
+    notify end users. There are several way to perform this notification: decoration, status bars,
+    tool tips, message dialogs, etc. A generic solution is implemented in this release to 
+    support  all the most useful error handling mechanisms of data binding. This solution itself relies on data binding.
+    <p>Here is an example of a status bar that manages two <tt>Text</tt> fields.</p>
+    <p><img src="images/BindingStatus.png" width="229" height="125" /></p></td>
+  </tr>
+  <tr id="itemname">
+    <td width="30%" valign="top" align="left"><b>Support for null layout</b></td>
+    <td width="70%" valign="top">The standard  SWT Composite has no layout by default. 
+    Its children can be manually positioned and arranged by the coordination x and y. It is 
+    known as Null Layout. In case of a Composite with a pre-defined layout, when this UI 
+    element is marked up in XWT, it is possible to need removing the layout and use it 
+    without layout. With this release, it can be done using an extension of markup &quot;Null&quot;.
+   <p>For example, MyFillComposite is a Composite with a FillLayout, we can create one without layout in the following way:</p>
+    <pre>     &lt;MyFillComposite layout-&quot;{x:Null}&quot;/&gt;</pre></td>
+  </tr>
+
+  <tr id="itemname2">
+    <td width="30%" valign="top" align="left"><b>Resource pre-processing</b></td>
+    <td width="70%" valign="top">By default, XWT UI resources are loaded directly to 
+    create  runtime SWT  UI controls. In some cases, we need to change dynamically 
+    some UIs during runtime. For example, it could be useful to change the UIs through 
+    some conditions such as security rules, user privileges, application context etc.
+    <p>To meet this requirement, a pre-processing mechanism is introduced. A callback 
+    will be called just after the loading of XWT Resource if the following option is provided in XWT.loadWithOptions().</p>
+      <pre>   options.get(IXWTLoader.BEFORE_PARSING_CALLBACK, preprocessor);
+   XWT.loadWithOptions(url, options);</pre>
+	<p>where the variable &quot;preprocessor&quot; is an instance of the type IBeforeParsingCallback.</p>
+    <p></p></td>
+  </tr>
+
+    <!-- ******************** XWT TOOLING ********************** -->
+
+    <tr> 
+      <td colspan="2"><a name="XWTTooling"></a> <div style="font-size: 20px; font-weight: bold;">XWT Tooling</div></td>
+    </tr>
+
+   <tr id="xwt-designer">
+    <td width="30%" valign="top" align="left"><b>XWT visual designer</b></td>
+    <td width="70%" valign="top">XWT Visual Designer is a visual editor-like <a href="http://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> tool. 
+    It is designed to allow applications to be designed by non-software engineers.
+      <p><a href="images/xw-designer.png"><img src="images/xw-designer500x333.png" width="500" height="390" /></a></p>
+      <p>Here is the summary of the main features supported by XWT Visual Designer:</p>
+      <ol>
+        <li>A tool palette view</li>
+        <li>WYSIWYG authoring</li>
+        <li>Support for SWT and JFace</li>
+        <li>Support for XML editing with code completion</li>
+        <li>Integration with the tabbed <b>Properties</b> view</li>
+        <li>Hierarchical outline view with DnD operation, copy/paste and undo/redo</li>
+        <li>Support for all layouts: including <tt>SashForm</tt></li>
+        <li>String externalization</li>
+        <li>Surround With</li>
+        <li>Widget style change via context menus</li>
+        <li>Advanced control binding editing</li>
+      </ol>
+      <p><a href="images/control-binding.png"><img src="images/control-binding500x395.png" width="500" height="394" /></a></p>
+      <p>This tool  is tested on Windows, Linux and Mac OS Carbon/Cocoa.</p></td>
+  </tr>
+  
+  <tr id="xwt-part-creation">
+    <td width="30%" valign="top" align="left"><b> Part creation</b></td>
+    <td width="70%" valign="top"><p>In this release, the palette tool &quot;Part&quot; 
+    is completed. This tool creates an empty <tt>Part</tt> implementation. A dialog is 
+    presented during part creation: It is possible to create a Java based Part or a XWT based Part.</p>
+      <p><img src="images/e4VD-01_600.png"/></p>
+      <p><img src="images/e4XWTVD-01.png"/></p>
+    <p>If the Data Context type is provided, the UI form is generated through the Bean structure. </p></td>
+  </tr>
+
+  <tr id="xwt-input-part">
+    <td width="30%" valign="top" align="left"><b>XWT input part</b></td>
+    <td width="70%" valign="top"><p>An Input Part is a part that reads its root data 
+    from a data source such as a file. A &quot;Contributed Input Part&quot; palette tool 
+	has been added to create a Part that reads data from an EMF file. </p>
+    <p><img src="images/e4Contributed-01_600.png" width="600" height="443" /></p>
+    <p>After having provided the EMF data file in the creation option dialog, we can 
+    select the root object such as Customer. For a collection property, it is possible to 
+    check the option &quot;Master/Detail&quot; to generate the necessary code to 
+    update &quot;Selection&quot; property of the Eclipse selection service when an item gets selected.</p>
+    <p><img src="images/e4Contributed-02.png"/></p>
+    <p>The UI form for the Part  is generated in XWT through the data structure and user selection.</p>
+    <p><img src="images/e4Contributed-04_600.png"/></p></td>
+  </tr>
+
+  <tr id="xwt-selection-part">
+    <td width="30%" valign="top" align="left"><b>XWT Selection Part</b></td>
+    <td width="70%" valign="top"><p>A &quot;Selection Part&quot; is a part that displays 
+    the selected element in the Eclipse selection service. During the &quot;Selection Part&quot; 
+    creation using the &quot;Contributed Selection Part&quot; tool in the palette, an option 
+    dialog is presented that requires a data type. The data type can be a type defined in an EMF data file, or directly in a Java class. 
+    The tool also allows you to select the properties to display.</p>
+      <p><img src="images/e4Contributed-05.png" /></p>
+      <p>With &quot;Input Part&quot; palette tool, we  can create an e4 application in Master/Detail presentation pattern without one line hand code.</p>
+    <p><img src="images/e4Contributed-07_600.png"/></p></td>
+  </tr>
+
+    <!-- ******************** WORKBENCH TOOLING ********************** -->
+
+    <tr> 
+      <td colspan="2"><a name="wbTooling"></a> <div style="font-size: 20px; font-weight: bold;">Workbench Tooling</div></td>
+    </tr>
+
+	<tr id="workbench-visual-designer">
+    <td width="30%" valign="top" align="left"><b>New visual design tool</b></td>
+    <td width="70%" valign="top">e4 Workbench Visual Designer is a visual editor-like WYSIWYG tool
+    for e4 workbench authoring. The designer allows you to assemble and layout an 
+    e4 application visually without needing programming or EMF knowledge. 
+    It reuses many components from XWT Visual Designer.
+      <p><a href="images/e4Designer.png"><img src="images/e4Designer500.png" width="500" height="420" /></a></p>
+      <p>The following components/features are implemented:</p>
+      <ol>
+        <li>A tool palette view</li>
+        <li>WYSIWYG authoring</li>
+        <li>Part layout reorganization using DnD</li>
+        <li>Integration with the standard <b>Properties</b> view</li>
+        <li>Hierarchical outline view</li>
+      </ol>      
+      <p>This tool  is tested on Windows, Linux and Mac OS Carbon/Cocoa.</p></td>
+  </tr>
+  
+    <tr id="e4-project-wizard">
+    <td width="30%" valign="top" align="left"><b>e4 project wizard</b></td>
+    <td width="70%" valign="top">A project wizard has been added to help creating a simple e4 application project.
+      <p><a href="http://wiki.eclipse.org/E4/E4Designer"><img src="images/e4Wizard.png" width="525" height="500" /></a></p>
+      <p>A <a href="http://wiki.eclipse.org/E4/E4Designer">screencast</a> is provided 
+      to help getting started with an e4 application. It shows how to develop, run and 
+      deploy an e4 application using the e4 wizard and e4 Visual Designer.</p></td>
+  </tr>
+
+  <tr id="designer-outline-view">
+    <td width="30%" valign="top" align="left"><b>Hierarchical outline view</b></td>
+    <td width="70%" valign="top">The following new features have been added 
+    to the hierarchical <b>Outline</b> view:
+      <ul>
+        <li>DnD for moving and copy</li>
+        <li>DnD creation from Palette</li>
+        <li>Copy/Paste/Cut</li>
+        <li>Undo/Redo</li>
+      </ul></td>
+  </tr>
+
+  <tr id="designer-integrity">
+    <td width="30%" valign="top" align="left"><strong>Model integrity control</strong></td>
+    <td width="70%" valign="top">Model integrity control in the current e4
+    workbench is very weak. The only model integrity control currently provided is the
+    integrity of the java programming language itself. The UI meta model provides almost
+    no integrity checking. Since e4 Visual Designer relies on the UI meta model, we need additional model integrity control.
+    <p>A command-based mechanism has been added in both the <b>Outline</b> view and 
+    WYSIWYG editor to guarantee the correctness of the UI model and provides the undo/redo capability.</p></td>
+  </tr>
+
+  <tr id="designer-perspective-switch">
+    <td width="30%" valign="top" align="left"><b>Perspective switching</b></td>
+    <td width="70%" valign="top">A context menu has been added in the <b>Outline</b>
+    view to switch one perspective to another.
+    <p><img src="images/Perspective.png" width="477" height="546" /></p></td>
+  </tr>
+
+  <tr id="designer-change-active-part">
+    <td width="30%" valign="top" align="left"><b>Change the active part</b></td>
+    <td width="70%" valign="top">A context menu has been added in the <b>Outline</b>
+    view and WYSIWYG editor to change the active part contained in a <tt>PartStack</tt>.
+    <p><img src="images/ActivePart2.png" width="467" height="524" /></p>
+    <p><img src="images/ActivePart.png" width="592" height="494" /></p></td>
+  </tr>
+
+  <tr id="visual-design-search">
+    <td width="30%" valign="top" align="left"><b>Search capability</b></td>
+    <td width="70%" valign="top">This release provides an useful search operation 
+    in the visual design view and <b>Outline</b> view via the context menu.
+      <p><img src="images/Search01.png" width="600" height="527" /></p>
+<p>Three submenu entries are created, corresponding to three kinds of search on Element Name, Element Id and Contribution URI. </p>
+<p><img src="images/Find.png" width="350" height="302" /></p>
+<p>The found element will be selected in the current part view. </p>
+This feature is a basic operation that can be used to setup the references between any elements in the <b>Properties</b> view.</td>
+  </tr>
+
+  <tr id="visual-design-category-outline">
+    <td width="30%" valign="top" align="left"><b>Category display in hierarchical outline view</b></td>
+    <td width="70%" valign="top">Previously, the visual designer's <b>Outline</b> view used an
+    EMF-generated tree view to display the  contents of Workbench elements. All contained 
+    elements were displayed as children in a flat list. For example, The elements of Handler and Command 
+    were displayed at the same level as the Trimmed Window. 
+    <p><img src="images/Outline01.png" width="608" height="355" /></p>
+    <p>This release changes the view by adding the categories as defined by the containment 
+    property, except the children property. </p></td>
+  </tr>
+
+  <tr id="visual-design-context-menu">
+    <td width="30%" valign="top" align="left"><b>Child creation via context menu</b></td>
+    <td width="70%" valign="top">In the visual designer's <b>Outline</b> view and <b>Visual Design</b> view, a 
+    context menu &quot;New&quot; is added for each node to create an immediate child.
+    <p><img src="images/NewMenu01.png" /></p>
+    <p>After the calling of this menu, a dialog in Rich UI is displayed for data initialization, in 
+    which all required information (denoted by &quot;*&quot;) must be provided.</p>
+    <p><img src="images/NewInitialization.png" width="600" height="473" /></p></td>
+  </tr>
+
+  <tr id="editor-properties-view">
+    <td width="30%" valign="top" align="left"><b>Editing in Properties view</b></td>
+    <td width="70%" valign="top">A user-friendly editor in the visual designer has been 
+    added to he <b>Properties</b> view under a delegate tab.
+    <p><img src="images/PropertiesView.png" width="600" height="473" /></p></td>
+  </tr>
+
+  <tr id="model-editor"> 
+    <td width="30%" valign="top" align="left"><b>Advanced workbench model editor</b></td>
+    <td width="70%" valign="top">A new form-based editor has been introduced that
+    provides support for editing the workbench model in a more natural way than the 
+    default reflective editor that comes with EMF. This first version supports:
+    <ul>
+    <li>Editing the model at design time</li>
+    <li>Editing a live model in a running e4 application instance</li>
+    <li>Integration with JDT to define contributions using auto-completion</li>
+    </ul>
+    <p><img src="images/model-editor.png" alt="e4 model editor"/></p>
+    </td>
+  </tr>
+
+  <tr id="modeltooling_singlesource">
+    <td width="30%" valign="top" align="left"><b>Single sourcing</b></td>
+    <td width="70%" valign="top">The model editor now comes with integration in the different flavors of the Eclipse Platform:
+    <ul>
+    <li>Eclipse 3.6 SDK:<br />
+    <img src="images/screen_36SDK.png" width='550' />
+    </li>
+    <li>Eclipse 4.0 SDK:<br />
+    <img src="images/screen_40SDK.png" width='550' />
+    </li>
+    <li>"Native" e4-Application:<br />
+    <img src="images/screen_e4.png" width='550' />
+    </li>
+    </ul>
+    Using the same code base. The only difference is how the component integrates into the different platforms.
+    </td>
+  </tr>
+
+  <tr id="modeltooling_iconuris">
+    <td width="30%" valign="top" align="left"><b>Support for icon-URIs</b></td>
+    <td width="70%" valign="top">Support for selection constructing icons URIs has been added to
+    the form-based workbench model editor.
+    <p><img src="images/icon_selection.png" width="550" /></p></td>
+  </tr>
+
+  <tr id="modeltooling_editorextension">
+    <td width="30%" valign="top" align="left"><b>Support for extended applications</b></td>
+    <td width="70%" valign="top">The workbench model editor bundle now comes with an extension point 
+    which allows it to deal with extended application models.
+    <p><img src="images/screen_extended.png" width="550" /></p></td>
+  </tr>
+
+  <!-- ******************** Resources ********************** -->
+
+    <tr> 
+      <td colspan="2"><a name="Resources"></a> <div style="font-size: 20px; font-weight: bold;">Resources</div></td>
+    </tr>
+
+  <tr id="SFS">
+    <td valign="top" align="left" width="30%"><b>Semantic File System</b></td>
+    <td valign="top" width="70%">
+      The Semantic File System (SFS) continues the e4 work on flexible resources and 
+      brings in a capability to work with a <b>non-file-system-based content</b>. 
+      <p>The SFS allows the resource model to tap a variety of sources of information that reside on the 
+      Internet or a corporate network. The minimal requirement is that the source of 
+      information exposes its content in the form of Internet resources. That is, pieces of information 
+      that can be addressed via URI/URL and transferred via a byte stream. The 
+      resource-based content will usually be accessed via the HTTP protocol 
+      but the SFS also allows plugging in other communication protocols.  </p>
+      
+      <p>Remote content exposed via SFS can be mounted as a resource hierarchy 
+      underneath an Eclipse project so that standard Eclipse editors/tools can work 
+      with this content as if it were coming from the local file system.</p>
+
+      <p>You can start playing with local-only aspects of the SFS by creating a new 
+      project and choosing SFS as a file system implementation: </p>
+	
+      <p><img src="images/NewSFSProject.png" alt="Create new project on SFS" /></p>
+
+      <p>You can discover the full capabilities of SFS by running through 
+	<a href="http://wiki.eclipse.org/E4/Resources/Semantic_File_System/Demos/Running_SFS_Examples">SFS Examples</a> 
+	that demonstrate additional features and aspects of the user interface.</p>
+     </td></tr>
+
+  <tr id="SFS-team">
+    <td valign="top" align="left" width="30%"><b>SFS team integration</b></td>
+    <td valign="top" width="70%">
+    The Semantic File System integrates with different aspects of the Eclipse Platform
+    <b>Team</b> support:
+	<ul>
+	  <li>Repository Provider to control content lifecycle (e.g. open for edit, revert, etc)</li>
+	  <li>Synchronization support to control flow of changes between Eclipse and remote sources of information</li>
+	  <li>History View</li>
+	  <li>Merge/Compare</li>
+    </ul>
+
+      <p>For example, you can share the project via the SFS Repository provider in order 
+      to enable <tt>FileModificationValidator</tt> and <tt>MoveDeleteHook</tt> functionality:</p>
+      
+      <p><img src="images/ShareProject.png" alt="Share SFS project" /></p>
+
+      <p>Or you can open the <b>Synchronize</b> perspective and examine your changes using <b>Compare Editor</b>:</p>
+
+      <p><img src="images/SynchronizeCompare.png" alt="Share SFS project" /></p>
+
+      <p>For more information about Semantic File System, see the <a href="http://wiki.eclipse.org/E4/Resources/Semantic_File_System">SFS wiki</a>.</p>
+
+      <p>The SFS is currently in an early incubation phase so that the APIs and the 
+      functionality are likely to be changed/extended in the upcoming releases.</p>
+     </td></tr>
+
+  <!-- ******************** Examples ********************** -->
+
+    <tr> 
+      <td colspan="2"><a name="Examples"></a> <div style="font-size: 20px; font-weight: bold;">Examples</div></td>
+    </tr>
+
+  <tr id="simpleide_demo">
+    <td width="30%" valign="top" align="left"><b>SimpleIDE Demo</b></td>
+    <td width="70%" valign="top">Work on another demo application has been started 
+    which shows how to write a very simple IDE like Application using pure e4-UI-Technologies
+    <p><img src="simpleide.png" width="550" /></p>
+    <p>For more information take a look at: <a href="http://wiki.eclipse.org/E4/UI/SimpleIDE">e4 wiki page</a></p>
+    </td>
+  </tr>
+
+    <!-- ****************** END OF N&N TABLE ****************** -->
+</tbody>
+</table>
+</body>
+</html>
