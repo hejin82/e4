@@ -17,7 +17,7 @@
 <div>
 
 <p>
-Last revised 15:00 ET May 7, 2010.
+Last revised 15:00 ET July 28, 2010.
 </p>
 <p><i>Please send comments about this plan to the</i> <a href="mailto:e4-dev@eclipse.org">e4-dev@eclipse.org</a> <i>developer
   mailing list.</i>
@@ -322,10 +322,30 @@ software components for the Eclipse platform.
 </p:description>
 
 <p:committed>
-  <p><i>None at this time.</i></p>
+<ul>
+<li>
+<strong>Support declarative and visual definition of user-interfaces.</strong> 
+  We will work with the community to identify and provide access to a best-of-breed
+  declarative mechanism for defining widget-based user-interfaces in Eclipse. We
+  will provide visual design tools to allow such user-interfaces to be crafted without
+  requiring extensive programming knowledge.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302750">302750</a>)</li>
+
+<li>
+<strong>Compatibility layer.</strong>
+  Although the July 2010 release itself will not be backward compatible with earlier versions
+  of the Eclipse platform, we will develop a compatibility layer that will allow the
+  full Eclipse platform and all API-clean platform plug-ins to run without modification
+  on e4.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302752">302752</a>)</li>
+</ul>
 </p:committed>
 
 <p:proposed>
+  <p><i>None at this time.</i></p>
+</p:proposed>
+
+<p:deferred>
 <ul>
 <li>
 <strong>Support for web UI components in the Eclipse platform</strong>
@@ -337,32 +357,12 @@ software components for the Eclipse platform.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302749">302749</a>)</li>
 
 <li>
-<strong>Support declarative and visual definition of user-interfaces.</strong> 
-  We will work with the community to identify and provide access to a best-of-breed
-  declarative mechanism for defining widget-based user-interfaces in Eclipse. We
-  will provide visual design tools to allow such user-interfaces to be crafted without
-  requiring extensive programming knowledge.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302750">302750</a>)</li>
-
-<li>
 <strong>Eclipse application services.</strong>
   We will provide a new, simplified API for accessing basic Eclipse platform services.
   This will allow developers to create components for Eclipse by learning and using
   a much smaller set of API.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302751">302751</a>)</li>
-
-<li>
-<strong>Compatibility layer.</strong>
-  Although the July 2010 release itself will not be backward compatible with earlier versions
-  of the Eclipse platform, we will develop a compatibility layer that will allow the
-  full Eclipse platform and all API-clean platform plug-ins to run without modification
-  on e4.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302752">302752</a>)</li>
 </ul>
-</p:proposed>
-
-<p:deferred>
-  <p><i>None at this time.</i></p>
 </p:deferred>
 
 </p:theme>
@@ -381,10 +381,6 @@ into very different kinds of applications.
 </p:description>
 
 <p:committed>
-  <p><i>None at this time.</i></p>
-</p:committed>
-
-<p:proposed>
 <ul>
 <li>
 <strong>Model-based workbench.</strong>
@@ -411,23 +407,30 @@ into very different kinds of applications.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302755">302755</a>)</li>
 
 <li>
-<strong>OpenSocial Gadget container for Eclipse.</strong>
-  We will provide a container for integrating OpenSocial gadgets into the Eclipse
-  platform. This will allow rapid assembly and customization of applications by drawing
-  from the large library of available OpenSocial gadgets.
-(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302756">302756</a>)</li>
-
-<li>
 <strong>Service-oriented programming model.</strong>
   We will define and use a more service-oriented programming model for the e4 API.
   This will avoid use of singleton APIs and allow a greater variety of Eclipse platform capabilities to be
   interchanged, customized, reimplemented, or reused in other environments.
 (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302757">302757</a>)</li>
+
 </ul>
+</p:committed>
+
+<p:proposed>
+  <p><i>None at this time.</i></p>
+
 </p:proposed>
 
 <p:deferred>
-  <p><i>None at this time.</i></p>
+<ul>
+<li>
+<strong>OpenSocial Gadget container for Eclipse.</strong>
+  We will provide a container for integrating OpenSocial gadgets into the Eclipse
+  platform. This will allow rapid assembly and customization of applications by drawing
+  from the large library of available OpenSocial gadgets.
+(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=302756">302756</a>)</li>
+</ul>
+	
 </p:deferred>
 
 </p:theme>
