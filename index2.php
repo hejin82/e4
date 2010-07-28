@@ -100,7 +100,6 @@ ob_start();
 				<li><a href="http://www.eclipse.org/org/press-release/20090731_e4alpha.php">See the press release</a></li>
 				<li><a href="http://www.eclipse.org/eclipse4/">Visit the landing page</a></li>
       		</ul>
-      		<img width="200" src="resources/images/july2010-splash.png"/>
 		</div>
 	</div>
 	
