@@ -99,6 +99,8 @@ ob_start();
 				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/e4-news.html">Browse the new &amp; noteworthy</a></li>
 				<li><a href="http://www.eclipse.org/org/press-release/20100728_eclipse4release.php">See the press release</a></li>
       		</ul>
+      		Note that several e4 components graduated into the Eclipse Platform project to
+      		produce the <a href="http://www.eclipse.org/eclipse4">Eclipse SDK 4.0</a> release.
 		</div>
 	</div>
 	
