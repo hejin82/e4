@@ -97,8 +97,7 @@ ob_start();
 			<ul>
 				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/">Download it</a></li>
 				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/e4-news.html">Browse the new &amp; noteworthy</a></li>
-				<li><a href="http://www.eclipse.org/org/press-release/20090731_e4alpha.php">See the press release</a></li>
-				<li><a href="http://www.eclipse.org/eclipse4/">Visit the landing page</a></li>
+				<li><a href="http://www.eclipse.org/org/press-release/20100728_eclipse4release.php">See the press release</a></li>
       		</ul>
 		</div>
 	</div>
