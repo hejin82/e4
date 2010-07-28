@@ -93,16 +93,14 @@ ob_start();
 	
 	<div id="rightcolumn">
 		<div class="sideitem">
-			<h6>The 0.9 Release is Available!</h6>
+			<h6>The July 2010 Release is Available!</h6>
 			<ul>
-				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.9-200907291930/index.html">Download it</a></li>
-				<li><a href="http://www.eclipse.org/e4/resources/e4-whitepaper.php">Read the white paper</a></li>
-				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.9-200907291930/e4-news-all.html">Browse the new &amp; noteworthy</a></li>
-				<li><a href="http://www.eclipse.org/org/press-release/20090731_e4alpha.php">See the press release</a></li>
-				<li><a href="http://www.eclipse.org/e4/development/readme/readme_e4_0.9.html#R-Demos">Run the demos</a></li>
-				<li><a href="http://www.eclipse.org/community/e4webinar/abstracts.php">Watch the webinars</a></li>
+				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/">Download it</a></li>
+				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/e4-news.html">Browse the new &amp; noteworthy</a></li>
+				<li><a href="http://www.eclipse.org/org/press-release/20100728_eclipse4release.php">See the press release</a></li>
       		</ul>
-      		<img width="200" src="resources/images/0.9-splash.png"/>
+      		Note that several e4 components graduated into the Eclipse Platform project to
+      		produce the <a href="http://www.eclipse.org/eclipse4">Eclipse SDK 4.0</a> release.
 		</div>
 	</div>
 	
