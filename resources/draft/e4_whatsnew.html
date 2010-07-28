@@ -4,6 +4,7 @@
 <meta name="copyright" content="Copyright (c) Eclipse contributors and others 2010. This page is made available under license. For full details, see the LEGAL section in the documentation that contains this page."/>
 <meta http-equiv="Content-Language" content="en-us"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="STYLESHEET" href="../book.css"  type="text/css"/>
 <style type="text/css">
 td {border-top: solid thin black;}
 img[alt] {background-color:#ffdddd;}
@@ -13,14 +14,14 @@ tr {vertical-align: top;}
 </head>
 
 <body>
-<h1>THIS IS A DRAFT DOCUMENT - BELIEVE NOTHING YOU SEE HERE</h1>
+
 <h2>e4 What's New in 2010 Release</h2>
 
 <p>Here are descriptions of some of the more interesting or significant changes 
 made in the e4 incubator for the July 2010 release. They are grouped into:</p>
 
 <ul>
-<li><a href="#JSOpenSocial">JavaScript and OpenSocial</a></li>
+<li><a href="#OpenSocial">OpenSocial</a></li>
 <li><a href="#XWT">XWT Changes</a></li>
 <li><a href="#XWTTooling">XWT Tooling Changes</a></li>
 <li><a href="#wbTooling">Workbench Tooling Changes</a></li>
@@ -37,8 +38,7 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
   <tbody>
     <!-- ******************** JavaScript/OpenSocial ********************** -->
     <tr> 
-      <td colspan="2"><a name="JSOpenSocial"></a> <div style="font-size: 20px; font-weight: bold;">JavaScript
-      and OpenSocial</div></td>
+      <td colspan="2"><a name="OpenSocial"></a> <div style="font-size: 20px; font-weight: bold;">OpenSocial</div></td>
     </tr>
 
 	<tr id="opensocial-gadgets">
@@ -55,7 +55,7 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
 		The "social" aspect of OpenSocial Gadgets, including access to user data and their network
 		of "friends", is also not yet implemented in e4 - we have focused on the Gadgets part of
 		the specification.</p> 
-		<p>The procedure to add a gadget is pretty simple:
+		<p>The procedure to add a gadget is straight-forward:
 		<ul>
 			<li>Press <b>CTRL+3</b> to bring up Quick Access, type "Open gadget" and press Enter.</li>
 			<li>A dialog will open in which you can enter the gadget URL (for example, use
@@ -71,19 +71,12 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
 		<p>You can find more details, and a list of gadgets to try, on the <a href="http://wiki.eclipse.org/E4/OpenSocialGadgets"
 			title="Eclipse Wiki page - OpenSocialGadgets">e4 OpenSocial wiki page</a>. Keep in mind that
 			the implementation is in a very early stage. Many features of the OpenSocial Gadgets
-		specification are still missing or are not fully implemented.</p>
+			specification are still missing or are not fully implemented.</p>
 		</td>
 	</tr>
     <tr> 
       <td colspan="2"><a name="XWT"></a> <div style="font-size: 20px; font-weight: bold;">XWT</div></td>
     </tr>
-  <tr id="xwt-comboviewer">
-    <td width="30%" valign="top" align="left"><b>ComboViewer</b></td>
-    <td width="70%" valign="top">The <code>ComboViewer</code> of JFace 
-    can be defined in the same way as <code>ListViewer</code> and 
-    <code>TableViewer</code> using the standard JFace class.
-    <p><img src="images/ComboViewer.png" width="199" height="111" /></p></td>
-  </tr>
 
   <tr id="xwt-simplified-jface-viewers">
     <td width="30%" valign="top" align="left"><b>Simplified JFace viewers</b></td>
@@ -101,8 +94,6 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
 		&lt;GridData horizontalAlignment=&quot;FILL&quot; grabExcessHorizontalSpace=&quot;true&quot;/&gt;
 	&lt;/TableViewer.control.layoutData&gt;
 &lt;/TableViewer&gt;
-
-
 	 <img src="images/TableViewer.png" width="245" height="127" /></pre>
       <p>Here is the code for ComboViewer,<br/>
       </p>
@@ -115,6 +106,14 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
   &lt;ListViewer input=&quot;{Binding Path=employees}&quot; <span class="style1">displayMemberPath=&quot;name&quot;</span>&gt;<br />	&lt;ListViewer.control.layoutData&gt;<br />		&lt;GridData horizontalAlignment=&quot;FILL&quot;<br />        		grabExcessHorizontalSpace=&quot;true&quot;/&gt;<br />	&lt;/ListViewer.control.layoutData&gt;<br />  &lt;/ListViewer&gt;
 
 	 <img src="images/ListViewer.png" width="144" height="76" /></pre></td>
+  </tr>
+
+  <tr id="xwt-comboviewer">
+    <td width="30%" valign="top" align="left"><b>ComboViewer</b></td>
+    <td width="70%" valign="top">The <code>ComboViewer</code> of JFace 
+    can now be defined in the same way as <code>ListViewer</code> and 
+    <code>TableViewer</code> using the standard JFace class.
+    <p><img src="images/ComboViewer.png" width="199" height="111" /></p></td>
   </tr>
 
   <tr id="xwt-viewer-filter">
@@ -139,13 +138,13 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
 
   <tr id="xwt-master-detail">
     <td width="30%" valign="top" align="left"><b>Master/Detail support</b></td>
-    <td width="70%" valign="top">XWT starts to provide a transparent  &quot;Declarative Data Binding&quot; 
-    solution to hide  all complexity   of JFace data binding. The master/detail presentation 
-    is supported straightforward   in the path expression of Data Binding. The expression language    
+    <td width="70%" valign="top">XWT now provides a transparent  &quot;Declarative Data Binding&quot; 
+    solution to hide all the complexity of JFace data binding. The master/detail presentation 
+    is supported straightforward in the path expression of Data Binding. The expression language    
     is extended to complete the missing type in  programming language.
     
-    <p>For example, the element type of a collection is always missing in binary class in Java. 
-    This information is necessary   to build the Data binding chain in Mater/Detail pattern. 
+    <p>For example, the element type of a collection is always missing in binary Java classes.
+    This information is necessary to build the data binding chain in the master/detail pattern. 
     In the following example, we have a class <code>Company</code> with a property 
     &quot;employees&quot; in a collection or an array. The employees are displayed in a 
     <code>ListViewer</code>, when user select an element, its name will be displayed 
@@ -367,7 +366,8 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
     <p>Here is an example of a status bar that manages two <tt>Text</tt> fields.</p>
     <p><img src="images/BindingStatus.png" width="229" height="125" /></p></td>
   </tr>
-  <tr id="itemname">
+
+  <tr id="xwt-null-layout">
     <td width="30%" valign="top" align="left"><b>Support for null layout</b></td>
     <td width="70%" valign="top">The standard  SWT Composite has no layout by default. 
     Its children can be manually positioned and arranged by the coordination x and y. It is 
@@ -378,7 +378,7 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
     <pre>     &lt;MyFillComposite layout-&quot;{x:Null}&quot;/&gt;</pre></td>
   </tr>
 
-  <tr id="itemname2">
+  <tr id="xwt-resource-processing">
     <td width="30%" valign="top" align="left"><b>Resource pre-processing</b></td>
     <td width="70%" valign="top">By default, XWT UI resources are loaded directly to 
     create  runtime SWT  UI controls. In some cases, we need to change dynamically 
@@ -423,19 +423,19 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
   
   <tr id="xwt-part-creation">
     <td width="30%" valign="top" align="left"><b> Part creation</b></td>
-    <td width="70%" valign="top"><p>In this release, the palette tool &quot;Part&quot; 
-    is completed. This tool creates an empty <tt>Part</tt> implementation. A dialog is 
-    presented during part creation: It is possible to create a Java based Part or a XWT based Part.</p>
+    <td width="70%" valign="top">XWT Visual Designer provides a palette tool for
+    creating an empty <tt>Part</tt> implementation. A dialog is 
+    presented during part creation: It is possible to create a Java based part or an XWT based part.
       <p><img src="images/e4VD-01_600.png"/></p>
       <p><img src="images/e4XWTVD-01.png"/></p>
-    <p>If the Data Context type is provided, the UI form is generated through the Bean structure. </p></td>
+    <p>If the data context type is provided, the UI form is generated through the bean structure. </p></td>
   </tr>
 
   <tr id="xwt-input-part">
     <td width="30%" valign="top" align="left"><b>XWT input part</b></td>
-    <td width="70%" valign="top"><p>An Input Part is a part that reads its root data 
-    from a data source such as a file. A &quot;Contributed Input Part&quot; palette tool 
-	has been added to create a Part that reads data from an EMF file. </p>
+    <td width="70%" valign="top">An <i>input part</i> is a part that reads its root data 
+    from a data source such as a file. A <b>Contributed Input Part</b> palette tool 
+	has been added to create a part that reads data from an EMF file.
     <p><img src="images/e4Contributed-01_600.png" width="600" height="443" /></p>
     <p>After having provided the EMF data file in the creation option dialog, we can 
     select the root object such as Customer. For a collection property, it is possible to 
@@ -448,11 +448,11 @@ made in the e4 incubator for the July 2010 release. They are grouped into:</p>
 
   <tr id="xwt-selection-part">
     <td width="30%" valign="top" align="left"><b>XWT Selection Part</b></td>
-    <td width="70%" valign="top"><p>A &quot;Selection Part&quot; is a part that displays 
+    <td width="70%" valign="top">A &quot;Selection Part&quot; is a part that displays 
     the selected element in the Eclipse selection service. During the &quot;Selection Part&quot; 
     creation using the &quot;Contributed Selection Part&quot; tool in the palette, an option 
     dialog is presented that requires a data type. The data type can be a type defined in an EMF data file, or directly in a Java class. 
-    The tool also allows you to select the properties to display.</p>
+    The tool also allows you to select the properties to display.
       <p><img src="images/e4Contributed-05.png" /></p>
       <p>With &quot;Input Part&quot; palette tool, we  can create an e4 application in Master/Detail presentation pattern without one line hand code.</p>
     <p><img src="images/e4Contributed-07_600.png"/></p></td>
