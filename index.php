@@ -72,10 +72,6 @@ ob_start();
 	          <td width="82%">Platform resource management</td>
 	        </tr>
 	        <tr> 
-	          <td width="20%" valign="top"><a href="http://www.eclipse.org/swt/" target="_top">SWT</a></td>
-	          <td width="82%">Standard Widget Toolkit</td>
-	        </tr>
-	        <tr> 
 	          <td width="20%" valign="top"><b>UI</b></td>
 	          <td width="82%">Platform user interface</td>
 	        </tr>
@@ -93,14 +89,12 @@ ob_start();
 	
 	<div id="rightcolumn">
 		<div class="sideitem">
-			<h6>The July 2010 Release is Available!</h6>
+			<h6>The June 2011 Release is Available!</h6>
 			<ul>
-				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/">Download it</a></li>
-				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.10-201007271415/e4-news.html">Browse the new &amp; noteworthy</a></li>
-				<li><a href="http://www.eclipse.org/org/press-release/20100728_eclipse4release.php">See the press release</a></li>
+				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.11-201106201631/index.html">Download it</a></li>
       		</ul>
       		Note that several e4 components graduated into the Eclipse Platform project to
-      		produce the <a href="http://www.eclipse.org/eclipse4">Eclipse SDK 4.0</a> release.
+      		produce the <a href="http://www.eclipse.org/eclipse4">Eclipse 4</a> stream of releases.
 		</div>
 	</div>
 	
