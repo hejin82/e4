@@ -89,9 +89,9 @@ ob_start();
 	
 	<div id="rightcolumn">
 		<div class="sideitem">
-			<h6>The June 2011 Release is Available!</h6>
+			<h6>The June 2012 Release is Available!</h6>
 			<ul>
-				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.11-201106201631/index.html">Download it</a></li>
+				<li><a href="http://download.eclipse.org/e4/downloads/drops/R-0.12-201206131100/index.html">Download it</a></li>
       		</ul>
       		Note that several e4 components graduated into the Eclipse Platform project to
       		produce the <a href="http://www.eclipse.org/eclipse4">Eclipse 4</a> stream of releases.
