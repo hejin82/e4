@@ -20,22 +20,16 @@ ob_start();
 		<h1><?= $pageTitle ?></h1>
 		<div class="homeitem3col">
 			<h3>About e4</h3>
-		      <p>The mission of the e4 project is to build a next generation platform for 
-		      pervasive, component-based applications and tools. See the
-		      <a href="/projects/project_summary.php?projectid=eclipse.e4">about page</a>
-		      as well as the original
-		      <a href="http://www.eclipse.org/proposals/e4/">project proposal</a>
-		      for more details.
-		      </p>
-		      <p>
-		      The Eclipse platform was first targeted at building an extensible IDE component 
-		      framework. It has since grown to include a Rich Client Platform, enabling whole 
-		      new categories of scenarios and domains. As the software landscape changes, 
-		      so must the Eclipse platform in order to remain relevant and vibrant. These 
-		      trend lines point to web technologies, new user interface metaphors, and 
-		      distributed infrastructure. Now is the time to rethink elements of the platform 
-		      so that Eclipse may remain at the forefront of application development.
-		      </p>
+		    <p>e4 is an incubator for community exploration of future technologies for the Eclipse Platform. 
+		    The project has three principal aims:
+		    <ul>
+		      <li>Simplify the Eclipse programming model: This will reduce development and maintenance costs and enable a larger developer community to leverage the platform in their own Eclipse-based applications.</li>
+		      <li>Enable the platform for use on emerging web-based runtime technologies: This will ensure the platform remains a compelling and viable application framework in a rapidly changing web technology landscape, and it will allow e4-based applications to leverage web technologies, while remaining insulated from specific technology choices that may quickly become obsolete.</li>
+		      <li>Broaden participation in development of the platform: This reduces the risks associated with building on a platform largely funded from a single source. Having a large and diverse group of commercial backers, will ensure the platform remains vibrant and viable over the long term. </li>
+		    </ul>
+		    For more details, see the project 
+		    <a href="/projects/project_summary.php?projectid=eclipse.e4">about page</a>.
+		    </p>
 		</div>
 		<div class="homeitem3col">
 			<h3>For more information</h3>
