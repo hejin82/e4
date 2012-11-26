@@ -57,34 +57,6 @@ ob_start();
       	   </li>
       	 </ul>
 		</div>
-		<div class="homeitem3col">
-			<h3>e4 Components</h3>
-			<p>The e4 subproject is broken down into components. Each component operates 
-				like a project unto its own, with its own CVS folders and bugzilla categories.
-			</p>
-	      <table width="100%" border="0">
-	        <tr> 
-	          <td width="20%" valign="top"><b>Name</b></td>
-	          <td width="82%"><b>Description</b></td>
-	        </tr>
-	        <tr> 
-	          <td width="20%" valign="top"><a href="http://wiki.eclipse.org/E4/Resources">Resources</a></td>
-	          <td width="82%">Platform resource management</td>
-	        </tr>
-	        <tr> 
-	          <td width="20%" valign="top"><b>UI</b></td>
-	          <td width="82%">Platform user interface</td>
-	        </tr>
-	        <tr> 
-	          <td width="20%" valign="top"><b>Languages</b></td>
-	          <td width="82%">Framework pieces for creating bundles in other languages, such as JavaScript</td>
-	        </tr>
-	        <tr> 
-	          <td width="20%" valign="top"><b>XWT</b></td>
-	          <td width="82%">Declarative toolkit for writing SWT/JFace user interface components in XML</td>
-	        </tr>
-	      </table>
-		</div>
 	</div>
 	
 	<div id="rightcolumn">
